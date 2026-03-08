@@ -83,6 +83,10 @@ config/
         ├── strings.json
         ├── translations/
         │   └── en.json
+        ├── codes/
+        │   └── climate
+        │   └── media_player
+        │   └── light
         └── icons.json
 
 ---
