@@ -1,0 +1,7 @@
+{
+  "name": "AR Smart IR",
+  "content_in_root": false,
+  "render_readme": true,
+  "domains": ["ar_smart_ir"],
+  "homeassistant": "2024.6.0"
+}
