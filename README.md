@@ -85,9 +85,13 @@ config/
         │   └── en.json
         ├── codes/
         │   └── climate/
+        │       └── 1000.json
         │   └── media_player/
+        │       └── 1000.json
         │   └── light/
+        │       └── 1000.json
         │   └── fan/
+        │       └── 1000.json
         └── icons.json
 
 ---
