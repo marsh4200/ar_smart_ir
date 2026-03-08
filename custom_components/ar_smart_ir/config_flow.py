@@ -37,7 +37,7 @@ CONTROLLERS = [
 ]
 
 
-class SmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     VERSION = 1
 
@@ -196,10 +196,10 @@ class SmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     @staticmethod
     def async_get_options_flow(config_entry):
-        return SmartIROptionsFlow()
+        return ARSmartIROptionsFlow()
 
 
-class SmartIROptionsFlow(config_entries.OptionsFlow):
+class ARSmartIROptionsFlow(config_entries.OptionsFlow):
 
     async def async_step_init(self, user_input=None):
 
