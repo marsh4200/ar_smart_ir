@@ -20,6 +20,7 @@ from homeassistant.helpers.restore_state import RestoreEntity
 
 from .controller import get_controller
 from .helpers import async_load_device_data
+from .const import CONF_COMMAND_OVERRIDES
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -41,11 +42,15 @@ SUPPORT_FLAGS = (
 
 async def async_setup_entry(hass, entry, async_add_entities):
 
-    config = entry.data
+    config = {**entry.data, **entry.options}
 
     device_code = config.get(CONF_DEVICE_CODE)
 
-    device_data = await async_load_device_data(device_code, "climate")
+    device_data = await async_load_device_data(
+        device_code,
+        "climate",
+        config.get(CONF_COMMAND_OVERRIDES),
+    )
 
     entity = SmartIRClimate(hass, config, device_data)
 

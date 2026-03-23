@@ -17,10 +17,163 @@ def get_codes_dir(platform: str) -> str:
     return os.path.join(COMPONENT_ABS_DIR, "codes", platform)
 
 
-async def async_load_device_data(device_code: int | str, platform: str) -> dict[str, Any]:
+COMMAND_META_KEYS = {
+    "code",
+    "command",
+    "value",
+    "repeat_count",
+    "repeat_delay_secs",
+    "repeat_delay",
+    "delay_secs",
+    "repeats",
+    "num_repeats",
+}
+
+
+def _is_command_meta_dict(value: Any) -> bool:
+    return isinstance(value, dict) and bool(COMMAND_META_KEYS.intersection(value))
+
+
+def _merge_command_tree(base: Any, override: Any) -> Any:
+    if override is None:
+        return base
+
+    if _is_command_meta_dict(override):
+        if isinstance(base, dict) and _is_command_meta_dict(base):
+            merged = dict(base)
+        elif base is not None:
+            merged = {"code": base}
+        else:
+            merged = {}
+        merged.update(override)
+        return merged
+
+    if isinstance(base, dict) and isinstance(override, dict):
+        merged = dict(base)
+        for key, value in override.items():
+            merged[key] = _merge_command_tree(base.get(key), value)
+        return merged
+
+    return override
+
+
+def parse_command_overrides(value: Any) -> dict[str, Any]:
+    if not value:
+        return {}
+
+    if isinstance(value, dict):
+        return value
+
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+        except json.JSONDecodeError as err:
+            raise ValueError(f"Invalid command overrides JSON: {err}") from err
+
+        if isinstance(parsed, dict):
+            return parsed
+
+    raise ValueError("Command overrides must be a JSON object.")
+
+
+def _is_command_leaf(value: Any) -> bool:
+    return isinstance(value, str) or _is_command_meta_dict(value)
+
+
+def flatten_command_paths(commands: dict[str, Any], prefix: tuple[str, ...] = ()) -> list[tuple[str, ...]]:
+    paths: list[tuple[str, ...]] = []
+
+    if not isinstance(commands, dict):
+        return paths
+
+    for key, value in commands.items():
+        current = prefix + (str(key),)
+        if _is_command_leaf(value):
+            paths.append(current)
+            continue
+        if isinstance(value, dict):
+            paths.extend(flatten_command_paths(value, current))
+
+    return paths
+
+
+def command_path_to_key(path: tuple[str, ...]) -> str:
+    return " / ".join(path)
+
+
+def get_command_value_at_path(commands: Any, path: tuple[str, ...]) -> Any:
+    current = commands
+    for part in path:
+        if not isinstance(current, dict):
+            return None
+        current = current.get(part)
+    return current
+
+
+def set_command_override_at_path(
+    overrides: dict[str, Any],
+    path: tuple[str, ...],
+    repeat_count: int,
+    repeat_delay_secs: float,
+) -> dict[str, Any]:
+    current = overrides
+    for part in path[:-1]:
+        node = current.get(part)
+        if not isinstance(node, dict) or _is_command_meta_dict(node):
+            node = {}
+            current[part] = node
+        current = node
+
+    current[path[-1]] = {
+        "repeat_count": max(1, int(repeat_count)),
+        "repeat_delay_secs": max(0.0, float(repeat_delay_secs)),
+    }
+    return overrides
+
+
+def remove_command_override_at_path(
+    overrides: dict[str, Any],
+    path: tuple[str, ...],
+) -> dict[str, Any]:
+    def _prune(node: Any, parts: tuple[str, ...], depth: int = 0) -> bool:
+        if not isinstance(node, dict):
+            return False
+
+        key = parts[depth]
+        if key not in node:
+            return not node
+
+        if depth == len(parts) - 1:
+            node.pop(key, None)
+        else:
+            child = node.get(key)
+            should_delete = _prune(child, parts, depth + 1)
+            if should_delete:
+                node.pop(key, None)
+
+        return not node
+
+    _prune(overrides, path)
+    return overrides
+
+
+async def async_load_device_data(
+    device_code: int | str,
+    platform: str,
+    command_overrides: Any = None,
+) -> dict[str, Any]:
     path = os.path.join(get_codes_dir(platform), f"{device_code}.json")
     async with aiofiles.open(path, mode="r") as jfile:
-        return json.loads(await jfile.read())
+        device_data = json.loads(await jfile.read())
+
+    overrides = parse_command_overrides(command_overrides)
+    if overrides:
+        device_data["commands"] = _merge_command_tree(
+            device_data.get("commands", {}),
+            overrides,
+        )
+
+    return device_data
 
 
 def load_catalog(platform: str) -> list[dict[str, Any]]:

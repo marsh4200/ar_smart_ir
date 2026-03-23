@@ -1,3 +1,4 @@
+import asyncio
 from abc import ABC, abstractmethod
 from base64 import b64encode
 import binascii
@@ -73,6 +74,69 @@ class AbstractController(ABC):
     async def send(self, command):
         pass
 
+    def _get_command_spec(self, command):
+
+        code = command
+        repeat_count = 1
+        repeat_delay_secs = None
+
+        if isinstance(command, dict):
+            code = (
+                command.get("code")
+                or command.get("command")
+                or command.get("value")
+            )
+
+            repeat_count = command.get(
+                "repeat_count",
+                command.get("repeats", repeat_count),
+            )
+
+            if repeat_count == 1 and "num_repeats" in command:
+                try:
+                    repeat_count = int(command["num_repeats"]) + 1
+                except (TypeError, ValueError):
+                    repeat_count = 1
+
+            repeat_delay_secs = command.get(
+                "repeat_delay_secs",
+                command.get("repeat_delay", command.get("delay_secs")),
+            )
+
+        try:
+            repeat_count = max(1, int(repeat_count))
+        except (TypeError, ValueError):
+            repeat_count = 1
+
+        try:
+            if repeat_delay_secs is not None:
+                repeat_delay_secs = max(0.0, float(repeat_delay_secs))
+        except (TypeError, ValueError):
+            repeat_delay_secs = None
+
+        return code, repeat_count, repeat_delay_secs
+
+    def _get_command_list(self, command):
+
+        code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
+
+        if isinstance(code, list):
+            commands = code
+        else:
+            commands = [code]
+
+        return commands, repeat_count, repeat_delay_secs
+
+    async def _repeat_with_delay(self, action, repeat_count, repeat_delay_secs):
+
+        delay = self._delay if repeat_delay_secs is None else repeat_delay_secs
+
+        for index in range(repeat_count):
+            await action()
+
+            if index < repeat_count - 1 and delay > 0:
+                await asyncio.sleep(delay)
+
 
 class BroadlinkController(AbstractController):
 
@@ -86,11 +150,9 @@ class BroadlinkController(AbstractController):
     async def send(self, command):
 
         commands = []
+        raw_commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
-        if not isinstance(command, list):
-            command = [command]
-
-        for _command in command:
+        for _command in raw_commands:
 
             if self._encoding == ENC_HEX:
 
@@ -121,8 +183,13 @@ class BroadlinkController(AbstractController):
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
             "command": commands,
-            "delay_secs": self._delay,
+            "delay_secs": (
+                self._delay if repeat_delay_secs is None else repeat_delay_secs
+            ),
         }
+
+        if repeat_count > 1:
+            service_data["num_repeats"] = repeat_count
 
         await self.hass.services.async_call(
             "remote",
@@ -142,10 +209,18 @@ class XiaomiController(AbstractController):
 
     async def send(self, command):
 
+        code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
+
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
-            "command": self._encoding.lower() + ":" + command,
+            "command": self._encoding.lower() + ":" + code,
         }
+
+        if repeat_count > 1:
+            service_data["num_repeats"] = repeat_count
+
+        if repeat_delay_secs is not None:
+            service_data["delay_secs"] = repeat_delay_secs
 
         await self.hass.services.async_call(
             "remote",
@@ -163,15 +238,28 @@ class MQTTController(AbstractController):
 
     async def send(self, command):
 
-        service_data = {
-            "topic": self._controller_data,
-            "payload": command,
-        }
+        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
-        await self.hass.services.async_call(
-            "mqtt",
-            "publish",
-            service_data,
+        async def publish_once():
+            for index, payload in enumerate(commands):
+                service_data = {
+                    "topic": self._controller_data,
+                    "payload": payload,
+                }
+
+                await self.hass.services.async_call(
+                    "mqtt",
+                    "publish",
+                    service_data,
+                )
+
+                if index < len(commands) - 1 and self._delay > 0:
+                    await asyncio.sleep(self._delay)
+
+        await self._repeat_with_delay(
+            publish_once,
+            repeat_count,
+            repeat_delay_secs,
         )
 
 
@@ -184,14 +272,27 @@ class LookinController(AbstractController):
 
     async def send(self, command):
 
-        encoding = self._encoding.lower().replace("pronto", "prontohex")
+        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
-        url = (
-            f"http://{self._controller_data}/commands/ir/"
-            f"{encoding}/{command}"
+        async def send_once():
+            encoding = self._encoding.lower().replace("pronto", "prontohex")
+
+            for index, current_command in enumerate(commands):
+                url = (
+                    f"http://{self._controller_data}/commands/ir/"
+                    f"{encoding}/{current_command}"
+                )
+
+                await self.hass.async_add_executor_job(requests.get, url)
+
+                if index < len(commands) - 1 and self._delay > 0:
+                    await asyncio.sleep(self._delay)
+
+        await self._repeat_with_delay(
+            send_once,
+            repeat_count,
+            repeat_delay_secs,
         )
-
-        await self.hass.async_add_executor_job(requests.get, url)
 
 
 class ESPHomeController(AbstractController):
@@ -203,12 +304,25 @@ class ESPHomeController(AbstractController):
 
     async def send(self, command):
 
-        service_data = {"command": json.loads(command)}
+        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
-        await self.hass.services.async_call(
-            "esphome",
-            self._controller_data,
-            service_data,
+        async def send_once():
+            for index, current_command in enumerate(commands):
+                service_data = {"command": json.loads(current_command)}
+
+                await self.hass.services.async_call(
+                    "esphome",
+                    self._controller_data,
+                    service_data,
+                )
+
+                if index < len(commands) - 1 and self._delay > 0:
+                    await asyncio.sleep(self._delay)
+
+        await self._repeat_with_delay(
+            send_once,
+            repeat_count,
+            repeat_delay_secs,
         )
 
 
@@ -221,10 +335,18 @@ class TuyaController(AbstractController):
 
     async def send(self, command):
 
+        code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
+
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
-            "command": command,
+            "command": code,
         }
+
+        if repeat_count > 1:
+            service_data["num_repeats"] = repeat_count
+
+        if repeat_delay_secs is not None:
+            service_data["delay_secs"] = repeat_delay_secs
 
         await self.hass.services.async_call(
             "remote",

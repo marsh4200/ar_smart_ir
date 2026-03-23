@@ -17,6 +17,7 @@ from homeassistant.util.percentage import (
 
 from .controller import get_controller
 from .helpers import async_load_device_data
+from .const import CONF_COMMAND_OVERRIDES
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -32,11 +33,15 @@ SPEED_OFF = "off"
 
 async def async_setup_entry(hass, entry, async_add_entities):
 
-    config = entry.data
+    config = {**entry.data, **entry.options}
 
     device_code = config.get(CONF_DEVICE_CODE)
 
-    device_data = await async_load_device_data(device_code, "fan")
+    device_data = await async_load_device_data(
+        device_code,
+        "fan",
+        config.get(CONF_COMMAND_OVERRIDES),
+    )
 
     async_add_entities(
         [
