@@ -2,16 +2,59 @@
   "config": {
     "step": {
       "user": {
-        "title": "SmartIR Setup",
-        "description": "Configure a SmartIR device",
+        "title": "SmartIR",
+        "description": "Choose the SmartIR device type to set up.",
+        "data": {
+          "platform": "Device type"
+        }
+      },
+      "manufacturer": {
+        "title": "Manufacturer",
+        "description": "Choose the brand for your SmartIR device.",
+        "data": {
+          "manufacturer": "Manufacturer"
+        }
+      },
+      "model": {
+        "title": "Model / code",
+        "description": "Choose the SmartIR code that matches your device.",
+        "data": {
+          "device_code": "Model / code"
+        }
+      },
+      "controller": {
+        "title": "Controller",
+        "description": "Choose the IR controller type.",
+        "data": {
+          "controller": "Controller"
+        }
+      },
+      "name": {
+        "title": "Entity details",
+        "description": "Finish setting up your SmartIR device.",
         "data": {
           "name": "Name",
-          "device_type": "Device Type",
-          "manufacturer": "Manufacturer",
-          "device_code": "Device Code",
-          "controller": "IR Controller"
+          "controller_data": "Controller data / service name"
         }
       }
     }
-  }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SmartIR options",
+        "description": "Update the UI-configured SmartIR entity and set repeat behavior for a selected command.",
+        "data": {
+          "name": "Name",
+          "controller_data": "Controller data / service name",
+          "delay": "Delay between commands",
+          "override_command": "Command",
+          "override_repeat_count": "Repeat count",
+          "override_repeat_delay_secs": "Repeat delay (secs)",
+          "override_remove": "Remove selected override"
+        }
+      }
+    }
+  },
+  "error": {}
 }
