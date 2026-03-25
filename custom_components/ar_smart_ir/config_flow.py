@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from typing import Any
 import uuid
 
@@ -13,18 +14,20 @@ from .const import (
     CONF_CONTROLLER_DATA,
     CONF_DELAY,
     CONF_DEVICE_CODE,
+    CONF_HUMIDITY_SENSOR,
     CONF_OVERRIDE_COMMAND,
     CONF_OVERRIDE_REMOVE,
     CONF_OVERRIDE_REPEAT_COUNT,
     CONF_OVERRIDE_REPEAT_DELAY,
     CONF_PLATFORM,
+    CONF_TEMPERATURE_SENSOR,
     DEFAULT_DELAY,
     DOMAIN,
     PLATFORM_TITLES,
     PLATFORMS,
 )
-
 from .helpers import (
+    async_load_device_data,
     command_path_to_key,
     flatten_command_paths,
     get_command_value_at_path,
@@ -34,7 +37,6 @@ from .helpers import (
     parse_command_overrides,
     remove_command_override_at_path,
     set_command_override_at_path,
-    async_load_device_data,
 )
 
 CONF_CONTROLLER = "controller"
@@ -49,15 +51,41 @@ CONTROLLERS = [
 ]
 
 
-class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+def _temperature_sensor_selector():
+    return selector.EntitySelector(
+        selector.EntitySelectorConfig(
+            filter=[
+                {
+                    "domain": "sensor",
+                    "device_class": "temperature",
+                }
+            ],
+            multiple=False,
+        )
+    )
 
+
+def _humidity_sensor_selector():
+    return selector.EntitySelector(
+        selector.EntitySelectorConfig(
+            filter=[
+                {
+                    "domain": "sensor",
+                    "device_class": "humidity",
+                }
+            ],
+            multiple=False,
+        )
+    )
+
+
+class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
 
     def __init__(self) -> None:
         self._data: dict[str, Any] = {}
 
     async def async_step_user(self, user_input=None):
-
         if user_input is not None:
             self._data[CONF_PLATFORM] = user_input[CONF_PLATFORM]
             return await self.async_step_manufacturer()
@@ -83,7 +111,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
 
     async def async_step_manufacturer(self, user_input=None):
-
         platform = self._data[CONF_PLATFORM]
         manufacturers = get_manufacturers(platform)
 
@@ -106,7 +133,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
 
     async def async_step_model(self, user_input=None):
-
         platform = self._data[CONF_PLATFORM]
         manufacturer = self._data["manufacturer"]
 
@@ -139,7 +165,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
 
     async def async_step_controller(self, user_input=None):
-
         if user_input is not None:
             self._data[CONF_CONTROLLER] = user_input[CONF_CONTROLLER]
             return await self.async_step_name()
@@ -159,7 +184,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
 
     async def async_step_name(self, user_input=None):
-
         platform = self._data[CONF_PLATFORM]
         code = self._data[CONF_DEVICE_CODE]
         controller = self._data[CONF_CONTROLLER]
@@ -172,7 +196,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
 
         if user_input is not None:
-
             data = {**self._data, **user_input}
 
             data[CONF_DEVICE_CODE] = int(data[CONF_DEVICE_CODE])
@@ -196,14 +219,19 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         else:
             controller_field = str
 
+        data_schema: dict[Any, Any] = {
+            vol.Required(CONF_NAME, default=default_name): str,
+            vol.Required(CONF_CONTROLLER_DATA): controller_field,
+        }
+
+        if platform == "climate":
+            data_schema[vol.Optional(CONF_TEMPERATURE_SENSOR)] = _temperature_sensor_selector()
+            data_schema[vol.Optional(CONF_HUMIDITY_SENSOR)] = _humidity_sensor_selector()
+        data_schema[vol.Optional(CONF_DELAY, default=DEFAULT_DELAY)] = vol.Coerce(float)
+
         return self.async_show_form(
             step_id="name",
-            data_schema=vol.Schema(
-                {
-                    vol.Required(CONF_NAME, default=default_name): str,
-                    vol.Required(CONF_CONTROLLER_DATA): controller_field,
-                }
-            ),
+            data_schema=vol.Schema(data_schema),
         )
 
     @staticmethod
@@ -212,7 +240,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
 
 class ARSmartIROptionsFlow(config_entries.OptionsFlow):
-
     def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
         self._config_entry = config_entry
 
@@ -240,7 +267,8 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
         selected_key = (
             user_input.get(CONF_OVERRIDE_COMMAND)
             if user_input is not None
-            else data.get(CONF_OVERRIDE_COMMAND) or (command_options[0]["value"] if command_options else "")
+            else data.get(CONF_OVERRIDE_COMMAND)
+            or (command_options[0]["value"] if command_options else "")
         )
         selected_path = tuple(selected_key.split(" / ")) if selected_key else ()
         current_override = (
@@ -261,7 +289,10 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                 repeat_count = int(user_input.get(CONF_OVERRIDE_REPEAT_COUNT, 1) or 1)
                 repeat_delay = float(user_input.get(CONF_OVERRIDE_REPEAT_DELAY, 0.0) or 0.0)
                 if remove_override or (repeat_count <= 1 and repeat_delay <= 0):
-                    override_data = remove_command_override_at_path(override_data, selected_path)
+                    override_data = remove_command_override_at_path(
+                        override_data,
+                        selected_path,
+                    )
                 else:
                     override_data = set_command_override_at_path(
                         override_data,
@@ -278,41 +309,83 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
         return self.async_show_form(
             step_id="init",
             data_schema=vol.Schema(
-                {
-                    vol.Optional(
-                        CONF_NAME,
-                        default=data.get(CONF_NAME, self._config_entry.title),
-                    ): str,
-                    vol.Optional(
-                        CONF_CONTROLLER_DATA,
-                        default=data.get(CONF_CONTROLLER_DATA, ""),
-                    ): str,
-                    vol.Optional(
-                        CONF_DELAY,
-                        default=data.get(CONF_DELAY, DEFAULT_DELAY),
-                    ): vol.Coerce(float),
-                    vol.Optional(
-                        CONF_OVERRIDE_COMMAND,
-                        default=selected_key,
-                    ): selector.SelectSelector(
-                        selector.SelectSelectorConfig(
-                            options=command_options,
-                            mode=selector.SelectSelectorMode.DROPDOWN,
-                        )
-                    ),
-                    vol.Optional(
-                        CONF_OVERRIDE_REPEAT_COUNT,
-                        default=current_repeat,
-                    ): vol.All(vol.Coerce(int), vol.Range(min=1, max=20)),
-                    vol.Optional(
-                        CONF_OVERRIDE_REPEAT_DELAY,
-                        default=current_delay,
-                    ): vol.All(vol.Coerce(float), vol.Range(min=0, max=30)),
-                    vol.Optional(
-                        CONF_OVERRIDE_REMOVE,
-                        default=current_remove,
-                    ): bool,
-                }
+                self._build_options_schema(
+                    data,
+                    command_options,
+                    selected_key,
+                    current_repeat,
+                    current_delay,
+                    current_remove,
+                )
             ),
             errors=errors,
         )
+
+    def _build_options_schema(
+        self,
+        data: dict[str, Any],
+        command_options: list[Any],
+        selected_key: str,
+        current_repeat: int,
+        current_delay: float,
+        current_remove: bool,
+    ) -> dict[Any, Any]:
+        schema: dict[Any, Any] = {
+            vol.Optional(
+                CONF_NAME,
+                default=data.get(CONF_NAME, self._config_entry.title),
+            ): str,
+            vol.Optional(
+                CONF_CONTROLLER_DATA,
+                default=data.get(CONF_CONTROLLER_DATA, ""),
+            ): str,
+        }
+
+        if data.get(CONF_PLATFORM) == "climate":
+            schema[
+                vol.Optional(
+                    CONF_TEMPERATURE_SENSOR,
+                    default=data.get(CONF_TEMPERATURE_SENSOR, ""),
+                )
+            ] = _temperature_sensor_selector()
+            schema[
+                vol.Optional(
+                    CONF_HUMIDITY_SENSOR,
+                    default=data.get(CONF_HUMIDITY_SENSOR, ""),
+                )
+            ] = _humidity_sensor_selector()
+
+        schema[
+            vol.Optional(
+                CONF_DELAY,
+                default=data.get(CONF_DELAY, DEFAULT_DELAY),
+            )
+        ] = vol.Coerce(float)
+
+        schema.update(
+            {
+                vol.Optional(
+                    CONF_OVERRIDE_COMMAND,
+                    default=selected_key,
+                ): selector.SelectSelector(
+                    selector.SelectSelectorConfig(
+                        options=command_options,
+                        mode=selector.SelectSelectorMode.DROPDOWN,
+                    )
+                ),
+                vol.Optional(
+                    CONF_OVERRIDE_REPEAT_COUNT,
+                    default=current_repeat,
+                ): vol.All(vol.Coerce(int), vol.Range(min=1, max=20)),
+                vol.Optional(
+                    CONF_OVERRIDE_REPEAT_DELAY,
+                    default=current_delay,
+                ): vol.All(vol.Coerce(float), vol.Range(min=0, max=30)),
+                vol.Optional(
+                    CONF_OVERRIDE_REMOVE,
+                    default=current_remove,
+                ): bool,
+            }
+        )
+
+        return schema

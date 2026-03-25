@@ -62,6 +62,8 @@
           "name": "Name",
           "controller_data": "Controller data / service name",
           "delay": "Delay between commands",
+          "temperature_sensor": "Temperature sensor",
+          "humidity_sensor": "Humidity sensor",
           "override_command": "Command",
           "override_repeat_count": "Repeat count",
           "override_repeat_delay_secs": "Repeat delay (secs)",

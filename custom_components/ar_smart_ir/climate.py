@@ -7,20 +7,26 @@ from homeassistant.components.climate.const import (
     HVACMode,
     HVAC_MODES,
 )
-
 from homeassistant.const import (
-    STATE_UNKNOWN,
-    STATE_UNAVAILABLE,
     ATTR_TEMPERATURE,
+    ATTR_UNIT_OF_MEASUREMENT,
     PRECISION_WHOLE,
+    STATE_UNAVAILABLE,
+    STATE_UNKNOWN,
     UnitOfTemperature,
 )
-
+from homeassistant.core import callback
+from homeassistant.helpers.event import async_track_state_change_event
 from homeassistant.helpers.restore_state import RestoreEntity
+from homeassistant.util.unit_conversion import TemperatureConverter
 
+from .const import (
+    CONF_COMMAND_OVERRIDES,
+    CONF_HUMIDITY_SENSOR,
+    CONF_TEMPERATURE_SENSOR,
+)
 from .controller import get_controller
 from .helpers import async_load_device_data
-from .const import CONF_COMMAND_OVERRIDES
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -31,6 +37,7 @@ CONF_CONTROLLER_DATA = "controller_data"
 CONF_DELAY = "delay"
 
 DEFAULT_DELAY = 0.5
+SENSOR_STATES_INVALID = {STATE_UNKNOWN, STATE_UNAVAILABLE, None, ""}
 
 SUPPORT_FLAGS = (
     ClimateEntityFeature.TURN_OFF
@@ -41,7 +48,6 @@ SUPPORT_FLAGS = (
 
 
 async def async_setup_entry(hass, entry, async_add_entities):
-
     config = {**entry.data, **entry.options}
 
     device_code = config.get(CONF_DEVICE_CODE)
@@ -58,9 +64,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
 
 
 class SmartIRClimate(ClimateEntity, RestoreEntity):
-
     def __init__(self, hass, config, device_data):
-
         self.hass = hass
 
         self._unique_id = config.get(CONF_UNIQUE_ID)
@@ -68,6 +72,8 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
 
         self._controller_data = config.get(CONF_CONTROLLER_DATA)
         self._delay = config.get(CONF_DELAY, DEFAULT_DELAY)
+        self._temperature_sensor = config.get(CONF_TEMPERATURE_SENSOR)
+        self._humidity_sensor = config.get(CONF_HUMIDITY_SENSOR)
 
         self._supported_controller = device_data["supportedController"]
         self._commands_encoding = device_data["commandsEncoding"]
@@ -105,7 +111,6 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         )
 
     async def async_added_to_hass(self):
-
         await super().async_added_to_hass()
 
         last_state = await self.async_get_last_state()
@@ -113,6 +118,23 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         if last_state:
             self._hvac_mode = last_state.state
             self._target_temperature = last_state.attributes.get("temperature")
+
+        self._update_current_temperature()
+        self._update_current_humidity()
+
+        tracked_entities = [
+            entity_id
+            for entity_id in (self._temperature_sensor, self._humidity_sensor)
+            if entity_id
+        ]
+        if tracked_entities:
+            self.async_on_remove(
+                async_track_state_change_event(
+                    self.hass,
+                    tracked_entities,
+                    self._async_sensor_state_changed,
+                )
+            )
 
     @property
     def unique_id(self):
@@ -170,8 +192,74 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
     def supported_features(self):
         return self._support_flags
 
-    async def async_set_temperature(self, **kwargs):
+    @callback
+    def _async_sensor_state_changed(self, event):
+        entity_id = event.data.get("entity_id")
 
+        if entity_id == self._temperature_sensor:
+            self._update_current_temperature()
+
+        if entity_id == self._humidity_sensor:
+            self._update_current_humidity()
+
+        self.async_write_ha_state()
+
+    def _update_current_temperature(self):
+        self._current_temperature = self._get_temperature_sensor_value()
+
+    def _update_current_humidity(self):
+        self._current_humidity = self._get_sensor_numeric_state(self._humidity_sensor)
+
+    def _get_temperature_sensor_value(self):
+        if not self._temperature_sensor:
+            return None
+
+        state = self.hass.states.get(self._temperature_sensor)
+        if state is None or state.state in SENSOR_STATES_INVALID:
+            return None
+
+        try:
+            value = float(state.state)
+        except (TypeError, ValueError):
+            _LOGGER.debug(
+                "Unable to parse temperature sensor state for %s: %s",
+                self._temperature_sensor,
+                state.state,
+            )
+            return None
+
+        sensor_unit = state.attributes.get(ATTR_UNIT_OF_MEASUREMENT)
+        if sensor_unit == UnitOfTemperature.FAHRENHEIT:
+            return round(
+                TemperatureConverter.convert(
+                    value,
+                    UnitOfTemperature.FAHRENHEIT,
+                    UnitOfTemperature.CELSIUS,
+                ),
+                1,
+            )
+
+        return value
+
+    def _get_sensor_numeric_state(self, entity_id):
+        if not entity_id:
+            return None
+
+        state = self.hass.states.get(entity_id)
+        if state is None or state.state in SENSOR_STATES_INVALID:
+            return None
+
+        try:
+            return float(state.state)
+        except (TypeError, ValueError):
+            _LOGGER.debug(
+                "Unable to parse sensor state for %s: %s",
+                entity_id,
+                state.state,
+            )
+            return None
+
+    async def async_set_temperature(self, **kwargs):
         temperature = kwargs.get(ATTR_TEMPERATURE)
 
         if temperature is None:
@@ -187,7 +275,6 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self.async_write_ha_state()
 
     async def async_set_hvac_mode(self, hvac_mode):
-
         self._hvac_mode = hvac_mode
 
         await self.send_command()
@@ -195,7 +282,6 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self.async_write_ha_state()
 
     async def async_set_fan_mode(self, fan_mode):
-
         self._current_fan_mode = fan_mode
 
         await self.send_command()
@@ -203,25 +289,19 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self.async_write_ha_state()
 
     async def async_turn_on(self):
-
         await self.async_set_hvac_mode(HVACMode.COOL)
 
     async def async_turn_off(self):
-
         await self.async_set_hvac_mode(HVACMode.OFF)
 
     async def send_command(self):
-
         async with self._temp_lock:
-
             try:
-
                 operation_mode = self._hvac_mode
                 fan_mode = self._current_fan_mode
                 temp = f"{self._target_temperature:g}"
 
                 if operation_mode == HVACMode.OFF:
-
                     await self._controller.send(self._commands["off"])
                     return
 
@@ -230,5 +310,4 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                 )
 
             except Exception as err:
-
                 _LOGGER.exception("SmartIR send command failed: %s", err)
