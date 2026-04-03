@@ -19,24 +19,30 @@
         "title": "Model / code",
         "description": "Choose the SmartIR code that matches your device.",
         "data": {
-          "device_code": "Model / code"
+          "device_code": "Model / code",
+          "go_back": "Go back to manufacturer selection"
         }
       },
       "controller": {
         "title": "Controller",
         "description": "Choose the IR controller type.",
         "data": {
-          "controller": "Controller"
+          "controller": "Controller",
+          "go_back": "Go back to model selection"
         }
       },
       "name": {
         "title": "Entity details",
-        "description": "Finish setting up your SmartIR device.",
+        "description": "Finish setting up your SmartIR device.\n\nTest status: {status}",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
+          "delay": "Delay between commands",
           "temperature_sensor": "Temperature sensor",
-          "humidity_sensor": "Humidity sensor"
+          "humidity_sensor": "Humidity sensor",
+          "go_back": "Go back to controller selection",
+          "test_command": "Test command",
+          "test_device": "Send test command instead of saving"
         }
       }
     }
@@ -60,5 +66,7 @@
       }
     }
   },
-  "error": {}
+  "error": {
+    "test_failed": "The test command could not be sent. Check the controller selection and controller data."
+  }
 }
