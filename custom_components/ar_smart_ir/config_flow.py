@@ -14,6 +14,7 @@ from .const import (
     CONF_CONTROLLER_DATA,
     CONF_DELAY,
     CONF_DEVICE_CODE,
+    CONF_GO_BACK,
     CONF_HUMIDITY_SENSOR,
     CONF_OVERRIDE_COMMAND,
     CONF_OVERRIDE_REMOVE,
@@ -21,6 +22,8 @@ from .const import (
     CONF_OVERRIDE_REPEAT_DELAY,
     CONF_PLATFORM,
     CONF_TEMPERATURE_SENSOR,
+    CONF_TEST_COMMAND,
+    CONF_TEST_DEVICE,
     DEFAULT_DELAY,
     DOMAIN,
     PLATFORM_TITLES,
@@ -31,13 +34,14 @@ from .helpers import (
     command_path_to_key,
     flatten_command_paths,
     get_command_value_at_path,
+    infer_title,
     get_manufacturers,
     get_models_for_manufacturer,
-    infer_title,
     parse_command_overrides,
     remove_command_override_at_path,
     set_command_override_at_path,
 )
+from .controller import get_controller
 
 CONF_CONTROLLER = "controller"
 
@@ -49,6 +53,15 @@ CONTROLLERS = [
     "ESPHome",
     "Tuya",
 ]
+
+TEST_COMMAND_PRIORITIES = (
+    ("off", "Power off"),
+    ("power_off", "Power off"),
+    ("power", "Power toggle"),
+    ("toggle", "Power toggle"),
+    ("on", "Power on"),
+    ("power_on", "Power on"),
+)
 
 
 def _temperature_sensor_selector():
@@ -90,6 +103,169 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     def __init__(self) -> None:
         self._data: dict[str, Any] = {}
+        self._test_status: str = ""
+        self._pending_name_input: dict[str, Any] = {}
+
+    async def _get_test_command_options(self) -> list[selector.SelectOptionDict]:
+        device_data = await async_load_device_data(
+            self._data[CONF_DEVICE_CODE],
+            self._data[CONF_PLATFORM],
+        )
+        command_paths = flatten_command_paths(device_data.get("commands", {}))
+
+        return [
+            selector.SelectOptionDict(
+                value=command_path_to_key(path),
+                label=self._label_for_test_path(path),
+            )
+            for path in command_paths
+        ]
+
+    async def _get_default_test_command(self) -> str:
+        options = await self._get_test_command_options()
+        if not options:
+            return ""
+
+        by_value = {option["value"]: option for option in options}
+        normalized = {
+            value.casefold().replace(" ", "").replace("_", ""): value
+            for value in by_value
+        }
+
+        for preferred, _label in TEST_COMMAND_PRIORITIES:
+            match = normalized.get(preferred.casefold().replace("_", ""))
+            if match:
+                return match
+
+        return options[0]["value"]
+
+    def _label_for_test_path(self, path: tuple[str, ...]) -> str:
+        key = command_path_to_key(path)
+        leaf = path[-1].casefold().replace("_", "")
+
+        for preferred, label in TEST_COMMAND_PRIORITIES:
+            if leaf == preferred.casefold().replace("_", ""):
+                return f"{label} ({key})"
+
+        return key
+
+    async def _async_test_selected_command(self, data: dict[str, Any]) -> str:
+        device_data = await async_load_device_data(
+            data[CONF_DEVICE_CODE],
+            data[CONF_PLATFORM],
+        )
+        commands = device_data.get("commands", {})
+
+        selected_key = data.get(CONF_TEST_COMMAND) or await self._get_default_test_command()
+        if not selected_key:
+            raise ValueError("No testable commands were found for this code.")
+
+        command_path = tuple(selected_key.split(" / "))
+        command = get_command_value_at_path(commands, command_path)
+        if command is None:
+            raise ValueError("The selected test command could not be found in this code.")
+
+        controller = get_controller(
+            self.hass,
+            data[CONF_CONTROLLER],
+            device_data["commandsEncoding"],
+            data[CONF_CONTROLLER_DATA],
+            float(data.get(CONF_DELAY, DEFAULT_DELAY)),
+        )
+        await controller.send(command)
+
+        return selected_key
+
+    async def _async_show_name_form(
+        self,
+        user_input: dict[str, Any] | None = None,
+        errors: dict[str, str] | None = None,
+    ):
+        platform = self._data[CONF_PLATFORM]
+        code = self._data[CONF_DEVICE_CODE]
+        controller = self._data[CONF_CONTROLLER]
+
+        default_name = infer_title(
+            {
+                "platform": platform,
+                "device_code": code,
+            }
+        )
+        test_options = await self._get_test_command_options()
+        default_test_command = await self._get_default_test_command()
+
+        current_values = {**self._pending_name_input}
+        if user_input is not None:
+            current_values.update(user_input)
+
+        if controller in ["Broadlink", "Xiaomi", "ESPHome", "Tuya"]:
+            controller_field = selector.EntitySelector(
+                selector.EntitySelectorConfig(domain="remote")
+            )
+        else:
+            controller_field = str
+
+        data_schema: dict[Any, Any] = {
+            vol.Required(
+                CONF_NAME,
+                default=current_values.get(CONF_NAME, default_name),
+            ): str,
+        }
+
+        if CONF_CONTROLLER_DATA in current_values:
+            data_schema[
+                vol.Required(
+                    CONF_CONTROLLER_DATA,
+                    default=current_values[CONF_CONTROLLER_DATA],
+                )
+            ] = controller_field
+        else:
+            data_schema[vol.Required(CONF_CONTROLLER_DATA)] = controller_field
+
+        if platform == "climate":
+            data_schema[
+                _optional_entity_field(CONF_TEMPERATURE_SENSOR, current_values)
+            ] = _temperature_sensor_selector()
+            data_schema[
+                _optional_entity_field(CONF_HUMIDITY_SENSOR, current_values)
+            ] = _humidity_sensor_selector()
+
+        data_schema[
+            vol.Optional(
+                CONF_DELAY,
+                default=current_values.get(CONF_DELAY, DEFAULT_DELAY),
+            )
+        ] = vol.Coerce(float)
+
+        if test_options:
+            data_schema[
+                vol.Optional(
+                    CONF_TEST_COMMAND,
+                    default=current_values.get(CONF_TEST_COMMAND, default_test_command),
+                )
+            ] = selector.SelectSelector(
+                selector.SelectSelectorConfig(
+                    options=test_options,
+                    mode=selector.SelectSelectorMode.DROPDOWN,
+                )
+            )
+            data_schema[
+                vol.Optional(
+                    CONF_TEST_DEVICE,
+                    default=False,
+                )
+            ] = bool
+
+        data_schema[vol.Optional(CONF_GO_BACK, default=False)] = bool
+
+        return self.async_show_form(
+            step_id="name",
+            data_schema=vol.Schema(data_schema),
+            errors=errors or {},
+            description_placeholders={
+                "status": self._test_status or "No test sent yet.",
+            },
+        )
 
     async def async_step_user(self, user_input=None):
         if user_input is not None:
@@ -145,6 +321,8 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         models = get_models_for_manufacturer(platform, manufacturer)
 
         if user_input is not None:
+            if user_input.get(CONF_GO_BACK):
+                return await self.async_step_manufacturer()
             self._data[CONF_DEVICE_CODE] = int(user_input[CONF_DEVICE_CODE])
             return await self.async_step_controller()
 
@@ -165,13 +343,16 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                             options=options,
                             mode=selector.SelectSelectorMode.DROPDOWN,
                         )
-                    )
+                    ),
+                    vol.Optional(CONF_GO_BACK, default=False): bool,
                 }
             ),
         )
 
     async def async_step_controller(self, user_input=None):
         if user_input is not None:
+            if user_input.get(CONF_GO_BACK):
+                return await self.async_step_model()
             self._data[CONF_CONTROLLER] = user_input[CONF_CONTROLLER]
             return await self.async_step_name()
 
@@ -184,31 +365,54 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                             options=CONTROLLERS,
                             mode=selector.SelectSelectorMode.DROPDOWN,
                         )
-                    )
+                    ),
+                    vol.Optional(CONF_GO_BACK, default=False): bool,
                 }
             ),
         )
 
     async def async_step_name(self, user_input=None):
-        platform = self._data[CONF_PLATFORM]
-        code = self._data[CONF_DEVICE_CODE]
         controller = self._data[CONF_CONTROLLER]
-
-        default_name = infer_title(
-            {
-                "platform": platform,
-                "device_code": code,
-            }
-        )
 
         if user_input is not None:
             data = {**self._data, **user_input}
+            self._pending_name_input = {
+                key: value
+                for key, value in user_input.items()
+                if key != CONF_TEST_DEVICE
+            }
 
             data[CONF_DEVICE_CODE] = int(data[CONF_DEVICE_CODE])
-            data[CONF_DELAY] = DEFAULT_DELAY
+            data[CONF_DELAY] = float(data.get(CONF_DELAY, DEFAULT_DELAY))
 
             data["controller"] = controller
+
+            if user_input.get(CONF_TEST_DEVICE):
+                try:
+                    tested_command = await self._async_test_selected_command(data)
+                except Exception as err:  # noqa: BLE001
+                    self._test_status = (
+                        "Test failed: "
+                        f"{err}"
+                    )
+                    return await self._async_show_name_form(
+                        user_input,
+                        errors={"base": "test_failed"},
+                    )
+                else:
+                    self._test_status = (
+                        "Test command sent: "
+                        f"{tested_command}. Confirm the device reacted, then save."
+                    )
+                    return await self._async_show_name_form(user_input)
+
+            if user_input.get(CONF_GO_BACK):
+                return await self.async_step_controller()
+
             data["unique_id"] = uuid.uuid4().hex
+            data.pop(CONF_GO_BACK, None)
+            data.pop(CONF_TEST_DEVICE, None)
+            data.pop(CONF_TEST_COMMAND, None)
 
             await self.async_set_unique_id(data["unique_id"])
             self._abort_if_unique_id_configured()
@@ -218,27 +422,7 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 data=data,
             )
 
-        if controller in ["Broadlink", "Xiaomi", "ESPHome", "Tuya"]:
-            controller_field = selector.EntitySelector(
-                selector.EntitySelectorConfig(domain="remote")
-            )
-        else:
-            controller_field = str
-
-        data_schema: dict[Any, Any] = {
-            vol.Required(CONF_NAME, default=default_name): str,
-            vol.Required(CONF_CONTROLLER_DATA): controller_field,
-        }
-
-        if platform == "climate":
-            data_schema[vol.Optional(CONF_TEMPERATURE_SENSOR)] = _temperature_sensor_selector()
-            data_schema[vol.Optional(CONF_HUMIDITY_SENSOR)] = _humidity_sensor_selector()
-        data_schema[vol.Optional(CONF_DELAY, default=DEFAULT_DELAY)] = vol.Coerce(float)
-
-        return self.async_show_form(
-            step_id="name",
-            data_schema=vol.Schema(data_schema),
-        )
+        return await self._async_show_name_form()
 
     @staticmethod
     def async_get_options_flow(config_entry):
