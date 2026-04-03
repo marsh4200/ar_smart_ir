@@ -26,7 +26,8 @@
         "title": "Model / code",
         "description": "Choose the SmartIR code that matches your device.",
         "data": {
-          "device_code": "Model / code"
+          "device_code": "Model / code",
+          "go_back": "Go back to manufacturer selection"
         }
       },
       "manual": {
@@ -49,6 +50,20 @@
           "power_sensor_restore_state": "Restore HVAC state from power sensor",
           "device_class": "Media player class",
           "source_names": "Optional source remap JSON / text"
+        }
+      },
+      "name": {
+        "title": "Entity details",
+        "description": "Finish setting up your SmartIR device.\n\nTest status: {status}",
+        "data": {
+          "name": "Name",
+          "controller_data": "Controller data / service name",
+          "delay": "Delay between commands",
+          "temperature_sensor": "Temperature sensor",
+          "humidity_sensor": "Humidity sensor",
+          "go_back": "Go back to controller selection",
+          "test_command": "Test command",
+          "test_device": "Send test command instead of saving"
         }
       }
     }
@@ -73,6 +88,7 @@
     }
   },
   "error": {
-    "invalid_command_overrides": "Command overrides must be valid JSON."
+    "invalid_command_overrides": "Command overrides must be valid JSON.",
+    "test_failed": "The test command could not be sent. Check the controller selection and controller data."
   }
 }
