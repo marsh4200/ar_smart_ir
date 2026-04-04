@@ -276,3 +276,65 @@ class Helper:
             packet += bytearray(16 - remainder)
 
         return packet
+
+    @staticmethod
+    def raw2lirc(raw):
+        if isinstance(raw, str):
+            try:
+                values = json.loads(raw)
+            except json.JSONDecodeError as err:
+                raise ValueError("Raw command must be valid JSON.") from err
+        elif isinstance(raw, list):
+            values = raw
+        else:
+            raise ValueError("Raw command must be a JSON array or list.")
+
+        try:
+            return [abs(int(round(float(value)))) for value in values]
+        except (TypeError, ValueError) as err:
+            raise ValueError("Raw command contains invalid pulse values.") from err
+
+    @staticmethod
+    def lirc2raw(pulses):
+        raw = []
+
+        for index, pulse in enumerate(pulses):
+            value = abs(int(round(float(pulse))))
+            raw.append(value if index % 2 == 0 else -value)
+
+        return json.dumps(raw)
+
+    @staticmethod
+    def broadlink2lirc(packet):
+        if not isinstance(packet, (bytes, bytearray)):
+            raise ValueError("Broadlink packet must be bytes.")
+
+        data = bytes(packet)
+        if len(data) < 4:
+            raise ValueError("Broadlink packet is too short.")
+
+        if data[:2] != b"\x26\x00":
+            raise ValueError("Broadlink packet has an unsupported header.")
+
+        length = int.from_bytes(data[2:4], byteorder="little")
+        payload = data[4:4 + length]
+
+        if len(payload) < length:
+            raise ValueError("Broadlink packet payload is truncated.")
+
+        pulses = []
+        index = 0
+
+        while index < len(payload):
+            chunk = payload[index]
+            index += 1
+
+            if chunk == 0:
+                if index + 1 >= len(payload):
+                    raise ValueError("Broadlink packet ended mid-pulse.")
+                chunk = int.from_bytes(payload[index:index + 2], byteorder="big")
+                index += 2
+
+            pulses.append(int(round(chunk * 8192 / 269)))
+
+        return pulses

@@ -1,14 +1,14 @@
 import asyncio
 from abc import ABC, abstractmethod
-from base64 import b64encode
+from base64 import b64decode, b64encode
 import binascii
-import requests
-import logging
 import json
+import logging
+
+import requests
 
 from homeassistant.const import ATTR_ENTITY_ID
 
-# FIXED IMPORT
 from .helpers import Helper
 
 _LOGGER = logging.getLogger(__name__)
@@ -25,12 +25,12 @@ ENC_HEX = "Hex"
 ENC_PRONTO = "Pronto"
 ENC_RAW = "Raw"
 
-BROADLINK_COMMANDS_ENCODING = [ENC_BASE64, ENC_HEX, ENC_PRONTO]
-XIAOMI_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
-MQTT_COMMANDS_ENCODING = [ENC_RAW]
-LOOKIN_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
-ESPHOME_COMMANDS_ENCODING = [ENC_RAW]
-TUYA_COMMANDS_ENCODING = [ENC_RAW]
+BROADLINK_COMMANDS_ENCODING = [ENC_BASE64, ENC_HEX, ENC_PRONTO, ENC_RAW]
+XIAOMI_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW, ENC_BASE64, ENC_HEX]
+MQTT_COMMANDS_ENCODING = [ENC_RAW, ENC_PRONTO, ENC_BASE64, ENC_HEX]
+LOOKIN_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW, ENC_BASE64, ENC_HEX]
+ESPHOME_COMMANDS_ENCODING = [ENC_RAW, ENC_PRONTO, ENC_BASE64, ENC_HEX]
+TUYA_COMMANDS_ENCODING = [ENC_RAW, ENC_PRONTO, ENC_BASE64, ENC_HEX]
 
 
 def get_controller(hass, controller, encoding, controller_data, delay):
@@ -49,15 +49,14 @@ def get_controller(hass, controller, encoding, controller_data, delay):
         return controllers[controller](
             hass, controller, encoding, controller_data, delay
         )
-    except KeyError:
-        raise Exception("The controller is not supported.")
+    except KeyError as err:
+        raise Exception("The controller is not supported.") from err
 
 
 class AbstractController(ABC):
     """Representation of a controller."""
 
     def __init__(self, hass, controller, encoding, controller_data, delay):
-
         self.check_encoding(encoding)
 
         self.hass = hass
@@ -75,7 +74,6 @@ class AbstractController(ABC):
         pass
 
     def _get_command_spec(self, command):
-
         code = command
         repeat_count = 1
         repeat_delay_secs = None
@@ -117,7 +115,6 @@ class AbstractController(ABC):
         return code, repeat_count, repeat_delay_secs
 
     def _get_command_list(self, command):
-
         code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
 
         if isinstance(code, list):
@@ -128,7 +125,6 @@ class AbstractController(ABC):
         return commands, repeat_count, repeat_delay_secs
 
     async def _repeat_with_delay(self, action, repeat_count, repeat_delay_secs):
-
         delay = self._delay if repeat_delay_secs is None else repeat_delay_secs
 
         for index in range(repeat_count):
@@ -137,48 +133,80 @@ class AbstractController(ABC):
             if index < repeat_count - 1 and delay > 0:
                 await asyncio.sleep(delay)
 
+    def _normalize_command(self, command, target_encoding):
+        if target_encoding == ENC_BASE64:
+            return self._to_base64(command)
+        if target_encoding == ENC_RAW:
+            return self._to_raw(command)
+        raise Exception(f"Unsupported target encoding: {target_encoding}")
+
+    def _to_base64(self, command):
+        if self._encoding == ENC_BASE64:
+            return command
+
+        if self._encoding == ENC_HEX:
+            try:
+                return b64encode(binascii.unhexlify(command)).decode("utf-8")
+            except (binascii.Error, ValueError) as err:
+                raise Exception("Error converting HEX to Base64") from err
+
+        if self._encoding == ENC_PRONTO:
+            try:
+                pronto = bytearray.fromhex(command.replace(" ", ""))
+                lirc = Helper.pronto2lirc(pronto)
+                return b64encode(Helper.lirc2broadlink(lirc)).decode("utf-8")
+            except ValueError as err:
+                raise Exception("Error converting Pronto to Base64") from err
+
+        if self._encoding == ENC_RAW:
+            try:
+                lirc = Helper.raw2lirc(command)
+                return b64encode(Helper.lirc2broadlink(lirc)).decode("utf-8")
+            except ValueError as err:
+                raise Exception("Error converting Raw to Base64") from err
+
+        raise Exception(f"Unsupported source encoding: {self._encoding}")
+
+    def _to_raw(self, command):
+        if self._encoding == ENC_RAW:
+            return command if isinstance(command, str) else json.dumps(command)
+
+        if self._encoding == ENC_PRONTO:
+            try:
+                pronto = bytearray.fromhex(command.replace(" ", ""))
+                return Helper.lirc2raw(Helper.pronto2lirc(pronto))
+            except ValueError as err:
+                raise Exception("Error converting Pronto to Raw") from err
+
+        if self._encoding in (ENC_BASE64, ENC_HEX):
+            try:
+                packet = (
+                    b64decode(command)
+                    if self._encoding == ENC_BASE64
+                    else binascii.unhexlify(command)
+                )
+                return Helper.lirc2raw(Helper.broadlink2lirc(packet))
+            except (binascii.Error, ValueError) as err:
+                raise Exception(
+                    f"Error converting {self._encoding} to Raw"
+                ) from err
+
+        raise Exception(f"Unsupported source encoding: {self._encoding}")
+
 
 class BroadlinkController(AbstractController):
-
     def check_encoding(self, encoding):
-
         if encoding not in BROADLINK_COMMANDS_ENCODING:
             raise Exception(
                 "The encoding is not supported by the Broadlink controller."
             )
 
     async def send(self, command):
-
         commands = []
         raw_commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
-        for _command in raw_commands:
-
-            if self._encoding == ENC_HEX:
-
-                try:
-                    _command = binascii.unhexlify(_command)
-                    _command = b64encode(_command).decode("utf-8")
-
-                except Exception:
-                    raise Exception("Error converting HEX → Base64")
-
-            if self._encoding == ENC_PRONTO:
-
-                try:
-
-                    _command = _command.replace(" ", "")
-                    _command = bytearray.fromhex(_command)
-
-                    _command = Helper.pronto2lirc(_command)
-                    _command = Helper.lirc2broadlink(_command)
-
-                    _command = b64encode(_command).decode("utf-8")
-
-                except Exception:
-                    raise Exception("Error converting PRONTO → Base64")
-
-            commands.append("b64:" + _command)
+        for current_command in raw_commands:
+            commands.append("b64:" + self._normalize_command(current_command, ENC_BASE64))
 
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
@@ -199,21 +227,19 @@ class BroadlinkController(AbstractController):
 
 
 class XiaomiController(AbstractController):
-
     def check_encoding(self, encoding):
-
         if encoding not in XIAOMI_COMMANDS_ENCODING:
             raise Exception(
                 "The encoding is not supported by the Xiaomi controller."
             )
 
     async def send(self, command):
-
         code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
+        code = self._normalize_command(code, ENC_RAW)
 
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
-            "command": self._encoding.lower() + ":" + code,
+            "command": "raw:" + code,
         }
 
         if repeat_count > 1:
@@ -230,21 +256,18 @@ class XiaomiController(AbstractController):
 
 
 class MQTTController(AbstractController):
-
     def check_encoding(self, encoding):
-
         if encoding not in MQTT_COMMANDS_ENCODING:
             raise Exception("The encoding is not supported by MQTT controller.")
 
     async def send(self, command):
-
         commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
         async def publish_once():
             for index, payload in enumerate(commands):
                 service_data = {
                     "topic": self._controller_data,
-                    "payload": payload,
+                    "payload": self._normalize_command(payload, ENC_RAW),
                 }
 
                 await self.hass.services.async_call(
@@ -264,23 +287,19 @@ class MQTTController(AbstractController):
 
 
 class LookinController(AbstractController):
-
     def check_encoding(self, encoding):
-
         if encoding not in LOOKIN_COMMANDS_ENCODING:
             raise Exception("Encoding not supported by LOOKin controller.")
 
     async def send(self, command):
-
         commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
         async def send_once():
-            encoding = self._encoding.lower().replace("pronto", "prontohex")
-
             for index, current_command in enumerate(commands):
+                normalized_command = self._normalize_command(current_command, ENC_RAW)
                 url = (
                     f"http://{self._controller_data}/commands/ir/"
-                    f"{encoding}/{current_command}"
+                    f"raw/{normalized_command}"
                 )
 
                 await self.hass.async_add_executor_job(requests.get, url)
@@ -296,19 +315,17 @@ class LookinController(AbstractController):
 
 
 class ESPHomeController(AbstractController):
-
     def check_encoding(self, encoding):
-
         if encoding not in ESPHOME_COMMANDS_ENCODING:
             raise Exception("Encoding not supported by ESPHome controller.")
 
     async def send(self, command):
-
         commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
 
         async def send_once():
             for index, current_command in enumerate(commands):
-                service_data = {"command": json.loads(current_command)}
+                normalized_command = self._normalize_command(current_command, ENC_RAW)
+                service_data = {"command": json.loads(normalized_command)}
 
                 await self.hass.services.async_call(
                     "esphome",
@@ -327,15 +344,13 @@ class ESPHomeController(AbstractController):
 
 
 class TuyaController(AbstractController):
-
     def check_encoding(self, encoding):
-
         if encoding not in TUYA_COMMANDS_ENCODING:
             raise Exception("Encoding not supported by Tuya controller.")
 
     async def send(self, command):
-
         code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
+        code = self._normalize_command(code, ENC_RAW)
 
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,

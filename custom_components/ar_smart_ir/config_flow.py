@@ -11,6 +11,7 @@ from homeassistant.helpers import selector
 
 from .const import (
     CONF_COMMAND_OVERRIDES,
+    CONF_CONTROLLER,
     CONF_CONTROLLER_DATA,
     CONF_DELAY,
     CONF_DEVICE_CODE,
@@ -43,8 +44,6 @@ from .helpers import (
 )
 from .controller import get_controller
 
-CONF_CONTROLLER = "controller"
-
 CONTROLLERS = [
     "Broadlink",
     "Xiaomi",
@@ -62,6 +61,9 @@ TEST_COMMAND_PRIORITIES = (
     ("on", "Power on"),
     ("power_on", "Power on"),
 )
+
+
+RAW_BASED_CONTROLLERS = {"Xiaomi", "MQTT", "LOOKin", "ESPHome", "Tuya"}
 
 
 def _temperature_sensor_selector():
@@ -96,6 +98,38 @@ def _optional_entity_field(config_key: str, data: dict[str, Any]):
     if data.get(config_key):
         return vol.Optional(config_key, default=data.get(config_key))
     return vol.Optional(config_key)
+
+
+def _controller_data_field(controller: str):
+    if controller in ["Broadlink", "Xiaomi", "ESPHome", "Tuya"]:
+        return selector.EntitySelector(
+            selector.EntitySelectorConfig(domain="remote")
+        )
+    return str
+
+
+def _build_compatibility_message(
+    selected_controller: str,
+    device_controller: str,
+    command_encoding: str,
+) -> str:
+    if (
+        selected_controller in RAW_BASED_CONTROLLERS
+        and device_controller == "Broadlink"
+        and command_encoding in {"Base64", "Hex", "Pronto"}
+    ):
+        return (
+            "This code was authored for Broadlink and will be converted to raw "
+            f"format for {selected_controller}. Test a command before saving."
+        )
+
+    if selected_controller != device_controller:
+        return (
+            f"This code was authored for {device_controller} and will be adapted "
+            f"for {selected_controller}. Test a command before saving."
+        )
+
+    return "No test sent yet."
 
 
 class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
@@ -184,6 +218,7 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         platform = self._data[CONF_PLATFORM]
         code = self._data[CONF_DEVICE_CODE]
         controller = self._data[CONF_CONTROLLER]
+        device_data = await async_load_device_data(code, platform)
 
         default_name = infer_title(
             {
@@ -198,12 +233,7 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             current_values.update(user_input)
 
-        if controller in ["Broadlink", "Xiaomi", "ESPHome", "Tuya"]:
-            controller_field = selector.EntitySelector(
-                selector.EntitySelectorConfig(domain="remote")
-            )
-        else:
-            controller_field = str
+        controller_field = _controller_data_field(controller)
 
         data_schema: dict[Any, Any] = {
             vol.Required(
@@ -214,13 +244,13 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         if CONF_CONTROLLER_DATA in current_values:
             data_schema[
-                vol.Required(
+                vol.Optional(
                     CONF_CONTROLLER_DATA,
                     default=current_values[CONF_CONTROLLER_DATA],
                 )
             ] = controller_field
         else:
-            data_schema[vol.Required(CONF_CONTROLLER_DATA)] = controller_field
+            data_schema[vol.Optional(CONF_CONTROLLER_DATA)] = controller_field
 
         if platform == "climate":
             data_schema[
@@ -263,7 +293,12 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             data_schema=vol.Schema(data_schema),
             errors=errors or {},
             description_placeholders={
-                "status": self._test_status or "No test sent yet.",
+                "status": self._test_status
+                or _build_compatibility_message(
+                    controller,
+                    device_data["supportedController"],
+                    device_data["commandsEncoding"],
+                ),
             },
         )
 
@@ -387,6 +422,15 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
             data["controller"] = controller
 
+            if user_input.get(CONF_GO_BACK):
+                return await self.async_step_controller()
+
+            if not data.get(CONF_CONTROLLER_DATA):
+                return await self._async_show_name_form(
+                    user_input,
+                    errors={CONF_CONTROLLER_DATA: "required"},
+                )
+
             if user_input.get(CONF_TEST_DEVICE):
                 try:
                     tested_command = await self._async_test_selected_command(data)
@@ -405,9 +449,6 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         f"{tested_command}. Confirm the device reacted, then save."
                     )
                     return await self._async_show_name_form(user_input)
-
-            if user_input.get(CONF_GO_BACK):
-                return await self.async_step_controller()
 
             data["unique_id"] = uuid.uuid4().hex
             data.pop(CONF_GO_BACK, None)
@@ -526,10 +567,24 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                 default=data.get(CONF_NAME, self._config_entry.title),
             ): str,
             vol.Optional(
+                CONF_CONTROLLER,
+                default=data.get(CONF_CONTROLLER, CONTROLLERS[0]),
+            ): selector.SelectSelector(
+                selector.SelectSelectorConfig(
+                    options=CONTROLLERS,
+                    mode=selector.SelectSelectorMode.DROPDOWN,
+                )
+            ),
+        }
+
+        controller = data.get(CONF_CONTROLLER, CONTROLLERS[0])
+        controller_field = _controller_data_field(controller)
+        schema[
+            vol.Optional(
                 CONF_CONTROLLER_DATA,
                 default=data.get(CONF_CONTROLLER_DATA, ""),
-            ): str,
-        }
+            )
+        ] = controller_field
 
         if data.get(CONF_PLATFORM) == "climate":
             schema[

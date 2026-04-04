@@ -17,7 +17,7 @@ from homeassistant.util.percentage import (
 
 from .controller import get_controller
 from .helpers import async_load_device_data
-from .const import CONF_COMMAND_OVERRIDES
+from .const import CONF_COMMAND_OVERRIDES, CONF_CONTROLLER
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -67,7 +67,10 @@ class SmartIRFan(FanEntity, RestoreEntity):
         self._controller_data = config.get(CONF_CONTROLLER_DATA)
         self._delay = config.get(CONF_DELAY, DEFAULT_DELAY)
 
-        self._supported_controller = device_data["supportedController"]
+        self._supported_controller = config.get(
+            CONF_CONTROLLER,
+            device_data["supportedController"],
+        )
         self._commands_encoding = device_data["commandsEncoding"]
 
         self._speed_list = device_data["speed"]

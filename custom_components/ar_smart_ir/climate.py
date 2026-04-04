@@ -22,6 +22,7 @@ from homeassistant.util.unit_conversion import TemperatureConverter
 
 from .const import (
     CONF_COMMAND_OVERRIDES,
+    CONF_CONTROLLER,
     CONF_HUMIDITY_SENSOR,
     CONF_TEMPERATURE_SENSOR,
 )
@@ -75,7 +76,10 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self._temperature_sensor = config.get(CONF_TEMPERATURE_SENSOR)
         self._humidity_sensor = config.get(CONF_HUMIDITY_SENSOR)
 
-        self._supported_controller = device_data["supportedController"]
+        self._supported_controller = config.get(
+            CONF_CONTROLLER,
+            device_data["supportedController"],
+        )
         self._commands_encoding = device_data["commandsEncoding"]
 
         self._min_temperature = device_data["minTemperature"]
