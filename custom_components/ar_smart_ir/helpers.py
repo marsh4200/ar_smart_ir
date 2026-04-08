@@ -21,6 +21,11 @@ COMMAND_META_KEYS = {
     "code",
     "command",
     "value",
+    "sequence",
+    "steps",
+    "sequence_keys",
+    "step_delay_secs",
+    "sequence_delay_secs",
     "repeat_count",
     "repeat_delay_secs",
     "repeat_delay",
@@ -115,6 +120,9 @@ def set_command_override_at_path(
     path: tuple[str, ...],
     repeat_count: int,
     repeat_delay_secs: float,
+    sequence: list[Any] | None = None,
+    step_delay_secs: float | None = None,
+    sequence_keys: list[str] | None = None,
 ) -> dict[str, Any]:
     current = overrides
     for part in path[:-1]:
@@ -124,10 +132,17 @@ def set_command_override_at_path(
             current[part] = node
         current = node
 
-    current[path[-1]] = {
+    override: dict[str, Any] = {
         "repeat_count": max(1, int(repeat_count)),
         "repeat_delay_secs": max(0.0, float(repeat_delay_secs)),
     }
+    if sequence:
+        override["sequence"] = sequence
+        override["step_delay_secs"] = max(0.0, float(step_delay_secs or 0.0))
+        if sequence_keys:
+            override["sequence_keys"] = sequence_keys
+
+    current[path[-1]] = override
     return overrides
 
 

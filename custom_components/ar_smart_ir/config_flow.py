@@ -521,7 +521,11 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                 remove_override = bool(user_input.get(CONF_OVERRIDE_REMOVE, False))
                 repeat_count = int(user_input.get(CONF_OVERRIDE_REPEAT_COUNT, 1) or 1)
                 repeat_delay = float(user_input.get(CONF_OVERRIDE_REPEAT_DELAY, 0.0) or 0.0)
-                if remove_override or (repeat_count <= 1 and repeat_delay <= 0):
+
+                if remove_override or (
+                    repeat_count <= 1
+                    and repeat_delay <= 0
+                ):
                     override_data = remove_command_override_at_path(
                         override_data,
                         selected_path,

@@ -73,6 +73,14 @@ class AbstractController(ABC):
     async def send(self, command):
         pass
 
+    def _parse_positive_float(self, value):
+        try:
+            if value is not None:
+                return max(0.0, float(value))
+        except (TypeError, ValueError):
+            return None
+        return None
+
     def _get_command_spec(self, command):
         code = command
         repeat_count = 1
@@ -124,6 +132,24 @@ class AbstractController(ABC):
 
         return commands, repeat_count, repeat_delay_secs
 
+    def _get_sequence_spec(self, command):
+        if isinstance(command, dict):
+            sequence = command.get("sequence", command.get("steps"))
+            if isinstance(sequence, list):
+                _code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
+                step_delay_secs = self._parse_positive_float(
+                    command.get(
+                        "step_delay_secs",
+                        command.get("sequence_delay_secs", self._delay),
+                    )
+                )
+                if step_delay_secs is None:
+                    step_delay_secs = self._delay
+                return sequence, repeat_count, repeat_delay_secs, step_delay_secs
+
+        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
+        return commands, repeat_count, repeat_delay_secs, self._delay
+
     async def _repeat_with_delay(self, action, repeat_count, repeat_delay_secs):
         delay = self._delay if repeat_delay_secs is None else repeat_delay_secs
 
@@ -132,6 +158,20 @@ class AbstractController(ABC):
 
             if index < repeat_count - 1 and delay > 0:
                 await asyncio.sleep(delay)
+
+    async def _run_sequence(self, command, send_step):
+        steps, repeat_count, repeat_delay_secs, step_delay_secs = self._get_sequence_spec(
+            command
+        )
+
+        async def run_once():
+            for index, step in enumerate(steps):
+                await send_step(step)
+
+                if index < len(steps) - 1 and step_delay_secs > 0:
+                    await asyncio.sleep(step_delay_secs)
+
+        await self._repeat_with_delay(run_once, repeat_count, repeat_delay_secs)
 
     def _normalize_command(self, command, target_encoding):
         if target_encoding == ENC_BASE64:
@@ -202,28 +242,26 @@ class BroadlinkController(AbstractController):
             )
 
     async def send(self, command):
-        commands = []
-        raw_commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
+        async def send_step(step):
+            code, repeat_count, repeat_delay_secs = self._get_command_spec(step)
+            service_data = {
+                ATTR_ENTITY_ID: self._controller_data,
+                "command": ["b64:" + self._normalize_command(code, ENC_BASE64)],
+            }
 
-        for current_command in raw_commands:
-            commands.append("b64:" + self._normalize_command(current_command, ENC_BASE64))
+            if repeat_count > 1:
+                service_data["num_repeats"] = repeat_count
 
-        service_data = {
-            ATTR_ENTITY_ID: self._controller_data,
-            "command": commands,
-            "delay_secs": (
-                self._delay if repeat_delay_secs is None else repeat_delay_secs
-            ),
-        }
+            if repeat_delay_secs is not None:
+                service_data["delay_secs"] = repeat_delay_secs
 
-        if repeat_count > 1:
-            service_data["num_repeats"] = repeat_count
+            await self.hass.services.async_call(
+                "remote",
+                "send_command",
+                service_data,
+            )
 
-        await self.hass.services.async_call(
-            "remote",
-            "send_command",
-            service_data,
-        )
+        await self._run_sequence(command, send_step)
 
 
 class XiaomiController(AbstractController):
@@ -234,25 +272,28 @@ class XiaomiController(AbstractController):
             )
 
     async def send(self, command):
-        code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
-        code = self._normalize_command(code, ENC_RAW)
+        async def send_step(step):
+            code, repeat_count, repeat_delay_secs = self._get_command_spec(step)
+            code = self._normalize_command(code, ENC_RAW)
 
-        service_data = {
-            ATTR_ENTITY_ID: self._controller_data,
-            "command": "raw:" + code,
-        }
+            service_data = {
+                ATTR_ENTITY_ID: self._controller_data,
+                "command": "raw:" + code,
+            }
 
-        if repeat_count > 1:
-            service_data["num_repeats"] = repeat_count
+            if repeat_count > 1:
+                service_data["num_repeats"] = repeat_count
 
-        if repeat_delay_secs is not None:
-            service_data["delay_secs"] = repeat_delay_secs
+            if repeat_delay_secs is not None:
+                service_data["delay_secs"] = repeat_delay_secs
 
-        await self.hass.services.async_call(
-            "remote",
-            "send_command",
-            service_data,
-        )
+            await self.hass.services.async_call(
+                "remote",
+                "send_command",
+                service_data,
+            )
+
+        await self._run_sequence(command, send_step)
 
 
 class MQTTController(AbstractController):
@@ -260,14 +301,50 @@ class MQTTController(AbstractController):
         if encoding not in MQTT_COMMANDS_ENCODING:
             raise Exception("The encoding is not supported by MQTT controller.")
 
-    async def send(self, command):
-        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
+    def _get_mqtt_target(self):
+        topic = self._controller_data
+        payload_key = None
 
-        async def publish_once():
-            for index, payload in enumerate(commands):
+        if isinstance(self._controller_data, str):
+            controller_data = self._controller_data.strip()
+            if controller_data.startswith("{"):
+                try:
+                    mqtt_config = json.loads(controller_data)
+                except json.JSONDecodeError:
+                    mqtt_config = None
+                if isinstance(mqtt_config, dict):
+                    topic = mqtt_config.get("topic", topic)
+                    payload_key = (
+                        mqtt_config.get("payload_key")
+                        or mqtt_config.get("payloadProperty")
+                    )
+
+        if (
+            payload_key is None
+            and isinstance(topic, str)
+            and topic.startswith("zigbee2mqtt/")
+            and topic.endswith("/set")
+        ):
+            payload_key = "ir_code_to_send"
+
+        if not isinstance(topic, str) or not topic.strip():
+            raise Exception("MQTT controller data must include a valid topic.")
+
+        return topic.strip(), payload_key
+
+    async def send(self, command):
+        async def send_step(step):
+            code, repeat_count, repeat_delay_secs = self._get_command_spec(step)
+            topic, payload_key = self._get_mqtt_target()
+
+            async def publish_once():
+                payload = self._normalize_command(code, ENC_RAW)
+                if payload_key:
+                    payload = json.dumps({payload_key: payload})
+
                 service_data = {
-                    "topic": self._controller_data,
-                    "payload": self._normalize_command(payload, ENC_RAW),
+                    "topic": topic,
+                    "payload": payload,
                 }
 
                 await self.hass.services.async_call(
@@ -276,14 +353,13 @@ class MQTTController(AbstractController):
                     service_data,
                 )
 
-                if index < len(commands) - 1 and self._delay > 0:
-                    await asyncio.sleep(self._delay)
+            await self._repeat_with_delay(
+                publish_once,
+                repeat_count,
+                repeat_delay_secs,
+            )
 
-        await self._repeat_with_delay(
-            publish_once,
-            repeat_count,
-            repeat_delay_secs,
-        )
+        await self._run_sequence(command, send_step)
 
 
 class LookinController(AbstractController):
@@ -292,26 +368,24 @@ class LookinController(AbstractController):
             raise Exception("Encoding not supported by LOOKin controller.")
 
     async def send(self, command):
-        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
+        async def send_step(step):
+            code, repeat_count, repeat_delay_secs = self._get_command_spec(step)
+            normalized_command = self._normalize_command(code, ENC_RAW)
+            url = (
+                f"http://{self._controller_data}/commands/ir/"
+                f"raw/{normalized_command}"
+            )
 
-        async def send_once():
-            for index, current_command in enumerate(commands):
-                normalized_command = self._normalize_command(current_command, ENC_RAW)
-                url = (
-                    f"http://{self._controller_data}/commands/ir/"
-                    f"raw/{normalized_command}"
-                )
-
+            async def send_once():
                 await self.hass.async_add_executor_job(requests.get, url)
 
-                if index < len(commands) - 1 and self._delay > 0:
-                    await asyncio.sleep(self._delay)
+            await self._repeat_with_delay(
+                send_once,
+                repeat_count,
+                repeat_delay_secs,
+            )
 
-        await self._repeat_with_delay(
-            send_once,
-            repeat_count,
-            repeat_delay_secs,
-        )
+        await self._run_sequence(command, send_step)
 
 
 class ESPHomeController(AbstractController):
@@ -336,28 +410,27 @@ class ESPHomeController(AbstractController):
         return "esphome", controller_data
 
     async def send(self, command):
-        commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
         domain, service = self._get_service_call_target()
 
-        async def send_once():
-            for index, current_command in enumerate(commands):
-                normalized_command = self._normalize_command(current_command, ENC_RAW)
-                service_data = {"command": json.loads(normalized_command)}
+        async def send_step(step):
+            code, repeat_count, repeat_delay_secs = self._get_command_spec(step)
+            normalized_command = self._normalize_command(code, ENC_RAW)
+            service_data = {"command": json.loads(normalized_command)}
 
+            async def send_once():
                 await self.hass.services.async_call(
                     domain,
                     service,
                     service_data,
                 )
 
-                if index < len(commands) - 1 and self._delay > 0:
-                    await asyncio.sleep(self._delay)
+            await self._repeat_with_delay(
+                send_once,
+                repeat_count,
+                repeat_delay_secs,
+            )
 
-        await self._repeat_with_delay(
-            send_once,
-            repeat_count,
-            repeat_delay_secs,
-        )
+        await self._run_sequence(command, send_step)
 
 
 class TuyaController(AbstractController):
@@ -366,22 +439,25 @@ class TuyaController(AbstractController):
             raise Exception("Encoding not supported by Tuya controller.")
 
     async def send(self, command):
-        code, repeat_count, repeat_delay_secs = self._get_command_spec(command)
-        code = self._normalize_command(code, ENC_RAW)
+        async def send_step(step):
+            code, repeat_count, repeat_delay_secs = self._get_command_spec(step)
+            code = self._normalize_command(code, ENC_RAW)
 
-        service_data = {
-            ATTR_ENTITY_ID: self._controller_data,
-            "command": code,
-        }
+            service_data = {
+                ATTR_ENTITY_ID: self._controller_data,
+                "command": code,
+            }
 
-        if repeat_count > 1:
-            service_data["num_repeats"] = repeat_count
+            if repeat_count > 1:
+                service_data["num_repeats"] = repeat_count
 
-        if repeat_delay_secs is not None:
-            service_data["delay_secs"] = repeat_delay_secs
+            if repeat_delay_secs is not None:
+                service_data["delay_secs"] = repeat_delay_secs
 
-        await self.hass.services.async_call(
-            "remote",
-            "send_command",
-            service_data,
-        )
+            await self.hass.services.async_call(
+                "remote",
+                "send_command",
+                service_data,
+            )
+
+        await self._run_sequence(command, send_step)

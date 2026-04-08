@@ -54,7 +54,7 @@
       },
       "name": {
         "title": "Entity details",
-        "description": "Finish setting up your SmartIR device.\n\nTest status: {status}",
+        "description": "Finish setting up your SmartIR device.\n\nFor Zigbee2MQTT IR remotes, use the `/set` topic such as `zigbee2mqtt/Salon_IR/set`.\n\nTest status: {status}",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
@@ -72,7 +72,7 @@
     "step": {
       "init": {
         "title": "SmartIR options",
-        "description": "Update the UI-configured SmartIR entity and set repeat behavior for a selected command.",
+        "description": "Update the UI-configured SmartIR entity and adjust repeat timing for a selected command.\n\nFor Zigbee2MQTT IR remotes, use the `/set` topic such as `zigbee2mqtt/Salon_IR/set`.",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
