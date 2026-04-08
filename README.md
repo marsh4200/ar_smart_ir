@@ -1,4 +1,4 @@
-# AR Smart IR
+# AR Smart IR  (THIS PROJECT WAS BASED AND TESTED ON BROADLINK )
 
 [![GitHub release](https://img.shields.io/github/v/release/marsh4200/ar_smart_ir.svg)](https://github.com/marsh4200/ar_smart_ir/releases)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
