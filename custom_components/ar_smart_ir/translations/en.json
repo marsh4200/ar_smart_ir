@@ -33,7 +33,7 @@
       },
       "name": {
         "title": "Entity details",
-        "description": "Finish setting up your SmartIR device.\n\nTest status: {status}",
+        "description": "Finish setting up your SmartIR device.\n\nFor Zigbee2MQTT IR remotes, use the `/set` topic such as `zigbee2mqtt/Salon_IR/set`.\n\nTest status: {status}",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
@@ -51,7 +51,7 @@
     "step": {
       "init": {
         "title": "SmartIR options",
-        "description": "Update the UI-configured SmartIR entity and set repeat behavior for a selected command.",
+        "description": "Update the UI-configured SmartIR entity, adjust repeat timing, or build a multi-step sequence for a selected command.\n\nFor Zigbee2MQTT IR remotes, use the `/set` topic such as `zigbee2mqtt/Salon_IR/set`.",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
@@ -59,8 +59,15 @@
           "temperature_sensor": "Temperature sensor",
           "humidity_sensor": "Humidity sensor",
           "override_command": "Command",
+          "override_type": "Override mode",
           "override_repeat_count": "Repeat count",
           "override_repeat_delay_secs": "Repeat delay (secs)",
+          "override_step_delay_secs": "Sequence step delay (secs)",
+          "override_sequence_step_1": "Sequence step 1",
+          "override_sequence_step_2": "Sequence step 2",
+          "override_sequence_step_3": "Sequence step 3",
+          "override_sequence_step_4": "Sequence step 4",
+          "override_sequence_step_5": "Sequence step 5",
           "override_remove": "Remove selected override"
         }
       }
