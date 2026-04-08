@@ -319,8 +319,25 @@ class ESPHomeController(AbstractController):
         if encoding not in ESPHOME_COMMANDS_ENCODING:
             raise Exception("Encoding not supported by ESPHome controller.")
 
+    def _get_service_call_target(self):
+        controller_data = str(self._controller_data).strip()
+        if not controller_data:
+            raise ValueError("ESPHome service name is required.")
+
+        if "." in controller_data:
+            domain, service = controller_data.split(".", 1)
+            if domain != "esphome" or not service:
+                raise ValueError(
+                    "ESPHome controller data must be a service name or "
+                    "'esphome.<service_name>'."
+                )
+            return domain, service
+
+        return "esphome", controller_data
+
     async def send(self, command):
         commands, repeat_count, repeat_delay_secs = self._get_command_list(command)
+        domain, service = self._get_service_call_target()
 
         async def send_once():
             for index, current_command in enumerate(commands):
@@ -328,8 +345,8 @@ class ESPHomeController(AbstractController):
                 service_data = {"command": json.loads(normalized_command)}
 
                 await self.hass.services.async_call(
-                    "esphome",
-                    self._controller_data,
+                    domain,
+                    service,
                     service_data,
                 )
 

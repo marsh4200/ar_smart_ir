@@ -101,7 +101,9 @@ def _optional_entity_field(config_key: str, data: dict[str, Any]):
 
 
 def _controller_data_field(controller: str):
-    if controller in ["Broadlink", "Xiaomi", "ESPHome", "Tuya"]:
+    if controller == "ESPHome":
+        return str
+    if controller in ["Broadlink", "Xiaomi", "Tuya"]:
         return selector.EntitySelector(
             selector.EntitySelectorConfig(domain="remote")
         )
