@@ -14,6 +14,7 @@ from .const import (
     CONF_CONTROLLER,
     CONF_CONTROLLER_DATA,
     CONF_DELAY,
+    CONF_DEVICE_CLASS,
     CONF_DEVICE_CODE,
     CONF_GO_BACK,
     CONF_HUMIDITY_SENSOR,
@@ -22,9 +23,13 @@ from .const import (
     CONF_OVERRIDE_REPEAT_COUNT,
     CONF_OVERRIDE_REPEAT_DELAY,
     CONF_PLATFORM,
+    CONF_POWER_SENSOR,
+    CONF_POWER_SENSOR_RESTORE_STATE,
+    CONF_SOURCE_NAMES,
     CONF_TEMPERATURE_SENSOR,
     CONF_TEST_COMMAND,
     CONF_TEST_DEVICE,
+    DEFAULT_DEVICE_CLASS,
     DEFAULT_DELAY,
     DOMAIN,
     PLATFORM_TITLES,
@@ -94,6 +99,12 @@ def _humidity_sensor_selector():
     )
 
 
+def _entity_selector():
+    return selector.EntitySelector(
+        selector.EntitySelectorConfig(multiple=False)
+    )
+
+
 def _optional_entity_field(config_key: str, data: dict[str, Any]):
     if data.get(config_key):
         return vol.Optional(config_key, default=data.get(config_key))
@@ -108,6 +119,14 @@ def _controller_data_field(controller: str):
             selector.EntitySelectorConfig(domain="remote")
         )
     return str
+
+
+def _source_names_default(value: Any) -> str:
+    if not value:
+        return ""
+    if isinstance(value, str):
+        return value
+    return json.dumps(value, ensure_ascii=True)
 
 
 def _build_compatibility_message(
@@ -261,6 +280,38 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             data_schema[
                 _optional_entity_field(CONF_HUMIDITY_SENSOR, current_values)
             ] = _humidity_sensor_selector()
+            data_schema[
+                _optional_entity_field(CONF_POWER_SENSOR, current_values)
+            ] = _entity_selector()
+            data_schema[
+                vol.Optional(
+                    CONF_POWER_SENSOR_RESTORE_STATE,
+                    default=current_values.get(CONF_POWER_SENSOR_RESTORE_STATE, False),
+                )
+            ] = bool
+
+        if platform in {"fan", "light", "media_player"}:
+            data_schema[
+                _optional_entity_field(CONF_POWER_SENSOR, current_values)
+            ] = _entity_selector()
+
+        if platform == "media_player":
+            data_schema[
+                vol.Optional(
+                    CONF_DEVICE_CLASS,
+                    default=current_values.get(CONF_DEVICE_CLASS, DEFAULT_DEVICE_CLASS),
+                )
+            ] = str
+            data_schema[
+                vol.Optional(
+                    CONF_SOURCE_NAMES,
+                    default=_source_names_default(current_values.get(CONF_SOURCE_NAMES)),
+                )
+            ] = selector.TextSelector(
+                selector.TextSelectorConfig(
+                    multiline=True,
+                )
+            )
 
         data_schema[
             vol.Optional(
@@ -599,6 +650,38 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
             schema[
                 _optional_entity_field(CONF_HUMIDITY_SENSOR, data)
             ] = _humidity_sensor_selector()
+            schema[
+                _optional_entity_field(CONF_POWER_SENSOR, data)
+            ] = _entity_selector()
+            schema[
+                vol.Optional(
+                    CONF_POWER_SENSOR_RESTORE_STATE,
+                    default=data.get(CONF_POWER_SENSOR_RESTORE_STATE, False),
+                )
+            ] = bool
+
+        if data.get(CONF_PLATFORM) in {"fan", "light", "media_player"}:
+            schema[
+                _optional_entity_field(CONF_POWER_SENSOR, data)
+            ] = _entity_selector()
+
+        if data.get(CONF_PLATFORM) == "media_player":
+            schema[
+                vol.Optional(
+                    CONF_DEVICE_CLASS,
+                    default=data.get(CONF_DEVICE_CLASS, DEFAULT_DEVICE_CLASS),
+                )
+            ] = str
+            schema[
+                vol.Optional(
+                    CONF_SOURCE_NAMES,
+                    default=_source_names_default(data.get(CONF_SOURCE_NAMES)),
+                )
+            ] = selector.TextSelector(
+                selector.TextSelectorConfig(
+                    multiline=True,
+                )
+            )
 
         schema[
             vol.Optional(

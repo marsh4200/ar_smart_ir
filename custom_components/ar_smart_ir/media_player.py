@@ -1,4 +1,5 @@
 import asyncio
+import json
 import logging
 
 from homeassistant.components.media_player import MediaPlayerEntity
@@ -8,11 +9,18 @@ from homeassistant.components.media_player.const import (
 )
 
 from homeassistant.const import STATE_OFF, STATE_ON
+from homeassistant.const import STATE_UNKNOWN
+from homeassistant.core import callback
+from homeassistant.helpers.event import async_track_state_change_event
 from homeassistant.helpers.restore_state import RestoreEntity
 
 from .controller import get_controller
 from .helpers import async_load_device_data
-from .const import CONF_COMMAND_OVERRIDES, CONF_CONTROLLER
+from .const import (
+    CONF_COMMAND_OVERRIDES,
+    CONF_CONTROLLER,
+    DEFAULT_DEVICE_CLASS,
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -21,8 +29,26 @@ CONF_NAME = "name"
 CONF_DEVICE_CODE = "device_code"
 CONF_CONTROLLER_DATA = "controller_data"
 CONF_DELAY = "delay"
+CONF_POWER_SENSOR = "power_sensor"
+CONF_SOURCE_NAMES = "source_names"
+CONF_DEVICE_CLASS = "device_class"
 
 DEFAULT_DELAY = 0.5
+
+
+def _parse_source_names(value):
+    if not value:
+        return {}
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+        except json.JSONDecodeError:
+            return {}
+        if isinstance(parsed, dict):
+            return parsed
+    return {}
 
 
 async def async_setup_entry(hass, entry, async_add_entities):
@@ -57,9 +83,11 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
 
         self._unique_id = config.get(CONF_UNIQUE_ID)
         self._name = config.get(CONF_NAME)
+        self._device_code = config.get(CONF_DEVICE_CODE)
 
         self._controller_data = config.get(CONF_CONTROLLER_DATA)
         self._delay = config.get(CONF_DELAY, DEFAULT_DELAY)
+        self._power_sensor = config.get(CONF_POWER_SENSOR)
 
         self._supported_controller = config.get(
             CONF_CONTROLLER,
@@ -67,11 +95,15 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
         )
         self._commands_encoding = device_data["commandsEncoding"]
 
+        self._manufacturer = device_data["manufacturer"]
+        self._supported_models = device_data["supportedModels"]
         self._commands = device_data["commands"]
+        self._device_class = config.get(CONF_DEVICE_CLASS, DEFAULT_DEVICE_CLASS)
 
         self._state = STATE_OFF
         self._source = None
         self._sources_list = []
+        self._source_names = _parse_source_names(config.get(CONF_SOURCE_NAMES))
 
         self._support_flags = 0
 
@@ -94,6 +126,10 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
             self._support_flags |= MediaPlayerEntityFeature.VOLUME_MUTE
 
         if "sources" in self._commands:
+            for source, new_name in self._source_names.items():
+                if source in self._commands["sources"] and new_name:
+                    self._commands["sources"][new_name] = self._commands["sources"][source]
+                    del self._commands["sources"][source]
 
             self._support_flags |= (
                 MediaPlayerEntityFeature.SELECT_SOURCE
@@ -120,6 +156,16 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
 
         if last_state:
             self._state = last_state.state
+            self._source = last_state.attributes.get("source")
+
+        if self._power_sensor:
+            self.async_on_remove(
+                async_track_state_change_event(
+                    self.hass,
+                    self._power_sensor,
+                    self._async_power_sensor_changed,
+                )
+            )
 
     @property
     def unique_id(self):
@@ -128,6 +174,10 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
     @property
     def name(self):
         return self._name
+
+    @property
+    def device_class(self):
+        return self._device_class
 
     @property
     def state(self):
@@ -145,19 +195,32 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
     def supported_features(self):
         return self._support_flags
 
+    @property
+    def extra_state_attributes(self):
+        return {
+            "device_code": self._device_code,
+            "manufacturer": self._manufacturer,
+            "supported_models": self._supported_models,
+            "supported_controller": self._supported_controller,
+            "commands_encoding": self._commands_encoding,
+        }
+
+    @property
+    def media_content_type(self):
+        return MediaType.CHANNEL
+
     async def async_turn_on(self):
-
         await self.send_command(self._commands["on"])
-
-        self._state = STATE_ON
+        if self._power_sensor is None:
+            self._state = STATE_ON
 
         self.async_write_ha_state()
 
     async def async_turn_off(self):
-
         await self.send_command(self._commands["off"])
-
-        self._state = STATE_OFF
+        if self._power_sensor is None:
+            self._state = STATE_OFF
+            self._source = None
 
         self.async_write_ha_state()
 
@@ -190,14 +253,23 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
         self.async_write_ha_state()
 
     async def async_play_media(self, media_type, media_id, **kwargs):
-
         if media_type != MediaType.CHANNEL:
             return
+
+        media_id = str(media_id)
+        if not media_id.isdigit():
+            return
+
+        if self._state == STATE_OFF and "on" in self._commands:
+            await self.async_turn_on()
 
         for digit in media_id:
             await self.send_command(
                 self._commands["sources"].get(f"Channel {digit}")
             )
+
+        self._source = f"Channel {media_id}"
+        self.async_write_ha_state()
 
     async def send_command(self, command):
 
@@ -210,3 +282,17 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
             except Exception as e:
 
                 _LOGGER.exception(e)
+
+    @callback
+    def _async_power_sensor_changed(self, event):
+        new_state = event.data.get("new_state")
+        if new_state is None:
+            return
+
+        if new_state.state == STATE_OFF:
+            self._state = STATE_OFF
+            self._source = None
+        elif new_state.state not in {STATE_UNKNOWN, "unavailable"}:
+            self._state = STATE_ON
+
+        self.async_write_ha_state()

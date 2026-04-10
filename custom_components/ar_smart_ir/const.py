@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 DOMAIN = "ar_smart_ir"
-VERSION = "0.0.3"
+VERSION = "1.1.4"
 
 CONF_PLATFORM = "platform"
 CONF_UNIQUE_ID = "unique_id"
@@ -30,9 +30,6 @@ CONF_OVERRIDE_REMOVE = "override_remove"
 CONF_GO_BACK = "go_back"
 CONF_TEST_COMMAND = "test_command"
 CONF_TEST_DEVICE = "test_device"
-
-CONF_CHECK_UPDATES = "check_updates"
-CONF_UPDATE_BRANCH = "update_branch"
 
 DEFAULT_DELAY = 0.5
 DEFAULT_DEVICE_CLASS = "tv"
