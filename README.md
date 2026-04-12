@@ -182,9 +182,5 @@ A couple tiny fixes I’d make when you paste it:
 - In your original HACS badge link, the `repository` value looked off in one spot
 - Your manual install tree had an unclosed code block and a slightly broken folder layout
 
-If you want, I can also turn this into:
-- a cleaner, shorter README
-- a more “professional GitHub project” README
-- or a version with a stronger “MQTT / Zigbee2MQTT / ESPHome” spotlight.
 
-7:48 AM
+
