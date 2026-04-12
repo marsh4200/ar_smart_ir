@@ -10,7 +10,7 @@
 
 **AR Smart IR** is a modern Home Assistant custom integration for infrared-controlled devices, built to simplify SmartIR-style setups through the Home Assistant UI.
 
-Originally based around Broadlink testing, the project has expanded to support a wider range of controller methods and command workflows, including ongoing improvements for **MQTT**, **ESPHome**, **HEX-based IR codes**, and **raw command conversion**.
+Originally built around Broadlink, AR Smart IR is actively being expanded as support for newer devices and controller methods is developed and tested over time. Current work includes ongoing improvements around MQTT, ESPHome, HEX-based IR codes, and raw command conversion.
 
 It is designed for users who want a cleaner, more modern SmartIR experience without relying on legacy YAML setup.
 
