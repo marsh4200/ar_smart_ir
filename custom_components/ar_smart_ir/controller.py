@@ -220,13 +220,17 @@ class AbstractController(ABC):
 
         if self._encoding in (ENC_BASE64, ENC_HEX):
             try:
-                packet = (
-                    b64decode(command)
-                    if self._encoding == ENC_BASE64
-                    else binascii.unhexlify(command)
-                )
+                if self._encoding == ENC_BASE64:
+                    packet = b64decode(command)
+                else:
+                    packet = binascii.unhexlify(Helper.normalize_hex_string(command))
                 return Helper.lirc2raw(Helper.broadlink2lirc(packet))
             except (binascii.Error, ValueError) as err:
+                if self._encoding == ENC_HEX:
+                    try:
+                        return Helper.lirc2raw(Helper.compact_nec_hex_to_lirc(command))
+                    except ValueError:
+                        pass
                 raise Exception(
                     f"Error converting {self._encoding} to Raw"
                 ) from err

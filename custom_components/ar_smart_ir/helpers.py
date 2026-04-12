@@ -248,6 +248,20 @@ import binascii
 class Helper:
 
     @staticmethod
+    def normalize_hex_string(value):
+        if not isinstance(value, str):
+            raise ValueError("Hex command must be a string.")
+
+        normalized = value.strip().replace(" ", "")
+        if normalized.lower().startswith("0x"):
+            normalized = normalized[2:]
+
+        if len(normalized) % 2 != 0:
+            raise ValueError("Hex command must contain an even number of digits.")
+
+        return normalized
+
+    @staticmethod
     def pronto2lirc(pronto):
 
         codes = [
@@ -318,6 +332,28 @@ class Helper:
             raw.append(value if index % 2 == 0 else -value)
 
         return json.dumps(raw)
+
+    @staticmethod
+    def compact_nec_hex_to_lirc(command):
+        normalized = Helper.normalize_hex_string(command)
+
+        if len(normalized) != 8:
+            raise ValueError("Compact NEC hex commands must be exactly 8 hex digits.")
+
+        try:
+            payload = bytes.fromhex(normalized)
+        except ValueError as err:
+            raise ValueError("Compact NEC hex command is invalid.") from err
+
+        pulses = [9000, 4500]
+
+        for byte in payload:
+            for bit_index in range(8):
+                pulses.append(560)
+                pulses.append(1690 if (byte >> bit_index) & 0x01 else 560)
+
+        pulses.append(560)
+        return pulses
 
     @staticmethod
     def broadlink2lirc(packet):
