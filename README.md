@@ -170,17 +170,7 @@ Real-world compatibility can vary based on the quality and structure of the sour
 🙌 Credits
 AR Smart IR is inspired by the original SmartIR project and the wider Home Assistant community.
 
-This fork focuses on:
 
-modern Home Assistant compatibility
-UI-based setup
-bundled local codes
-broader controller flexibility
-ongoing improvements for modern IR workflows
-
-A couple tiny fixes I’d make when you paste it:
-- In your original HACS badge link, the `repository` value looked off in one spot
-- Your manual install tree had an unclosed code block and a slightly broken folder layout
 
 
 
