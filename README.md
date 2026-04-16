@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/marsh4200/ar_smart_ir.svg?style=social)](https://github.com/marsh4200/ar_smart_ir/stargazers)
 
 [![Add to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](
-  https://my.home-assistant.io/redirect/hacs_repository/?owner=marsh4200&repository=marsh4200&category=integration
+  https://my.home-assistant.io/redirect/hacs_repository/?owner=marsh4200&repository=ar_smart_ir&category=integration
 )
 
 **AR Smart IR** is a modern Home Assistant custom integration for infrared-controlled devices, built to simplify SmartIR-style setups through the Home Assistant UI.
