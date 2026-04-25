@@ -31,6 +31,11 @@ CONF_GO_BACK = "go_back"
 CONF_TEST_COMMAND = "test_command"
 CONF_TEST_DEVICE = "test_device"
 
+# Learn command
+CONF_LEARN_COMMAND = "learn_command"
+CONF_LEARN_BROADLINK_ENTITY = "learn_broadlink_entity"
+CONF_LEARN_TIMEOUT = "learn_timeout"
+
 DEFAULT_DELAY = 0.5
 DEFAULT_DEVICE_CLASS = "tv"
 

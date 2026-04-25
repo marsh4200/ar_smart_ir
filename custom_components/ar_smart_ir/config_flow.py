@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from typing import Any
 import uuid
 
@@ -34,6 +35,9 @@ from .const import (
     DOMAIN,
     PLATFORM_TITLES,
     PLATFORMS,
+    CONF_LEARN_COMMAND,
+    CONF_LEARN_BROADLINK_ENTITY,
+    CONF_LEARN_TIMEOUT,
 )
 from .helpers import (
     async_load_device_data,
@@ -526,6 +530,9 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 class ARSmartIROptionsFlow(config_entries.OptionsFlow):
     def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
         self._config_entry = config_entry
+        self._learn_status: str = ""
+
+    # ── step: init (main options page) ───────────────────────────────────────
 
     async def async_step_init(self, user_input=None):
         errors = {}
@@ -568,6 +575,13 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
             current_delay = float(current_override.get("repeat_delay_secs", 0.0) or 0.0)
 
         if user_input is not None:
+            # Navigate to the learn step if requested.
+            if user_input.get(CONF_LEARN_COMMAND):
+                # Persist the currently selected command path so the learn
+                # step can pre-populate its dropdown to the same selection.
+                self._pending_override_command = selected_key
+                return await self.async_step_learn()
+
             if selected_path:
                 remove_override = bool(user_input.get(CONF_OVERRIDE_REMOVE, False))
                 repeat_count = int(user_input.get(CONF_OVERRIDE_REPEAT_COUNT, 1) or 1)
@@ -592,6 +606,7 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
             cleaned_input = dict(user_input)
             cleaned_input[CONF_COMMAND_OVERRIDES] = override_data
             cleaned_input[CONF_OVERRIDE_COMMAND] = selected_key
+            cleaned_input.pop(CONF_LEARN_COMMAND, None)
             return self.async_create_entry(title="", data=cleaned_input)
 
         return self.async_show_form(
@@ -608,6 +623,96 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
             ),
             errors=errors,
         )
+
+    # ── step: learn ───────────────────────────────────────────────────────────
+
+    async def async_step_learn(self, user_input=None):
+        """
+        UI step that lets the user pick a command, point their physical remote
+        at the Broadlink device, and capture a live IR code which is then saved
+        as a command override.
+        """
+        errors: dict[str, str] = {}
+        data = {**self._config_entry.data, **self._config_entry.options}
+
+        # Build command list for the dropdown.
+        device_data = await async_load_device_data(
+            data.get(CONF_DEVICE_CODE),
+            data.get(CONF_PLATFORM),
+        )
+        command_paths = flatten_command_paths(device_data.get("commands", {}))
+        override_data = parse_command_overrides(data.get(CONF_COMMAND_OVERRIDES, {}))
+        command_options = [
+            selector.SelectOptionDict(
+                value=command_path_to_key(path),
+                label=(
+                    f"{command_path_to_key(path)} [learned]"
+                    if isinstance(get_command_value_at_path(override_data, path), dict)
+                    else command_path_to_key(path)
+                ),
+            )
+            for path in command_paths
+        ]
+
+        # Default the dropdown to whatever was selected on the init page.
+        preselected = getattr(self, "_pending_override_command", None) or (
+            command_options[0]["value"] if command_options else ""
+        )
+
+        if user_input is not None:
+            # "Go back" link returns to the main options page.
+            if user_input.get(CONF_GO_BACK):
+                return await self.async_step_init()
+
+            selected_key: str = user_input.get(CONF_OVERRIDE_COMMAND, preselected)
+            broadlink_entity: str = user_input.get(CONF_LEARN_BROADLINK_ENTITY, "")
+            timeout: int = int(user_input.get(CONF_LEARN_TIMEOUT, 30))
+
+            if not broadlink_entity:
+                errors[CONF_LEARN_BROADLINK_ENTITY] = "required"
+            else:
+                # Trigger learning via the service handler in __init__.py.
+                try:
+                    await self.hass.services.async_call(
+                        DOMAIN,
+                        "learn_command",
+                        {
+                            "entry_id": self._config_entry.entry_id,
+                            "command_path": selected_key,
+                            "broadlink_entity": broadlink_entity,
+                            "timeout": timeout,
+                        },
+                        blocking=True,
+                    )
+                except Exception as err:  # noqa: BLE001
+                    self._learn_status = f"Learn failed: {err}"
+                    errors["base"] = "learn_failed"
+                else:
+                    # The service already saved the override and reloaded the
+                    # entry.  Let the user know and stay on the learn step so
+                    # they can learn another command if they want.
+                    self._learn_status = (
+                        f"✅ Learned and saved: {selected_key}. "
+                        "Point your remote and learn another, or go back to finish."
+                    )
+                    preselected = selected_key
+
+        return self.async_show_form(
+            step_id="learn",
+            data_schema=vol.Schema(
+                self._build_learn_schema(command_options, preselected, data)
+            ),
+            errors=errors,
+            description_placeholders={
+                "status": self._learn_status or (
+                    "Select a command, choose your Broadlink remote entity, then "
+                    "click Learn. When prompted, point your physical remote at the "
+                    "Broadlink device and press the button you want to capture."
+                ),
+            },
+        )
+
+    # ── schema builders ───────────────────────────────────────────────────────
 
     def _build_options_schema(
         self,
@@ -713,7 +818,58 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                     CONF_OVERRIDE_REMOVE,
                     default=current_remove,
                 ): bool,
+                # ── learn shortcut ────────────────────────────────────────────
+                vol.Optional(CONF_LEARN_COMMAND, default=False): bool,
             }
         )
+
+        return schema
+
+    def _build_learn_schema(
+        self,
+        command_options: list[Any],
+        preselected: str,
+        data: dict[str, Any],
+    ) -> dict[Any, Any]:
+        """Schema for the learn step form."""
+        # Pre-fill the Broadlink entity from the device's controller_data if
+        # the controller is Broadlink, so the user doesn't have to type it.
+        default_broadlink = ""
+        if data.get(CONF_CONTROLLER) == "Broadlink":
+            default_broadlink = data.get(CONF_CONTROLLER_DATA, "")
+
+        schema: dict[Any, Any] = {
+            vol.Optional(
+                CONF_OVERRIDE_COMMAND,
+                default=preselected,
+            ): selector.SelectSelector(
+                selector.SelectSelectorConfig(
+                    options=command_options,
+                    mode=selector.SelectSelectorMode.DROPDOWN,
+                )
+            ),
+        }
+
+        if default_broadlink:
+            schema[
+                vol.Optional(
+                    CONF_LEARN_BROADLINK_ENTITY,
+                    default=default_broadlink,
+                )
+            ] = selector.EntitySelector(
+                selector.EntitySelectorConfig(domain="remote")
+            )
+        else:
+            schema[
+                vol.Optional(CONF_LEARN_BROADLINK_ENTITY)
+            ] = selector.EntitySelector(
+                selector.EntitySelectorConfig(domain="remote")
+            )
+
+        schema[
+            vol.Optional(CONF_LEARN_TIMEOUT, default=30)
+        ] = vol.All(vol.Coerce(int), vol.Range(min=5, max=120))
+
+        schema[vol.Optional(CONF_GO_BACK, default=False)] = bool
 
         return schema
