@@ -68,12 +68,24 @@
           "override_sequence_step_3": "Sequence step 3",
           "override_sequence_step_4": "Sequence step 4",
           "override_sequence_step_5": "Sequence step 5",
-          "override_remove": "Remove selected override"
+          "override_remove": "Remove selected override",
+          "learn_command": "Open IR learn wizard (Broadlink only)"
+        }
+      },
+      "learn": {
+        "title": "Learn IR Command",
+        "description": "{status}",
+        "data": {
+          "override_command": "Command to learn / replace",
+          "learn_broadlink_entity": "Broadlink remote entity",
+          "learn_timeout": "Timeout (seconds)",
+          "go_back": "Go back to options"
         }
       }
     }
   },
   "error": {
-    "test_failed": "The test command could not be sent. Check the controller selection and controller data."
+    "test_failed": "The test command could not be sent. Check the controller selection and controller data.",
+    "learn_failed": "IR learning failed. Check the Broadlink entity and try again."
   }
 }
