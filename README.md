@@ -74,6 +74,7 @@ AR Smart IR modernizes the classic SmartIR-style experience by focusing on UI-dr
 - ✅ Support for command normalization and format conversion
 - ✅ Ongoing work for **MQTT**, **ESPHome**, and **HEX/raw** compatibility
 - ✅ Easier setup and maintenance for users and installers
+- ✅ Learn Function (BroadLink)
 
 ---
 
