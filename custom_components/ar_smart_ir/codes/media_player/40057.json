@@ -1,0 +1,11 @@
+{
+  "manufacturer": "Sony",
+  "supportedModels": [
+    "TV (irdb 183,-1)"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Pronto",
+  "commands": {
+    "GUIDE": "0000 0068 0010 0000 0060 0018 0018 0018 0030 0018 0030 0018 0030 0018 0018 0018 0030 0018 0030 0018 0030 0018 0030 0018 0030 0018 0018 0018 0030 0018 0030 0018 0018 0018 0030 063A"
+  }
+}
