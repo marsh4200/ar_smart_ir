@@ -594,13 +594,21 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
     def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
         self._config_entry = config_entry
         self._learn_status: str = ""
+        self._draft_data: dict[str, Any] = {}
+
+    def _get_current_data(self) -> dict[str, Any]:
+        return {
+            **self._config_entry.data,
+            **self._config_entry.options,
+            **self._draft_data,
+        }
 
     # ── step: init (main options page) ───────────────────────────────────────
 
     async def async_step_init(self, user_input=None):
         errors = {}
 
-        data = {**self._config_entry.data, **self._config_entry.options}
+        data = self._get_current_data()
         override_data = parse_command_overrides(data.get(CONF_COMMAND_OVERRIDES, {}))
         device_data = await async_load_device_data(
             data.get(CONF_DEVICE_CODE),
@@ -649,6 +657,7 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                 updated_data = {**data, **user_input}
                 updated_data[CONF_CONTROLLER_DATA] = ""
                 updated_data.pop(CONF_INFRARED_ENTITY, None)
+                self._draft_data = updated_data
                 return self.async_show_form(
                     step_id="init",
                     data_schema=vol.Schema(
@@ -712,6 +721,7 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
             cleaned_input[CONF_COMMAND_OVERRIDES] = override_data
             cleaned_input[CONF_OVERRIDE_COMMAND] = selected_key
             cleaned_input.pop(CONF_LEARN_COMMAND, None)
+            self._draft_data = {}
             return self.async_create_entry(title="", data=cleaned_input)
 
         return self.async_show_form(
@@ -738,7 +748,7 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
         as a command override.
         """
         errors: dict[str, str] = {}
-        data = {**self._config_entry.data, **self._config_entry.options}
+        data = self._get_current_data()
 
         # Build command list for the dropdown.
         device_data = await async_load_device_data(
