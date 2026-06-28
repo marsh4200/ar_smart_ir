@@ -15,5 +15,5 @@
   "requirements": [
     "aiofiles>=23.1.0"
   ],
-  "version": "1.2.8"
+  "version": "1.2.9"
 }
