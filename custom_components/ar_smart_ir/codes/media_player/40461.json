@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Yamaha",
+  "supportedModels": [
+    "RXA770"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxI3EjcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSEhI3EhISNxISEhISNxISEjcSEhI3EhISNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSEhI3EhISNxISEhISNxISEjcSEhI3EhISNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "Soundbar-HTL2060 94"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAqAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDw8PDw8PDx0dDw8PDw8PDwANBQAA",
+    "volumeDown": "JgAoAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDw8PDw8PDx0dDw8PDx0ADQUAAAAA",
+    "mute": "JgAoAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDw8PDw8PDw8PHQ8PHR0ADQUAAAAA",
+    "on": "JgAqAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDw8PDw8PDw8PHQ8PHQ8PDwANBQAA",
+    "off": "JgAqAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDw8PDw8PDw8PHQ8PHQ8PDwANBQAA",
+    "sources": {
+      "USB": "JgAoAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDx0dDw8PDw8PHQ8PDw8ADQUAAAAA",
+      "Bluetooth": "JgAoAFgdDx0PDw8PDx0dDw8PHR0PDw8PDw8PDx0dDw8PDw8PHQ8PHQ8ADQUAAAAA"
+    }
+  }
+}

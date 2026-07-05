@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "FW-M55"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR0dHQANBQAAAAA=",
+    "volumeDown": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR06HQANBQAAAAA=",
+    "mute": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTo6HQANBQAAAAA=",
+    "on": "JgAWAB0dOjo6HR0dHTo6HR06HR06HR0ADQUAAAAAAAA=",
+    "off": "JgAWAB0dOjo6HR0dHTo6HR06HR06HR0ADQUAAAAAAAA=",
+    "sources": {
+      "AUX": "JgAYAB0dOjo6Ojo6HR0dHR0dHR0dHR0dHQANBQAAAAA=",
+      "Tuner": "JgAaAB0dOjo6HR0dHTodHR0dHR0dHR0dHR0dAA0FAAA="
+    }
+  }
+}

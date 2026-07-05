@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Yamaha",
+  "supportedModels": [
+    "RAV203 V473170 US"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOjodAA0FAAA=",
+    "nextChannel": "JgBIAAABKJQSEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Onkyo",
+  "supportedModels": [
+    "RC627S"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISEhI3EhISNxI3EjcSNxISEhISEhISEhISEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EhISEhI3EhISNxI3EjcSNxISEhISEhISEhISEhI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISEhI3EhISNxI3EjcSNxISEhISEhISEhISEhISEhISNxISEhISEhISEhISNxI3EhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhI3EhISNxI3EjcSNxISEhISEhISEhISEhISEhISNxISEhISEhISEhISNxI3EhISNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

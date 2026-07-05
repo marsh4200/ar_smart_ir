@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Como Audio",
+  "supportedModels": [
+    "Como audio"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSEhI3EjcSNxI3EjcSEhISEjcSEhISEhISEhISEgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EjcSEhI3EjcSNxISEhISEhISEjcSEhISEhISNxISEhISNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EjcSEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEgANBQAAAAA="
+  }
+}

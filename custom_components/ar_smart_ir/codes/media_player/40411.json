@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "HTS8010S"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAqAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDx0dDw8PDw8PDwANBQAA",
+    "volumeDown": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDx0dDw8PDx0ADQUAAAAA",
+    "mute": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDw8PHQ8PHR0ADQUAAAAA",
+    "on": "JgAmAFgdDx0PDw8PDx0dDw8PDw8dHR0dHR0PDw8PDw8dDw8dDw8PAA0FAAAAAAAA",
+    "off": "JgAmAFgdDx0PDw8PDx0dDw8PDw8dHR0dHR0PDw8PDw8dDw8dDw8PAA0FAAAAAAAA"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Edifier",
+  "supportedModels": [
+    "RC80B"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISEhI3EhISEhISEjcSNxI3EhISEhI3EjcSNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "sources": {
+      "Bluetooth": "JgBIAAABKJQSEhISEhISEhI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEhISNxI3EjcSEhI3EhISNxI3EhISEhISEjcSEhI3EgANBQAAAAA="
+    }
+  }
+}

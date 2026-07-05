@@ -1,0 +1,21 @@
+{
+  "manufacturer": "CambridgeAudio",
+  "supportedModels": [
+    "650A"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHR0dOgANBQAAAAA=",
+    "off": "JgAaAB0dOjo6HR0dHR0dHR0dHTodHR0dHR0dAA0FAAA=",
+    "volumeUp": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR0dHQANBQAAAAA=",
+    "volumeDown": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR06HQANBQAAAAA=",
+    "mute": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTo6HQANBQAAAAA=",
+    "sources": {
+      "AUX": "JgAYAB0dOjo6HR0dHR0dHR0dHR0dOjodHQANBQAAAAA=",
+      "CD": "JgAYAB0dOjo6HR0dHR0dHR0dHR0dOjo6HQANBQAAAAA=",
+      "DVD": "JgAaAB0dOjo6HR0dHR0dHR0dHR0dHR0dHTodAA0FAAA=",
+      "Source": "JgAYAB0dOjo6HR0dHR0dHR0dHTo6HR0dHQANBQAAAAA="
+    }
+  }
+}

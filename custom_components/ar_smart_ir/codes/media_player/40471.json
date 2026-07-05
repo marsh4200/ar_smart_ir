@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Logitech",
+  "supportedModels": [
+    "Logi WD216XM"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EjcSNxISEjcSNxISEjcSEhISEhISNxISEhISNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EjcSNxISEjcSNxISEjcSEhISEhISNxISEhISNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EjcSNxISEjcSNxISEjcSEhISEhISNxISEhISNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EjcSNxISEjcSNxISEjcSEhISEhISNxISEhISNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

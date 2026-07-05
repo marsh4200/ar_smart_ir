@@ -1,0 +1,27 @@
+{
+  "manufacturer": "Marantz",
+  "supportedModels": [
+    "RC042SR"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR0dHQANBQAAAAA=",
+    "volumeDown": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR06HQANBQAAAAA=",
+    "mute": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTo6HQANBQAAAAA=",
+    "nextChannel": "JgA/ACAaPTcgGj03Hxwfkz0bHxsfGx8bHxweOTs5OxweAAnGIBs8OB8bPDgfHB6VOxweHB4cHhweHB45Ozk7HAANBQAAAAAAAAAAAAAAAAA=",
+    "previousChannel": "JgA/ACAaIBogGiAaPTgfGyCTPRsfGx8bHzg8ODw4PBsfAAnFIBsfGx8bHxs8OB8bH5Q8HB4cHhweOTs5Ozk7HAANBQAAAAAAAAAAAAAAAAA=",
+    "on": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTodHQANBQAAAAA=",
+    "off": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTodHQANBQAAAAA=",
+    "sources": {
+      "USB": "JgBHACAaIBogGiAaPhsfGx+xHxsfGx8cHhweHDscHjg8OB8bHwAJqSAbHxsfGx8cOxweHB6yHhweHB4cHhweHDscHjk7OR4cAA0FAAAAAAA=",
+      "AUX": "JgBrACAaPzY/GSAbIBsgkyAbIBsfGx8cHhweHB4cHhweOR4cPAAJyB8bPTk8HB4cHhwelR4cHhweHB4cHhweHB4cHhweOR4cOwAJyB8bPTg8HB4cHhwelR4cHhweHB4cHhweHB4cHhweOR4cAA0FAA==",
+      "Bluetooth": "JgBHACAaIBogGj4aIBsfGx+UHxsfGx8cHjk7HB45OxweHB4cHgAJxyAbHxsfGzwbHxsfHB6VHhweHB4cHjk7HB45OxweHB4cAA0FAAAAAAA=",
+      "Tuner": "JgAaAB0dOjo6HR0dHTodHR0dHR0dHR0dHR0dAA0FAAA=",
+      "CD": "JgAYAB0dOjo6OjodHTodHR0dHR0dHR0dHQANBQAAAAA=",
+      "DVD": "JgAjACAaIBogGj4aIBofGyCTIBsfGx8bHxweHB4cHhweOTs5AA0FAAAAAAAAAAAA",
+      "Phono": "JgAYAB0dOjo6Ojo6HR0dHR0dHR0dHR0dHQANBQAAAAA=",
+      "Game": "JgCHAD43IBo+Gx8bHxwfkx8bHxsfGx8cHhweHB45OxweOTsACcY9OB8bPBweHB4cHpUeHB4cHhweHB4cHhweOTscHjk7AAnHPTgfGzwbHxweGx+VHhweHB4cHhweHB4cHjk7HB45OwAJxz04Hxw8HB4cHhwelR4cHhweHB4cHhweHB45OxweOQANBQAAAAAA"
+    }
+  }
+}

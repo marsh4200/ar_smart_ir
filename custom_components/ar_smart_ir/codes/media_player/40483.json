@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Toshiba",
+  "supportedModels": [
+    "RM-V329"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxISEjcSNxISEjcSEhISEjcSNxISEhISNxISEjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxISEjcSNxISEjcSEhISEjcSNxISEhISNxISEjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxISEjcSNxISEjcSEhISEjcSNxISEhISNxISEjcSNxI3EjcSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEjcSNxISEjcSEhISEjcSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEjcSNxISEjcSEhISEjcSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

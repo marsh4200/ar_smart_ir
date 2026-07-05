@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "FX55 HiFi"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR0dHQANBQAAAAA=",
+    "volumeDown": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR06HQANBQAAAAA=",
+    "mute": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTo6HQANBQAAAAA=",
+    "on": "JgAWAB0dOjo6OjodHR0dHR06HR06HR0ADQUAAAAAAAA=",
+    "off": "JgAWAB0dOjo6OjodHR0dHR06HR06HR0ADQUAAAAAAAA=",
+    "sources": {
+      "Source": "JgAYAB0dOjo6OjodHTodHR0dHR0dHR0dHQANBQAAAAA="
+    }
+  }
+}

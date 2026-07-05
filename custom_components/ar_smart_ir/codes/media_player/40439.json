@@ -1,0 +1,24 @@
+{
+  "manufacturer": "Marantz",
+  "supportedModels": [
+    "SR 7009 (RC026SR)"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAXAB4eOjo7Hh0eHR4dHh06Ox4dHh0eAA0FAAAAAAA=",
+    "volumeDown": "JgAZAB0dHh0dHTsdHh0dHR4dHjo7HR0dHjoADQUAAAA=",
+    "mute": "JgAXAB4dOzo7HR4dHR0eHR0dHjoeHTs6AA0FAAAAAAA=",
+    "nextChannel": "JgAhAB0eHR4dHh0eOjoeHh2SOx4dHh0eHR4dHh06Ozo7HgANBQAAAAAAAAAAAAAA",
+    "on": "JgAZAB4dHh4dHjoeHR4dHh0eHR4dOh0eOh4ADQUAAAA=",
+    "off": "JgAZAB4dHh4dHjoeHR4dHh0eHR4dOh0eOh4ADQUAAAA=",
+    "sources": {
+      "Bluetooth": "JgAhAB4eOjo7Hh0eHR0dkh4eHR0dHh06Ox4dOjseHR4dHgANBQAAAAAAAAAAAAAA",
+      "Tuner": "JgAbAB0dHR0eHTseHR0dOh0dHR0eHR0dHR0eHQANBQA=",
+      "CD": "JgAXAB0dOzo7OjsdHjodHR0dHh0eHR0dAA0FAAAAAAA=",
+      "DVD": "JgAjAB4dHR0dHTseHR0dHR6SHh0eHR0dHh0eHR0dHh0eOjs6AA0FAAAAAAAAAAAA",
+      "Phono": "JgAZAB0eHR4dHjo6OzodHh0eHR0dHh0eHR0ADQUAAAA=",
+      "Game": "JgAlAB0eHR4dHjoeHR4dHh2SHR4dHh0eHR4dHh06Hh4dHR4eHR0ADQUAAAAAAAAA"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "FW750c"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "off": "JgAUAB0dOjo6Ojo6Oh0dOh0dOh0dAA0FAAAAAAAAAAA=",
+    "volumeUp": "JgAYAB0dOjo6HR0dHR0dHR06Oh0dHR0dHQANBQAAAAA=",
+    "mute": "JgAYAB0dOjo6HR0dHR0dHR0dHTodHTo6HQANBQAAAAA=",
+    "on": "JgAWAB0dOjo6OjodHR0dHR06HR06HR0ADQUAAAAAAAA="
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "BTD2180"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PHR0PDw8PDw8PDx0dDw8PDw8PDwANBQAA",
+    "volumeDown": "JgAoAFgdDx0PDw8PDx0dDw8PDw8PDw8PHR0PDw8PDw8PDx0dDw8PDx0ADQUAAAAA",
+    "mute": "JgAoAFgdDx0PDw8PDx0dDw8PDw8PDw8PHR0PDw8PDw8dHR0PDx0PDw8ADQUAAAAA",
+    "on": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PHR0PDw8PDw8PDw8PHQ8PHQ8PDwANBQAA",
+    "off": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PHR0PDw8PDw8PDw8PHQ8PHQ8PDwANBQAA",
+    "sources": {
+      "Source": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PHR0PDw8PDw8dDw8PDw8PDw8PDwANBQAA"
+    }
+  }
+}

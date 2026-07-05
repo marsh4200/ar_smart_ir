@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "CD Player 723"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAWAB0dOjo6OjodHR0dOjodHR0dHR0ADQUAAAAAAAA=",
+    "volumeDown": "JgAWAB0dOjo6OjodHR0dOjodHR0dOh0ADQUAAAAAAAA=",
+    "on": "JgAWAB0dOjo6OjodHR0dHR06HR06HR0ADQUAAAAAAAA=",
+    "off": "JgAWAB0dOjo6OjodHR0dHR06HR06HR0ADQUAAAAAAAA="
+  }
+}

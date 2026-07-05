@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Fluance",
+  "supportedModels": [
+    "AI40"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxI3EjcSEhISEhISEhI3EjcSNxISEjcSEhI3EhISNxISEjcSEhI3EhISEhI3EhISNxISEjcSEhI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EjcSNxI3EjcSEhISEhISEhI3EjcSNxISEjcSEhI3EhISEhI3EjcSEhI3EhISEhI3EjcSEhISEjcSEhI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EjcSNxI3EjcSEhISEhISEhI3EjcSNxISEjcSEhI3EhISNxISEjcSEhISEhISEhI3EhISNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSNxI3EjcSEhISEhISEhI3EjcSNxISEjcSEhISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxI3EjcSEhISEhISEhI3EjcSNxISEjcSEhISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxI3EjcSNxI3EjcSEhISEhISEhI3EjcSNxISEjcSEhISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

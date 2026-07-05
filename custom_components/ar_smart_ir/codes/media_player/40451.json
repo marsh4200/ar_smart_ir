@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Denon",
+  "supportedModels": [
+    "AVR Receiver"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "off": "JgCpAAkaCDsJGwgaCBsIGQk7CRoJGggbBzwJOwk8CRoIGggABaEJGgk7CRoIGgkaCDwJGgg7CTwJOwkaCBoJGgg8CTsJAAWhCRoIPAkZCRoIGgkaCDwJGggaCBsIOwk8CDwJGggaCQAFoQgaCTsJGgkaCBoIPAkaCDwJOwk7CRsIGggaCDwJOwkABaEJGwc8CRoIGgkaCBoIPAkaCBoJGgg7CTwJOwkaCBsADQUAAAA=",
+    "volumeUp": "JgBlAAkZCTsJGgkaCBsIOwkbBxsIGgg8CDwJPAg8CRoIGggABaEJGwg7CRoIGwgaCBsIOwk8CDwJGggbBxsIGgc8CTsJAAWhCRoIPAkaCBoIGwg7CRoIGggaCDwJOwk8CDwJGwgaAA0FAAAAAAAAAA==",
+    "volumeDown": "JgBlAAkZCTsJGgkaCBsIGgg8CBoJGgg8CDwJOwk8CRkJGggABaEJGgk7CRoIGwgaCDwJGQk8CDwJGggbBxsIGgg8CTsJAAWhCRoIPAkZCRoIGwgaCDwJGQkbBzwJOwk8CDwJGggbAA0FAAAAAAAAAA==",
+    "mute": "JgBlAAkZCTsJGgkaCBsIGggbBxsIGgg8CDwJOwk8CRkJGggABaEJGgk7CRoIGwgaCDwJOwk8CDwJGQkbBxsIGgg8CTsJAAWhCRoIPAkZCRoIGwgaCBsIGggbBzwJOwk8CDwJGggbAA0FAAAAAAAAAA==",
+    "on": "JgCpAAkaCDsJGwgaCBsIOwkaCBsIGggaCDwJOwk8CRoIGggABaEJGgk7CRoIGgkaCBoJOwk7CTwJOwkaCRkJGQk8CTsJAAWhCRkJPAkZCRkJGgk7CRoJGQkZCRoJOwk8CTsJGQkaCQAFoQkZCTsJGgkZCRkJGgk7CTwJOwk7CRoJGQkaCTsJOwkABaEJGgg8CRoIGgkZCTsJGgkZCRoJGQk7CTwJOwkbBxoADQUAAAA="
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Emotiva",
+  "supportedModels": [
+    "PT100 TA100"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSEhISEjcSNxI3EjcSEhI3EhISEhI3EjcSEhISEjcSEhI3EjcSEhISEjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSEhISEjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSEhISEjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEgANBQAAAAA="
+  }
+}

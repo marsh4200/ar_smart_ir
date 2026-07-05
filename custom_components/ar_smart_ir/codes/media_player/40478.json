@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Steljes",
+  "supportedModels": [
+    "Desktop Speakers"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSNxISEjcSEhISEhISEhI3EjcSNxISEhISEhI3EhISEhI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEjcSEhISEhISEhI3EjcSNxISEhISEhI3EhISEhI3EhISEhI3EjcSEhISEjcSEhI3EjcSEhISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEjcSEhISEhISEhI3EjcSNxISEhISEhI3EhISEhI3EhISEhI3EjcSEhISEjcSEhI3EjcSEhISEjcSNxISEgANBQAAAAA="
+  }
+}

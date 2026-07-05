@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Bowers and Wilkins",
+  "supportedModels": [
+    "Zeppelin Air (with 30-pin connector)"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAmAFgdDx0PDw8PDx0sDw8dHR0PDx0dDw8PDw8PHR0PDw8PDw8PAA0FAAAAAAAA",
+    "volumeDown": "JgAkAFgdDx0PDw8PDx0sDw8dHR0PDx0dDw8PDw8PHR0PDw8PHQANBQAAAAAAAAAA",
+    "on": "JgAmAFgdDx0PDw8PDx0sDw8dHR0PDx0dDw8PDw8PDw8dDw8dDw8PAA0FAAAAAAAA",
+    "off": "JgAmAFgdDx0PDw8PDx0sDw8dHR0PDx0dDw8PDw8PDw8dDw8dDw8PAA0FAAAAAAAA",
+    "sources": {
+      "Source": "JgAkAFgdDx0PDw8PDx0sDw8dHR0PDx0dHR0PDw8PDw8dDw8dDwANBQAAAAAAAAAA"
+    }
+  }
+}

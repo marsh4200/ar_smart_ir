@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Eastern",
+  "supportedModels": [
+    "DA 9000"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEjcSEhISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEjcSEhI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEjcSEhI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}
