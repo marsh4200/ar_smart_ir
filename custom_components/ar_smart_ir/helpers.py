@@ -4,10 +4,8 @@ import aiofiles
 import json
 import logging
 import os
-from collections import defaultdict
 from typing import Any
 
-from .const import PLATFORMS
 
 _LOGGER = logging.getLogger(__name__)
 COMPONENT_ABS_DIR = os.path.dirname(os.path.abspath(__file__))
