@@ -1,0 +1,38 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "custom_components/**/*.py"
+      - "tools/**/*.py"
+      - ".github/**"
+
+permissions:
+  contents: read
+
+jobs:
+  ruff:
+    name: Ruff (bug-level rules)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: pip install ruff
+      - name: Syntax errors, undefined names, broken imports
+        run: ruff check --select E9,F --output-format github custom_components/ tools/ .github/scripts/
+
+  compile:
+    name: Python byte-compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile all Python sources
+        run: python -m compileall -q custom_components/ tools/ .github/scripts/
