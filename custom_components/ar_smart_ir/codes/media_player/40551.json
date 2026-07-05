@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Wanbo",
+  "supportedModels": [
+    "T6 Max"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

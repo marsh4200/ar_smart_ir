@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Minolta",
+  "supportedModels": [
+    "MN674"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxISEjcSNxI3EjcSEhI3EhISEhI3EhISEhISEjcSEhI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxISEjcSNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxISEjcSNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

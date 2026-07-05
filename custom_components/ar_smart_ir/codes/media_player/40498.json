@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Naim",
+  "supportedModels": [
+    "Muso"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAUAB0dOjo6Ojo6Ojo6HR0dHR0dAA0FAAAAAAAAAAA=",
+    "volumeDown": "JgAUAB0dOjo6Ojo6Ojo6HR0dHTodAA0FAAAAAAAAAAA=",
+    "mute": "JgAUAB0dOjo6Ojo6Oh0dOh0dOjodAA0FAAAAAAAAAAA=",
+    "on": "JgAUAB0dOjo6Ojo6Oh0dOh0dOh0dAA0FAAAAAAAAAAA=",
+    "off": "JgAUAB0dOjo6Ojo6Oh0dOh0dOh0dAA0FAAAAAAAAAAA="
+  }
+}

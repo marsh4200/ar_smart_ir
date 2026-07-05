@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Optoma",
+  "supportedModels": [
+    "HD65"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "HDMI": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhI3EhISEhI3EjcSEhISEhISEhI3EjcSEhISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

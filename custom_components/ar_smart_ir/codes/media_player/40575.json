@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Epson",
+  "supportedModels": [
+    "EBX39"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EhISEhI3EjcSEhISEjcSEhI3EjcSEhISEjcSNxISEgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EjcSEhISEjcSEhISEjcSEhISEjcSNxISEjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA="
+  }
+}

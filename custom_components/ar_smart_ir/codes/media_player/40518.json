@@ -1,0 +1,14 @@
+{
+  "manufacturer": "SAKAWA",
+  "supportedModels": [
+    "Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEhISEhISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEgANBQAAAAA="
+  }
+}

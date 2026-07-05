@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Casio",
+  "supportedModels": [
+    "YT-150"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxISEhISNxI3EhISNxISEhISNxI3EhISEhI3EhISNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhISEhISEhI3EhISNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

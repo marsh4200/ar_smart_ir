@@ -1,0 +1,14 @@
+{
+  "manufacturer": "ViewSonic",
+  "supportedModels": [
+    "M1 Mini Plus"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxISEhISNxISEjcSEhISEhISNxI3EhISNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

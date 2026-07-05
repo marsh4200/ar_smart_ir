@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Samsung",
+  "supportedModels": [
+    "SP-LSP3BLAXXU"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxIADQUAAAAAAAA=",
+    "on": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhIADQUAAAAAAAA=",
+    "off": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhIADQUAAAAAAAA=",
+    "sources": {
+      "TV": "JgAlAColDxMOHA9NDxMQLhFMD00POg8mDyYPTQ8ACuoLHgsNChYADQUAAAAAAAAA"
+    }
+  }
+}

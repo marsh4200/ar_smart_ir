@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Epson",
+  "supportedModels": [
+    "EMP822H"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EhISEhISEjcSNxISEjcSEhI3EjcSNxISEhISNxISEgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EjcSEhISEjcSNxISEjcSEhISEjcSNxISEhISNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISNxI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEgANBQAAAAA="
+    }
+  }
+}

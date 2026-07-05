@@ -1,0 +1,13 @@
+{
+  "manufacturer": "BrandUnknown",
+  "supportedModels": [
+    "LED Smart Home Theater Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISNxISEhISEhISEhISNxI3EhISNxISEhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EjcSEhISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISNxISEhISEhISEhISNxI3EhISNxISEhISEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEhISEhISEhISNxI3EhISNxISEhISEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEgANBQAAAAA="
+  }
+}

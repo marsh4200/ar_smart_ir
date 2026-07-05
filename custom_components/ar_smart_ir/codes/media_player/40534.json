@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Samsung",
+  "supportedModels": [
+    "Freestyle Gen2"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EhISEhIADQUAAAAAAAA=",
+    "nextChannel": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EhISEhIADQUAAAAAAAA=",
+    "previousChannel": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EhISEhIADQUAAAAAAAA=",
+    "on": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxIADQUAAAAAAAA=",
+    "off": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxIADQUAAAAAAAA="
+  }
+}

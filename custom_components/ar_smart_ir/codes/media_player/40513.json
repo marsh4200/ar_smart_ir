@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Optoma",
+  "supportedModels": [
+    "IAR Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEgANBQAAAAA=",
+    "sources": {
+      "HDMI1": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISNxI3EjcSEhI3EhISNxI3EhISEhISEgANBQAAAAA="
+    }
+  }
+}

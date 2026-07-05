@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Epson",
+  "supportedModels": [
+    "EB-L510U"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EjcSEhISEjcSEhISEjcSEhISEjcSNxISEjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA="
+  }
+}

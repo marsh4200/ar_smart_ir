@@ -1,0 +1,17 @@
+{
+  "manufacturer": "BrandUnknown",
+  "supportedModels": [
+    "Generic Universal Remote"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISNxISEhISNxISEhISEhISEhISNxISEjcSEhI3EjcSNxISEhISNxISEhISEhISEhISNxI3EhISNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

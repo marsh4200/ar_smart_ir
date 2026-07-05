@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Rayfoto",
+  "supportedModels": [
+    "Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EjcSNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EjcSEhI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EjcSNxISEhISNxISEjcSEhISEhISNxI3EhISNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}

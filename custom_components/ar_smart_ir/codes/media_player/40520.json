@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "NeoPix Prime Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EhISEhISEjcSEhI3EhISEhI3EjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhI3EjcSEhI3EhISNxISEjcSEhISEjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEhISEhISEjcSEhI3EhISNxI3EjcSNxISEjcSEhI3EgANBQAAAAA="
+    }
+  }
+}

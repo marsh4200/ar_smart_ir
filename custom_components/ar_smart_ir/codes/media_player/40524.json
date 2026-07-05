@@ -1,0 +1,15 @@
+{
+  "manufacturer": "JVC",
+  "supportedModels": [
+    "LX-UH1B"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEhISNxISEjcSEhI3EjcSEhISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEhISNxISEjcSEhI3EjcSEhISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEhISEhISEhISNxISEjcSEhI3EjcSEhISEjcSNxI3EjcSEhI3EhISNxISEhISEhISEjcSEhI3EgANBQAAAAA="
+    }
+  }
+}

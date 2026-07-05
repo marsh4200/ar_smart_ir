@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Eiki",
+  "supportedModels": [
+    "CMXA Remote"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Casio",
+  "supportedModels": [
+    "YT-130"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

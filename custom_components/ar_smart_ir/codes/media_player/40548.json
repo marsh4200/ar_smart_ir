@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Gateway",
+  "supportedModels": [
+    "210 projextor"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

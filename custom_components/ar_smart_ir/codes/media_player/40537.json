@@ -1,0 +1,13 @@
+{
+  "manufacturer": "RIF6",
+  "supportedModels": [
+    "cube-projector-raw"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBHAAABKZMTExITEhMSExITEhMRFBITEjcTNxM3EzcTNxM3EjgTNxMTEjcTExITEjcTExI3ExMSNxMTEjcSNxITETcSExE3AA0FAAAAAAA=",
+    "on": "JgBHAAABKJQTExITERQRFBEUERQRFBEUETgSOBI4EjgSOBI4EjgSOBM3EhQROBIUEhMSExI3EhQRFBI3ExMSNxI4EzcTExE4AA0FAAAAAAA=",
+    "off": "JgBHAAABKJQTExITERQRFBEUERQRFBEUETgSOBI4EjgSOBI4EjgSOBM3EhQROBIUEhMSExI3EhQRFBI3ExMSNxI4EzcTExE4AA0FAAAAAAA="
+  }
+}

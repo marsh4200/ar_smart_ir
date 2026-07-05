@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Vankyo",
+  "supportedModels": [
+    "V630W"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISNxI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISEhISEjcSNxI3EjcSEhI3EjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISNxISEjcSNxI3EjcSEhI3EhISNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISNxISEjcSNxI3EjcSEhI3EhISNxISEgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEgANBQAAAAA="
+    }
+  }
+}

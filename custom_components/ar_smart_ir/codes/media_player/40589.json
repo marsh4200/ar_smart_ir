@@ -1,0 +1,17 @@
+{
+  "manufacturer": "SMART",
+  "supportedModels": [
+    "Projectors"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISNxISEhISEhI3EhISNxISEjcSEhISEjcSNxISEhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EhISNxISEhISEhI3EhISNxISEjcSEhISEjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISNxISEhISEhI3EhISNxISEjcSEhISEjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISNxISEhISEhI3EhISNxISEjcSEhISEjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxI3EhISNxISEhISEhI3EhISNxISEjcSEhISEjcSNxISEhISNxISEjcSEhISEhISNxI3EhISNxISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

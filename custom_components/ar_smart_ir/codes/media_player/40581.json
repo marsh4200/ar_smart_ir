@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Anker",
+  "supportedModels": [
+    "NebulaMarsLite"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSEhISEjcSNxISEhISEhISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSEhISEjcSNxISEhISEhISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSEhISEjcSNxISEhISEhISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Bluetooth": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSEhISEjcSNxISEhISEhISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

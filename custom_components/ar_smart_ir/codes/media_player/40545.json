@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Maxell",
+  "supportedModels": [
+    "MC-EU5001"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEjcSEhI3EhISEhISEjcSEhI3EhISEhI3EjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEjcSEhISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEjcSEhISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

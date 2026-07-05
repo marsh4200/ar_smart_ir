@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Promethean",
+  "supportedModels": [
+    "UST-P1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSNxISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEgANBQAAAAA="
+    }
+  }
+}

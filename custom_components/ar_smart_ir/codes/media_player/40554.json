@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Sharp",
+  "supportedModels": [
+    "RRMCGA664WJSA Notevision XR-32S-L"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBlAAk8CRoJPAs5CxcLFwwXCzkLFws5CxcLFwwXCzkMFwsABb0LOQwXCzkLOQsXCzkMOQwXDDkMFww5DDkMOQwXDDkMAAU0DDkMFww5DDkMFwwXDBcMOQwXDDkMFwwXDBcMOQwXAA0FAAAAAAAAAA==",
+    "on": "JgCpAAo7ChkKOwo7ChkKGQo7CjsKGQo7ChkKOwoZCjsKGQoABXoKOwoZCjsKOwoZCjsKGQoZCjsKGQo7ChkKOwoZCjsKAAV6CjsKGQo7CjsKGQoZCjsKOwoZCjsKGQo7ChkKOwoZCgAFego7ChkKOwo7ChkKOwoZChkKOwoZCjsKGQo7ChkKOwoABXoKOwoZCjsKOwkaCRoJPAk8CRoJPAkaCTwLGAk8CRoADQUAAAA=",
+    "off": "JgCpAAo7ChkKOwo7ChkKGQo7CjsKGQo7ChkKOwoZCjsKGQoABXoKOwoZCjsKOwoZCjsKGQoZCjsKGQo7ChkKOwoZCjsKAAV6CjsKGQo7CjsKGQoZCjsKOwoZCjsKGQo7ChkKOwoZCgAFego7ChkKOwo7ChkKOwoZChkKOwoZCjsKGQo7ChkKOwoABXoKOwoZCjsKOwkaCRoJPAk8CRoJPAkaCTwLGAk8CRoADQUAAAA="
+  }
+}

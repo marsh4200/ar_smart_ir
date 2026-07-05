@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Optoma",
+  "supportedModels": [
+    "projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "VGA": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSNxI3EjcSEhISEhISNxISEhISEhISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

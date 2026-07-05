@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Dell",
+  "supportedModels": [
+    "tsfm ir01"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxI3EjcSNxISEhISNxISEhISEhISEhISNxISEjcSEhISEhISNxISEhISEhISEhISNxI3EhISNxI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

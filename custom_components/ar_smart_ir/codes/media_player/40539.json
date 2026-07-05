@@ -1,0 +1,14 @@
+{
+  "manufacturer": "WiMiUS",
+  "supportedModels": [
+    "s25"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EjcSEhI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEhISNxISEjcSEhISEhISNxI3EhISNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEhISNxISEjcSEhISEhISNxI3EhISNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

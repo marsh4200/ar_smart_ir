@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Acer",
+  "supportedModels": [
+    "H6517ST"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxISEhISNxISEhISEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxISEhISNxISEhISEhI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxISEhISNxISEhISEhISEhISNxI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEgANBQAAAAA="
+    }
+  }
+}

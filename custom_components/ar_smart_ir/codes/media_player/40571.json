@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Epson",
+  "supportedModels": [
+    "EB-725Wi"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxISEhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA="
+  }
+}

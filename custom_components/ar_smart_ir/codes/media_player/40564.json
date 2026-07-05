@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Eiki",
+  "supportedModels": [
+    "Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhI3EjcSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

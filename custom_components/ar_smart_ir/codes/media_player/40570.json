@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Epson",
+  "supportedModels": [
+    "EB-695Wi"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA="
+  }
+}

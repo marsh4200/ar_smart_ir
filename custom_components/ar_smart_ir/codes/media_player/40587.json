@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Panasonic",
+  "supportedModels": [
+    "PT-AR100U"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgB1AHE5Dg8OKw4PDg8ODw4PDg8ODw4PDg8ODw4PDg8OKw4PDg8ODw4PDg8ODw4PDg8ODw4rDg8ODw4PDisODw4PDisODw4PDg8ODw4PDg8ODw4PDg8OKw4PDisOKw4rDisODw4PDisODw4rDg8OKw4rDisOKwANBQAAAAAAAAA=",
+    "off": "JgB1AHE5Dg8OKw4PDg8ODw4PDg8ODw4PDg8ODw4PDg8OKw4PDg8ODw4PDg8ODw4PDg8ODw4rDg8ODw4PDisODw4PDisODw4PDg8ODw4PDg8ODw4PDg8OKw4PDisOKw4rDisODw4PDisODw4rDg8OKw4rDisOKwANBQAAAAAAAAA=",
+    "sources": {
+      "Source": "JgB1AHE6Dw4PKg8ODw4PDg8ODw4PDg8ODw4PDg8ODw4PKg8ODw4PDg8ODw4PDg8ODw4PDg8qDw4PDg8ODyoPDg8ODyoPDg8ODw4PDg8ODw4PDg8ODw4PKg8ODyoPKg8ODyoPKg8ODyoPDg8qDw4PDg8qDw4PKgANBQAAAAAAAAA="
+    }
+  }
+}
