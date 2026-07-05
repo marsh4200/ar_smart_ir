@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Mecool",
+  "supportedModels": [
+    "KM6"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EhISNxISEjcSNxI3EjcSEhI3EhISNxISEhISEhISEgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EjcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

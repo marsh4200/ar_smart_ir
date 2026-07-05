@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Roku",
+  "supportedModels": [
+    "TCL Roku Remote"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxI3EhISNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

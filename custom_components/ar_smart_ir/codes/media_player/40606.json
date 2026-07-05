@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Kaleidescape",
+  "supportedModels": [
+    "Strato V"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EhISNxI3EjcSNxISEhISNxI3EhISEhISEhISNxI3EhISEhI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EhISEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

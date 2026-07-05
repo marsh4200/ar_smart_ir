@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Apple",
+  "supportedModels": [
+    "TV 4K Gen2"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSNxISEjcSEhISEjcSNxI3EjcSNxI3EhISEhISEhISNxISEhISNxI3EhISNxISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEjcSEhISEjcSNxI3EjcSNxI3EhISEhISEhISNxISEjcSEhI3EhISNxISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "TV": "JgBIAAABKJQSNxISEjcSEhISEjcSNxI3EjcSNxI3EhISEhISEhISNxISEhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

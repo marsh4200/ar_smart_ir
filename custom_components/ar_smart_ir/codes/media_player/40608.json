@@ -1,0 +1,15 @@
+{
+  "manufacturer": "MAG",
+  "supportedModels": [
+    "TV Box"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAVABsdHB03OBwcGx03HRw3OBwcNwANBQAAAAAAAAA=",
+    "volumeDown": "JgAXABsdNx0bOBwcGx04HBw3OBwcNxwcAA0FAAAAAAA=",
+    "mute": "JgAXABsdHB03OBwcHBw3OBwcOBwcHBwcAA0FAAAAAAA=",
+    "on": "JgAXABsdNx0bOBwcHBw3HRwcHDccHDgcAA0FAAAAAAA=",
+    "off": "JgAXABsdNx0bOBwcHBw3HRwcHDccHDgcAA0FAAAAAAA="
+  }
+}

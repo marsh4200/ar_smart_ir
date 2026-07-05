@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Amazon",
+  "supportedModels": [
+    "FireTV Stick 4K Max"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSEhISEjcSNxI3EhISEhI3EhISNxISEhISEhI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

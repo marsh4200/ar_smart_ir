@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Clinton Electronics",
+  "supportedModels": [
+    "M-10A"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxI3EjcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhI3EhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhI3EhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

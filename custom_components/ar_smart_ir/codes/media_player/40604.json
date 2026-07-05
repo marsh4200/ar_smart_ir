@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Roku",
+  "supportedModels": [
+    "SoundBridge"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxI3EjcSNxISEjcSNxISEhISEhISEhISNxISEhISNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EjcSNxISEjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxISEjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA="
+  }
+}
