@@ -48,7 +48,7 @@ jobs:
         # Skip it there; the step summary and log still show the report.
         if: failure() && github.event.pull_request.head.repo.fork == false
         continue-on-error: true
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
