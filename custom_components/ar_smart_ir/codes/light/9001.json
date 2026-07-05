@@ -1,0 +1,14 @@
+{
+  "manufacturer": "HLKZine",
+  "supportedModels": [
+    "Astronaut Star Projector"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSNxI3EjcSEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEgANBQAAAAA="
+  }
+}

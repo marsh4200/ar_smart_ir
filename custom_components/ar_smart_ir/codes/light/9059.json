@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Sonoff",
+  "supportedModels": [
+    "LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBPAAABMpYTExMTExMUEhQTFBMUFBMUEzgTOBM4EzgTFBM4EzgTOBM4EzgTFBMUExQTFBMUExQTFBMUEzgTOBM4EzgTOBM4EwAFUwABMksADQUAAAAAAAAAAAAAAAAA",
+    "off": "JgBPAAABMpYTExQSFBIUEhQSFBIUExQTEzgTOBM4EzgTExM4EzgTOBMTEzgTExMTExMTExMTExMTOBMTEzgTOBM4EzgTOBM4EwAFUQABMksADQUAAAAAAAAAAAAAAAAA"
+  }
+}

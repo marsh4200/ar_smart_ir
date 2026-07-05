@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Baltimore",
+  "supportedModels": [
+    "LED Light Strip"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "dim": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "night": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSEhI3EjcSEhI3EhISNxISEjcSEhISEjcSEhI3EgANBQAAAAA="
+  }
+}

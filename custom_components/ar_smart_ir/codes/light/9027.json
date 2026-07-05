@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Puck Button",
+  "supportedModels": [
+    "Sooair Puck LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgB3AAABL5QUERQRFBEUERQRFBEUERQRFDUUNRQ1FDUUNRQ1FDUUNRQ1FBEUNRQRFBEUERQ1FBEUERU1FBEUNRQ1FDUUERU1FAAFHQABL0kUAAxWAAEvSRQADFcAAS9JFAAMVgABL0kUAAxXAAEvSRQADFYAAS9JAA0FAAAAAAA=",
+    "off": "JgBnAAABL5QTExMTExMTExMTExMTExMTEzcTNxM3EzcTNxM3EzcTNxMTEzcTNxMTExMTExM3ExMTNxMTExMTNxM3EzcTExM3EwAFHwABLkoTAAxZAAEuShMADFkAAS5KEwAMWQABLkoADQUAAAAAAA=="
+  }
+}

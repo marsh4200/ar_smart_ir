@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Ove",
+  "supportedModels": [
+    "Strip Lights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

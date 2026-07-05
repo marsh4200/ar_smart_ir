@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Kiwong",
+  "supportedModels": [
+    "333SolarLedLight"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBPAAABM5MUEhMSExITEhMSExITEhQRFDcUNxQ3FDYUNhQ2FDYUNhQ2FBIUNxQSFBIUERQ2FBIUEhQ3FBEUNhQ3FDcUEhQ3FAAFEgABMEkADQUAAAAAAAAAAAAAAAAA",
+    "off": "JgBPAAABMZMUEhQSFBEUEhQSFBIUEhQSFDYUNxQ2FDcUNxQ3FDYUNhQ3FDcUNhQSFBIUEhQ3FBIUEhQSFBEUNhQ3FDYUERQ2FAAFEwABMUkADQUAAAAAAAAAAAAAAAAA"
+  }
+}

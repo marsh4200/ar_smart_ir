@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Rusta Christmas Tree Candle",
+  "supportedModels": [
+    "Rusta Xmas Candle"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgAXAAABLYQWDhIREhEUDhUOExAjJSMlAA0FAAAAAAA=",
+    "off": "JgAXAAABLoQVDhIREhIUDyUjJCMTDxMQAA0FAAAAAAA="
+  }
+}

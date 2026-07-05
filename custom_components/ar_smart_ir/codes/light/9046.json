@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Moredig",
+  "supportedModels": [
+    "LED PROTECTOR"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

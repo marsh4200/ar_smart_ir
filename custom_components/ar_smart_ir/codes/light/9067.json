@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Feron",
+  "supportedModels": [
+    "AL5000 Starlight"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxI3EjcSEhI3EhISNxISEjcSEhISEjcSEhI3EhISNxISEgANBQAAAAA=",
+    "dim": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxISEhISNxI3EjcSNxISEjcSNxI3EhISEhISEhISNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxI3EhISEhI3EhISNxI3EjcSEhI3EjcSEhI3EhISEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxI3EhISEhI3EhISNxI3EjcSEhI3EjcSEhI3EhISEhISEgANBQAAAAA="
+  }
+}

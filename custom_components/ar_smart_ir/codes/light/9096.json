@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "LED Sign"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBhAAAG6gATlgABkgsAAZEMAAiHAAFIkxYSFRIVEhUSFhEWERYRFjYWNxU3FTcVOBQ4FDgUOBQTFBMUOBQTFBMUOBQTFBMUExQ4FBMUOBQ4FBMUOBQ4FDgUAAUhAAFISxQADQUAAAAAAAAAAAAAAA==",
+    "off": "JgBbAAW8BT0FAArjDQABCgABR5QVEhUSFRIVEhYSFRIVEhU3FTcVNxU3FTcVNxU3FTcVEhUSFTcVEhU3FTcVEhUSFRIVNxUSFTcVEhUSFTcVNxU3FQAFIQABSEsADQUA"
+  }
+}

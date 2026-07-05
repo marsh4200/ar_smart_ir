@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "LED RGB"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBPAAABKo8XDxUQFRAVEBUQFRAVEBUQFTUVNRU1FTUVEBU1FTUVNRUQFTUVEBUQFRAVEBUQFRAVNRUQFTUVNRU1FTUVNRU1FQAFOAABKEgADQUAAAAAAAAAAAAAAAAA"
+  }
+}

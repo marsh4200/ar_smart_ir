@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Msmkeji",
+  "supportedModels": [
+    "Grow Light 100w"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

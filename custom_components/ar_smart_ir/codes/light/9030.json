@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Nexillumi",
+  "supportedModels": [
+    "LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "manufacturer": "HGomx",
+  "supportedModels": [
+    "Saturn LED Lamp"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

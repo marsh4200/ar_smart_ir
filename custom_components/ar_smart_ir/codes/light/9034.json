@@ -1,0 +1,15 @@
+{
+  "manufacturer": "JYSK",
+  "supportedModels": [
+    "Kristjan LED candle"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

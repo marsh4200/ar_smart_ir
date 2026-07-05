@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Piaozoo",
+  "supportedModels": [
+    "fairy lights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

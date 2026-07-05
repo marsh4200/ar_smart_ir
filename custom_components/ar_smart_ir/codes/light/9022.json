@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Bower",
+  "supportedModels": [
+    "ring 1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

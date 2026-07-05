@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Pumpkin Lights",
+  "supportedModels": [
+    "Pumpkin Lights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EhISNxISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EhISNxISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEgANBQAAAAA="
+  }
+}

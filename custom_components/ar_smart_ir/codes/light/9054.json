@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Emerson",
+  "supportedModels": [
+    "NH303UD"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "night": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhISEhISEhI3EjcSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EhISNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxI3EhISNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxI3EhISNxI3EgANBQAAAAA="
+  }
+}

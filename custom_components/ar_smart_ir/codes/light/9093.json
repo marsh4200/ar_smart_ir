@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "LED Cat"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "off": "JgBXAAABL5MUERQRFBEUEhQSFBIUEhQRFDYUNhQ2FDYUERQ2FDYUNhQRFDYUERQSFBIUEhQSFBEUNhQRFDYUNhQ2FDYUNhQ2FAAFPwABLUkUAAxKAAEtSQANBQAAAAAA",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "dim": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

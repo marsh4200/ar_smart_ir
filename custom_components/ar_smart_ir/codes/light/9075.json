@@ -1,0 +1,14 @@
+{
+  "manufacturer": "T-SUN",
+  "supportedModels": [
+    "TiL LED 24W"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISNxISEjcSEhI3EhISNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEjcSEhI3EhISNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

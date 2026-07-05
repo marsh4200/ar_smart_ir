@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Veezio",
+  "supportedModels": [
+    "Light Bulb"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

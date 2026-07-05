@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Duni",
+  "supportedModels": [
+    "MP12ECOLOR"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "night": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEhISNxISEhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

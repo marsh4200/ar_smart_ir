@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Govee",
+  "supportedModels": [
+    "Striplights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISNxI3EhISEhISEhISNxI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

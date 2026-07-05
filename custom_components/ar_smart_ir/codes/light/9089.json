@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "Closet LED 3W"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgAvAOuGFS8ULxQvFC8ULxQvLRYtFiAjICMAAQ2GFS8ULxQvFC8ULxQvLRYtFiAjAA0FAAAAAAAAAAAAAAAAAA==",
+    "off": "JgAxAAABDYYVLxQvFC8ULy0WLRYULxQvISMgIwABDYYVLxQvFC8ULy0WLRYULxQvICMADQUAAAAAAAAAAAAAAA==",
+    "dim": "JgAxAAABDIYVLxQvLRYtFhQvFC8ULxQvICMgIwABDYYVLxQvLRYtFhQvFC8ULxQvICMADQUAAAAAAAAAAAAAAA=="
+  }
+}

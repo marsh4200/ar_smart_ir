@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Neuhaus",
+  "supportedModels": [
+    "Leuchten Direkt sparkle LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": true,
+  "commands": {
+    "warmer": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEhISEhI3EjcSEhI3EhISNxI3EhISNxISEjcSEhI3EhISEhI3EhISNxISEjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EhISEhI3EhISNxISEjcSEhI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEhISEhI3EjcSEhI3EhISNxISEjcSEhI3EhISEhI3EhISNxISEjcSEhI3EjcSEhI3EgANBQAAAAA="
+  }
+}

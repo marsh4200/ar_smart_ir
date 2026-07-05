@@ -1,0 +1,14 @@
+{
+  "manufacturer": "BoomTone",
+  "supportedModels": [
+    "DJ LEDPAR 7x10W 5in1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

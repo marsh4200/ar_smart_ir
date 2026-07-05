@@ -1,0 +1,15 @@
+{
+  "manufacturer": "ECOLITE",
+  "supportedModels": [
+    "LED Light ECOLITE HB333"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "night": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhI3EhISNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

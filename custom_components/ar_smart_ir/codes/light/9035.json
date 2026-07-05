@@ -1,0 +1,16 @@
+{
+  "manufacturer": "KODA",
+  "supportedModels": [
+    "LM030008-1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhI3EjcSNxI3EjcSNxISEhISNxI3EjcSNxI3EjcSEhI3EhISNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EjcSNxI3EjcSNxISEhISNxI3EjcSNxI3EjcSEhISEhISNxISEhISEhISEhISNxI3EhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhI3EjcSNxI3EjcSNxISEhISNxI3EjcSNxI3EjcSEhISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "dim": "JgBIAAABKJQSEhI3EjcSNxI3EjcSNxISEhISNxI3EjcSNxI3EjcSEhI3EjcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

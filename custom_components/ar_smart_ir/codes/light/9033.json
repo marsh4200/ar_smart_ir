@@ -1,0 +1,14 @@
+{
+  "manufacturer": "CandleChoice LED",
+  "supportedModels": [
+    "CandleChoice"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBHAAABQ5QVEhUSFRIVEhUSFRIVEhUSFTYVNhU2FTYVNhU2FTYVNhU2FRIVEhUSFRIVEhUSFRIVEhU2FTYVNhU2FTYVNhU2AA0FAAAAAAA=",
+    "off": "JgBPAAABQZQVEhUSFRIVEhUSFRIVEhUSFTYVNhU2FTYVNhU2FTYVNhUSFRIVEhUSFRIVEhUSFRIVNhU2FTYVNhU2FTYVNhU2FQAFHgABQUkADQUAAAAAAAAAAAAAAAAA"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Paulman",
+  "supportedModels": [
+    "LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "CooPark",
+  "supportedModels": [
+    "LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBXAAABMJYUEhQSFBIUEhQSFBIUEhQSFDcUNxQ3FDcUEhQ3FDcUNxQ3FDcUEhQSFBIUExMSFBIUEhQSFDcUNxQ3FDcUNxQ3FAAFVAABMEoUAAyBAAEvSgANBQAAAAAA",
+    "off": "JgBPAAABMJYUEhQSFBIUEhQSFBIUEhQSFDcUOBM3FDcUEhQ3FDcUNxQSFDcUEhQSFBIUEhQTExIUNxQSFDcUNxQ3FDcUNxQ3FAAFVAABMEoADQUAAAAAAAAAAAAAAAAA"
+  }
+}

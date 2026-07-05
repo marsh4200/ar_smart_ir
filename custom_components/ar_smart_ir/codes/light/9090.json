@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "Color Change Bulb Remote"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "off": "JgBtAIaUCxILEwoRCxILEwoTChELEgs2CzYLNwk4CjYLNgs2CzYLEgs2CzYLEgsSCxILEgsSCzYLEwkSCzgKNgs4CTYLNwkAB6sAAbRKCQAMnwABtEsJAAygAAG0SgkADKAAAbRLCQAMoAABtEsADQUAAAAAAAAAAAAAAAAAAAA=",
+    "on": "JgB7AAYAARYKEwkUCRUJEwkVCRIJEwYjCTkIOAo4CzYIOQg5CTkJegYBBs0Jhgk4CjcJOAk2CzgJAAelBgABnQYGBkcJAAyiCAABXiwEBgsKSwkADKIIAAFpBgQTBAYKBgQGSwgADKMIAAFeS0sIAAyjCAABYSYMDAQGSwANBQA="
+  }
+}

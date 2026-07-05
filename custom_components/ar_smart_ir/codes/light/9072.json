@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Noma",
+  "supportedModels": [
+    "LED STRING LIGHTS"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "night": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

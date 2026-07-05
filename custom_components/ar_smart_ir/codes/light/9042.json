@@ -1,0 +1,17 @@
+{
+  "manufacturer": "iDual",
+  "supportedModels": [
+    "JEDI Lighting LED Light"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": true,
+  "commands": {
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "warmer": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "colder": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "night": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

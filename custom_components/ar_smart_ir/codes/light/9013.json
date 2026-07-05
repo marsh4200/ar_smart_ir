@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Lethe",
+  "supportedModels": [
+    "RGB LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

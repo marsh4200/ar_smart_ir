@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Briloner",
+  "supportedModels": [
+    "Ceiling Light"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBFAJSSExITEhM2EzYTNhMSEzYTEhM2EzYTEhMSEzYTNhM2ExITEhMSExITEhMSExITEhMSEzYTNhM2EzYTEhMSEzYTNgANBQAAAAAAAAA=",
+    "off": "JgBFAJSTFDYUERQRFBEUNhQRFDYUERQ2FDYUERQRFDYUNhQ2FBEUERQRFBEUERQRFBEUERQRFBEUERQ2FBEUERQRFDYUNgANBQAAAAAAAAA=",
+    "brighten": "JgBFAJOUExITNxMSEzcTNxMSEzcTEhM3EzcTEhMSEzcTNxM3ExITNxMSExITEhMSExITEhMSExITNxM3EzcTEhMSEzcTNwANBQAAAAAAAAA="
+  }
+}

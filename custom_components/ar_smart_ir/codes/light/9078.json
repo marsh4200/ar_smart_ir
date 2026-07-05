@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Artika",
+  "supportedModels": [
+    "Europa 21in chrome"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": true,
+  "commands": {
+    "brighten": "JgBIAAABKJQSNxISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EhISNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "warmer": "JgBIAAABKJQSNxISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "colder": "JgBIAAABKJQSNxISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "night": "JgBIAAABKJQSNxISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "manufacturer": "AuraLED",
+  "supportedModels": [
+    "ColorStrip"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "off": "JgBHAAABL5QUERQSFBEVERURFREVERURFTUVNRU2FTYUEhU2FTYVNhURFTYVERURFBEUERQRFBIUNhQRFDYUNhU2FTYUNhU2AA0FAAAAAAA=",
+    "dim": "JgBPAAABM5QVERURFREVERQSFREVERQSFDcVNhU1FTUVERU2FTUVNhQ2FREUERURFREVERURFREVERU2FTYVNhU1FTUVNRU1FQAFSAABLkkADQUAAAAAAAAAAAAAAAAA",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

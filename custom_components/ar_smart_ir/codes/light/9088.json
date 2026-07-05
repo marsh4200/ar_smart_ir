@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "Christmastree candle"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgDRACEhISIgIiAiICIgIiAiIAABJCEhISIgIiAiICIgIiAiIGIgISEiICIgIiAiIGEgISFhIWEgIiBhICEhIiAhICIgIyAADKwhIiAiICIgIiAiICIgIiAAASQhISEiICEgIiAiICIgIiBiICIgIiAiICIgIiBgICEhYSFgISEhYSAiICIgISEiICIgAAysISEhIiAiICIgIiAiICIgAAEkISIgISEiICIgIiAiICIgYiAhISIgIiAiICIgYCEhIWEhYSAhIWEgIiAiICEgIiAjAA0FAAAAAAAAAAAAAAA=",
+    "off": "JgCLACEhISEhISAhICIgISEiIAABJCEhISEhISAhICEhISEiIGIgISEiICEhISFhICIgYCEjICIgYCEhIWAhISEiICIgIiEADGwhISEhISEgISAiICEhISEAASQhISEiICIgIiAiICIgIiBhICIgIiAiICIgYCAiIGAhIyAiIGEgIiBgISIgIiAiICIADQUA"
+  }
+}

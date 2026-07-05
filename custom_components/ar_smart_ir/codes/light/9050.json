@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Briloner",
+  "supportedModels": [
+    "Leuchten LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": true,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "dim": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhI3EjcSEhISEhISEhI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "warmer": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "colder": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

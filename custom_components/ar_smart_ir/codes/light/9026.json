@@ -1,0 +1,14 @@
+{
+  "manufacturer": "tuffenough",
+  "supportedModels": [
+    "all models"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

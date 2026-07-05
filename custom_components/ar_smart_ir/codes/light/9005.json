@@ -1,0 +1,14 @@
+{
+  "manufacturer": "RY King",
+  "supportedModels": [
+    "Flameless Candles"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EhISNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EhISNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Defiant",
+  "supportedModels": [
+    "17FL0102"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

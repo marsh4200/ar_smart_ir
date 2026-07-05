@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Amazon",
+  "supportedModels": [
+    "LED Lights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "brighten": "JgBXAAABKJMTEhQSFBIUEhQSFBEUEhQRFDYTNhQ2FDYTNhQ2FDYUNhQSFBIUNhQ2EzYUERQ2ExIUNhQ2FBEVDhcQFDYUEhQ2FAAFGAABKEkUAAxNAAEpSQANBQAAAAAA",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

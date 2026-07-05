@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Varilux",
+  "supportedModels": [
+    "Lightme LED Bulb"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBPAAABMpMTExMSExISExMSExISExITEzcUNxM3FDcTNxM3FDcTNxM3FDcUNxQTEhMTExITEhITEhITExITNxM3EzcUNxM3EwAFHAABL0oADQUAAAAAAAAAAAAAAAAA",
+    "off": "JgBPAAABNJMTExQSFBITEhMSFBITEhMSFjUTNxM3FDcTNxM3FDcTNxMSEzcTNxQSExITERQSExITNxMSExIUNxM3EzcUNxM3EwAFHAABMkoADQUAAAAAAAAAAAAAAAAA"
+  }
+}

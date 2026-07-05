@@ -1,0 +1,14 @@
+{
+  "manufacturer": "ION",
+  "supportedModels": [
+    "HolidayPartyPlus"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBPAAABN5EWERUQFhAVEhQRFREUEhQRFTYUNhQ2FTYUNhQ2FTYUNhQ2FREUEhQ2FBIUERURFBIUERU2FDYUEhQ2FDYVNhQ2FAAFGQABN0kADQUAAAAAAAAAAAAAAAAA",
+    "off": "JgBPAAABN5EWERUQFhAVEhQRFREUEhQRFTYUNhQ2FTYUNhQ2FTYUNhQ2FREUEhQ2FBIUERURFBIUERU2FDYUEhQ2FDYVNhQ2FAAFGQABN0kADQUAAAAAAAAAAAAAAAAA"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Tween",
+  "supportedModels": [
+    "Light Oria"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "brighten": "JgBIAAABKJQSEhI3EhISEhI3EjcSEhI3EjcSEhI3EjcSEhISEjcSEhISEjcSEhI3EhISEhI3EjcSNxISEjcSEhI3EjcSEhISEgANBQAAAAA=",
+    "night": "JgBIAAABKJQSEhI3EhISEhI3EjcSEhI3EjcSEhI3EjcSEhISEjcSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISEhI3EjcSEhI3EjcSEhI3EjcSEhISEjcSEhISEhISNxI3EjcSEhI3EjcSNxI3EhISEhISEjcSEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhI3EjcSEhI3EjcSEhI3EjcSEhISEjcSEhISEhISNxI3EjcSEhI3EjcSNxI3EhISEhISEjcSEhISEgANBQAAAAA="
+  }
+}

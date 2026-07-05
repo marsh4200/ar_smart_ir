@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Unknown",
+  "supportedModels": [
+    "DMX Light"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBnAAABMZQUEhQSFBIUEhQSFBIUEhQ2FDYUNhQ2FDYUNhQ2FDYUEhQSFDYUEhQSFDYUEhQSFBIUNhQSFDYUNhQSFDYUNhQ2FAAFIgABMUkUAAxhAAEySRQADGEAATJJFAAMYQABMUkADQUAAAAAAA==",
+    "off": "JgBnAAABMZQUEhQSFBIUEhQSFBIUEhQ2FDYUNhQ2FDYUNhQ2FDYUEhQSFDYUEhQSFDYUEhQSFBIUNhQSFDYUNhQSFDYUNhQ2FAAFIgABMUkUAAxhAAEySRQADGEAATJJFAAMYQABMUkADQUAAAAAAA=="
+  }
+}

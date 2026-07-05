@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Deluxe Homeart",
+  "supportedModels": [
+    "FB-00001"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxI3EjcSEhI3EhISNxISEhISEhISEjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISNxI3EhISEhISEhISNxI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISNxISEhISEhISEjcSNxI3EhISNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

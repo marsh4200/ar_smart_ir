@@ -1,0 +1,14 @@
+{
+  "manufacturer": "ADJ",
+  "supportedModels": [
+    "UC-IR"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

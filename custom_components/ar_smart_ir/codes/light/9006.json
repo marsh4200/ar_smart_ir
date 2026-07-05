@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Osram",
+  "supportedModels": [
+    "24 Button LED"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "off": "JgBXAAABPpQVEhUSFRIVEhUSFRIVEhUSFTYVNhU2FTYVNhU2FTYVNhUSFTYVNhUSFRIVEhUSFRIVNhUSFRIVNxQ2FTYVNhU2FQAFIgABPUkVAAxdAAE9SQANBQAAAAAA",
+    "on": "JgBXAAABP5QVEhUSFRIVEhUSFRIVEhUSFTYVNhU2FTYVNhU2FTYVNhU2FTYVNhUSFRIVEhUSFBIUEhQSFRIVNhU2FTYVNhQ2FQAFJAABPkkVAAxhAAE9SQANBQAAAAAA"
+  }
+}

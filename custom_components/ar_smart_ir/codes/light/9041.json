@@ -1,0 +1,14 @@
+{
+  "manufacturer": "iDual",
+  "supportedModels": [
+    "iDual"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

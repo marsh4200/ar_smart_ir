@@ -1,0 +1,14 @@
+{
+  "manufacturer": "TAO",
+  "supportedModels": [
+    "A60BHV-RGB LightBulb"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEhISNxISEhISEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

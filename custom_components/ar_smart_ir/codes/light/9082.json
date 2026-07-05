@@ -1,0 +1,16 @@
+{
+  "manufacturer": "V-TAC",
+  "supportedModels": [
+    "VT5050 LED Strip"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "dim": "JgBPANkFUJMUEhQRFBEUERQRFBEUERQRFDYUNhQ2FDYUEhQ2FDYUNhQ2FBEUEhQSFBIUEhQSFBEUERQ2FDYUNhQ2FDYUNhQ2FAAFOwABLkkADQUAAAAAAAAAAAAAAAAA"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Keepsmile",
+  "supportedModels": [
+    "Led lights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

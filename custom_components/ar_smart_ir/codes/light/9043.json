@@ -1,0 +1,14 @@
+{
+  "manufacturer": "EVE",
+  "supportedModels": [
+    "LED SOLAR PI1901"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}

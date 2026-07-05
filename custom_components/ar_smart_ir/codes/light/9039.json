@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Monster Basics",
+  "supportedModels": [
+    "Monster Color Flow Neon"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBPAAABNZYTEhQTExMTExMSFBMTExMTEzgTOBM3FDgTOBM4EzgTOBM4ExMTOBMTExMTExM4ExMTEhQ3FBIUOBM4EzgTExM4EwAFJQABOEsADQUAAAAAAAAAAAAAAAAA",
+    "off": "JgBPAAABNJYTExMTExIUExQSFBIUEhQSFDcUNxQ3FDcUNxQ2FTYVNxQ3FDcUNxQRFRIUEhQ3FBIUEhQSFBIUNxQ3FDcUEhQ2FQAFJgABNEoADQUAAAAAAAAAAAAAAAAA"
+  }
+}

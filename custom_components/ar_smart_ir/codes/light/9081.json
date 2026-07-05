@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Tween lights",
+  "supportedModels": [
+    "Tween light"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

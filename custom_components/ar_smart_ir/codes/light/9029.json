@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Lotti LED",
+  "supportedModels": [
+    "Remote XT-RC1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}

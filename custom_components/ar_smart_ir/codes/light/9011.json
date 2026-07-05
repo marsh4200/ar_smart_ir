@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Brizled LED Icicle Lights",
+  "supportedModels": [
+    "Brizled Christmas Icicle Lights"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBXAAABMJIVEhQ2FBIUEhQSFBIUEhQSFDYUEhQ2FDYUNhQ2FDYUNhQSFBIUEhQSFBIUEhQSFBIUNhQ2FDYUNhQ2FDYUNhQ3EwAFDgABLUkUAAxNAAEuSAANBQAAAAAA",
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}
