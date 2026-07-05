@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "HTL2161B Soundbar"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAqAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDx0dDw8PDw8PDwANBQAA",
+    "volumeDown": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDx0dDw8PDx0ADQUAAAAA",
+    "on": "JgAqAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDw8PHQ8PHQ8PDwANBQAA",
+    "off": "JgAqAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDw8PHQ8PHQ8PDwANBQAA"
+  }
+}

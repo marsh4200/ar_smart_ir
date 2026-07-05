@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Sennheiser",
+  "supportedModels": [
+    "Ambeo Soundbar"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAWAB0dOjo6HR06HR06HR06HR06Oh0ADQUAAAAAAAA=",
+    "volumeDown": "JgAWAB0dOjo6HR06HR06HR06HR0dHToADQUAAAAAAAA=",
+    "mute": "JgAWAB0dOjo6HR06HR06HR06HR06HR0ADQUAAAAAAAA=",
+    "on": "JgAWAB0dOjo6HR06HR06HR06OjodHR0ADQUAAAAAAAA=",
+    "off": "JgAWAB0dOjo6HR06HR06HR06OjodHR0ADQUAAAAAAAA="
+  }
+}

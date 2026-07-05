@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Grundig",
+  "supportedModels": [
+    "2"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBNACAYPBggGCAYHxkeGR4aHTY5Gh4ZHhkeAAsNHhk6GR4aHhoeGh4aHhoeNToZHhoeGh4ACw0eGToZHhoeGh4aHhoeGh41OhoeGh4aAA0FAAAAAAAAAAAAAAAAAAAA",
+    "volumeDown": "JgBNAB8YHxg9Fx8YHxkdGh0aHTY5Gh0aHTYeAArwHRodGjoZHhkeGh4aHhoeNjkZHhoeNR4ACvAfGR4ZOhkeGh4aHhoeGh41OhkeGh41AA0FAAAAAAAAAAAAAAAAAAAA",
+    "mute": "JgAzAB4ZHhk6GR4ZHhkeGR8ZHxgfNB8YOzUeAArxHRodGjoZHhoeGh4aHhoeGh41Hho6NQANBQAAAAAAAAAAAA==",
+    "nextChannel": "JgBNACAYPBcgGCAYIBgeGR42ORodGh0aHhkeAAsMHRo6GR4ZHhoeGh0aHTY5Gh0aHRodGh0ACw0eGToZHhoeGh4aHhoeNToZHhoeGh4aAA0FAAAAAAAAAAAAAAAAAAAA",
+    "previousChannel": "JgBnACAYHxg+FiAYIBgeGh02ORodGh0aHTYeAArwHhkfGTsZHhkeGh4aHjU6GR4aHhoeNR4ACvAfGR4ZOhkeGh4aHhoeNToZHhoeGh41HgAK8R4ZHhk6GR4aHhoeGh41OhkeGh4aHjUADQUAAAAAAA==",
+    "on": "JgC1ACAYIBg8GB8ZHhkeGh0aHRodNh0aOhkeAAsNHRodGjoZHhoeGh4aHRodGh01Hho5Gh0ACw0dGh4ZOhkeGh4aHhoeGh4aHjUeGjoaHgALDR0aHhk6GR4aHhoeGh4aHhoeNR4aOhodAAsMHRoeGToZHhoeGh4aHhoeGh42HRo5Gh0ACw0dGh4ZOhodGh0aHRodGx0aHTYdGjkaHQALDB8ZHhk6GR4aHhoeGh4aHhoeNR4aOhkADQUAAAAAAAAA",
+    "off": "JgC1ACAYIBg8GB8ZHhkeGh0aHRodNh0aOhkeAAsNHRodGjoZHhoeGh4aHRodGh01Hho5Gh0ACw0dGh4ZOhkeGh4aHhoeGh4aHjUeGjoaHgALDR0aHhk6GR4aHhoeGh4aHhoeNR4aOhodAAsMHRoeGToZHhoeGh4aHhoeGh42HRo5Gh0ACw0dGh4ZOhodGh0aHRodGx0aHTYdGjkaHQALDB8ZHhk6GR4aHhoeGh4aHhoeNR4aOhkADQUAAAAAAAAA"
+  }
+}

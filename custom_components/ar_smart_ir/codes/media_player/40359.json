@@ -1,0 +1,16 @@
+{
+  "manufacturer": "PolkAudio",
+  "supportedModels": [
+    "Polk RE9114 1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISNxISEhISNxI3EjcSEhISEhISNxISEhISNxISEhISEhISEhISNxISEhISNxI3EjcSNxI3EhISNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISNxISEhISNxI3EjcSEhISEhISNxISEhISNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISNxISEhISNxI3EjcSEhISEhISNxISEhISNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "AUX": "JgBIAAABKJQSEhISEhISNxISEhISNxI3EjcSEhISEhISNxISEhISNxI3EhISNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

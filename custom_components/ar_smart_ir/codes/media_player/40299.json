@@ -1,0 +1,21 @@
+{
+  "manufacturer": "Grundig",
+  "supportedModels": [
+    "AndroidTV"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAzAB0aHRo4Gx0aHRodGh0aHTU5GhwaHBocAAsTHBocGjgbHRocGhwaHRodNTgcHBocGgANBQAAAAAAAAAAAA==",
+    "volumeDown": "JgBnAB4ZORoeGR4ZHhgfGB0aHjM6Gh0ZHTQcAAr4Hhk6Gh0ZHRocGhwaHBocNTgbHBocNRwACvgeGToaHRodGhwaHBocGhw1OBscGhw1HAAK+B4ZOhodGh0aHBocGhwaHDU4GxwaHDUADQUAAAAAAA==",
+    "mute": "JgAzABwbHBo5GxwbHBscGxwbHBscNhwbODYcAAr1HBscGzgbHRocGhwbHBscGxw1HBs3NgANBQAAAAAAAAAAAA==",
+    "nextChannel": "JgAZAB0ZHBs5GhwbHBscGxw2OBwcGxwbHBsADQUAAAA=",
+    "previousChannel": "JgAzAB8YORodGxwbHBsdGhw2OBsdGh0aHTUdAAr0HBs4Gx0aHRodGh0aHDY4HBwbHBscNgANBQAAAAAAAAAAAA==",
+    "on": "JgAzAB0aHRo5Gx0aHRsdGR4aHRodNR0aOBscAAsVHBscGzkaHBscGxwbHBscGxw2HBs4HAANBQAAAAAAAAAAAA==",
+    "off": "JgAzAB0aHRo5Gx0aHRsdGR4aHRodNR0aOBscAAsVHBscGzkaHBscGxwbHBscGxw2HBs4HAANBQAAAAAAAAAAAA==",
+    "sources": {
+      "TV": "JgAZAB4ZORoeGR8YHhkeGh0aHTUdGjg1HRoADQUAAAA=",
+      "Source": "JgAZAB8YHhk4GxwbHBsdGhw2HBscGzgbHRoADQUAAAA="
+    }
+  }
+}

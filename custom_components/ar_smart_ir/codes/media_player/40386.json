@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Pheanoo",
+  "supportedModels": [
+    "P27"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISNxI3EhISNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISNxI3EhISNxI3EhISNxI3EhISNxI3EhISEhI3EhISEhI3EhISEhI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISNxI3EhISNxI3EhISNxI3EhISNxI3EhISEhI3EhISEhI3EhISEhI3EjcSEhI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxI3EhISEhISEhISEhI3EhISNxI3EhISNxI3EhISNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

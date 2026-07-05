@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "TAB5105 79"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAqAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDx0dDw8PDw8PDwANBQAA",
+    "volumeDown": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDx0dDw8PDx0ADQUAAAAA",
+    "mute": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PDw8PDw8PHQ8PHR0ADQUAAAAA",
+    "on": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDx0PDx0PDw8PHQ8PDw8ADQUAAAAA",
+    "off": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDx0PDx0PDw8PHQ8PDw8ADQUAAAAA",
+    "sources": {
+      "AUX": "JgAmAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PHQ8PHR0dHQ8PAA0FAAAAAAAA",
+      "Optical": "JgAoAFgdDx0PDw8PDx0dDw8PDw8dHQ8PDw8PDw8PHQ8PHR0PDx0PDw8ADQUAAAAA"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Majority",
+  "supportedModels": [
+    "K2 SoundBar"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhISEhISEhI3EhISNxISEjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "manufacturer": "LG",
+  "supportedModels": [
+    "SK10Y"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBGAJSUEhISEhI3EjcSEhI3EhISEhISEhISNxI3EhISNxISEhISNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxIADQUAAAAAAAA=",
+    "on": "JgBGAJSUEhISEhI3EjcSEhI3EhISEhISEhISNxI3EhISNxISEhISEhI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxIADQUAAAAAAAA=",
+    "off": "JgBGAJSUEhISEhI3EjcSEhI3EhISEhISEhISNxI3EhISNxISEhISEhI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxIADQUAAAAAAAA="
+  }
+}
