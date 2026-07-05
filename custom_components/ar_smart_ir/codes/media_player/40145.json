@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Grandin",
+  "supportedModels": [
+    "Grandin"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSNxI3EjcSEhISEhISNxISEhISEhISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEhISNxISEjcSEhISEhISNxI3EhISNxISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Elements",
+  "supportedModels": [
+    "TV"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEjcSEhI3EhISEhISEjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "nextChannel": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSNxI3EhISEhI3EhISNxISEhISEhI3EjcSEhI3EgANBQAAAAA="
+    }
+  }
+}

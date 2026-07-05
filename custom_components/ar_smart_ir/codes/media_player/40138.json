@@ -1,0 +1,17 @@
+{
+  "manufacturer": "LG",
+  "supportedModels": [
+    "AKB74915305"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "TV": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

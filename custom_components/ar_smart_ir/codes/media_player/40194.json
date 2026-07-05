@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Sunbrite",
+  "supportedModels": [
+    "Sunbrite"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "off": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "volumeUp": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEhISNxISEhISEhISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxISEhISNxI3EjcSEhISEhISNxI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhISEhISEhI3EhISNxI3EgANBQAAAAA="
+    }
+  }
+}

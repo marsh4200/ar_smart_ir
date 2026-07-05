@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "5766 Series"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PHR0PDw8PDw8PAA0F",
+    "volumeDown": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PHR0PDw8PHQANBQAA",
+    "mute": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dHQANBQAA",
+    "nextChannel": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDx0dDw8PDw8PDw8PAA0F",
+    "previousChannel": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDx0dDw8PDw8PHQANBQAA",
+    "on": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dDw8PAA0F",
+    "off": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dDw8PAA0F"
+  }
+}

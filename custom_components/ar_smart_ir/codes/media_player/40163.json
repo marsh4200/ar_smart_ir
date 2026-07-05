@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Samsung",
+  "supportedModels": [
+    "LW17E34C"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxI3EjcSNxISEhISEhISEhISEhISEhISNxI3EjcSNxIADQUAAAAAAAA=",
+    "on": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxIADQUAAAAAAAA=",
+    "off": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxIADQUAAAAAAAA=",
+    "sources": {
+      "PC": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISNxISEhISNxISEjcSNxISEhISNxI3EhISNxISEhISNxIADQUAAAAAAAA="
+    }
+  }
+}

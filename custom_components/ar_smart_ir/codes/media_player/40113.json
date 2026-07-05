@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "TV"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PHR0PDw8PDw8PAA0F",
+    "volumeDown": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PHR0PDw8PHQANBQAA",
+    "mute": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dHQANBQAA",
+    "on": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dDw8PAA0F",
+    "off": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dDw8PAA0F",
+    "sources": {
+      "HDMI": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDx0PDw8PHQ8PDw8PAA0F"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Hotels",
+  "supportedModels": [
+    "Hilton Connected Room Remote"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhI3EjcSEhISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhI3EjcSEhI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhI3EjcSEhISEjcSNxI3EhISEhISEhISNxISEhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhI3EjcSEhI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhI3EjcSEhI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSNxISEhISNxISEjcSNxISEjcSEhISEjcSEhI3EjcSEhISEjcSNxISEjcSEhISEhISNxISEhISNxISEjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

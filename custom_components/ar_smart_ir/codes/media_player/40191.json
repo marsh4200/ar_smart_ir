@@ -1,0 +1,15 @@
+{
+  "manufacturer": "AmazonBasics",
+  "supportedModels": [
+    "TV Remote"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSEhISEhISNxI3EhISEhISEhISNxI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSEhI3EhISEhI3EjcSEhISEhISEhI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSEhISEhISNxI3EhISEhI3EhISNxI3EhISEhI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSEhISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSEhISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

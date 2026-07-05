@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Bose",
+  "supportedModels": [
+    "TV"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhI3EhISNxI3EjcSEhI3EhISEhISEhISEhI3EhISNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISNxI3EjcSEhI3EhISEhISEhISEhI3EhISNxISEhISNxI3EhISEhI3EhISNxI3EhISEhI3EjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISNxI3EjcSEhI3EhISEhISEhISEhI3EhISNxISEhISNxI3EhISEhI3EhISNxI3EhISEhI3EjcSEhI3EgANBQAAAAA="
+  }
+}

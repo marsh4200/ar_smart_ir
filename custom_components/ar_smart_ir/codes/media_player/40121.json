@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "TV 14PV172 08"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOjodAA0FAAA=",
+    "on": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "off": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "sources": {
+      "Source": "JgAaAB0dOh0dHR0dHR0dHR06HR0dHTodHR0dAA0FAAA="
+    }
+  }
+}

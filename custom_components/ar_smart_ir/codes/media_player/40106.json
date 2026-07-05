@@ -1,0 +1,17 @@
+{
+  "manufacturer": "RCA",
+  "supportedModels": [
+    "RLDED3258A-B"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEjcSEhISEjcSEhI3EhISNxISEjcSNxISEjcSEhI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA="
+    }
+  }
+}

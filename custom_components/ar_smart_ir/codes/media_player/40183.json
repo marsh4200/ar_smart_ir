@@ -1,0 +1,20 @@
+{
+  "manufacturer": "Hitachi",
+  "supportedModels": [
+    "43140"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAYAB0dOh0dHR0dHTodHTo6Oh0dHR0dHQANBQAAAAA=",
+    "volumeDown": "JgAYAB0dOh0dHR0dHTodHTo6Oh0dHR06HQANBQAAAAA=",
+    "mute": "JgAYAB0dOh0dHR0dHTodHTodHTodHTo6HQANBQAAAAA=",
+    "nextChannel": "JgAaAB0dOh0dHR0dHTodHR0dOh0dHR0dHR0dAA0FAAA=",
+    "previousChannel": "JgAaAB0dOh0dHR0dHTodHR0dOh0dHR0dHTodAA0FAAA=",
+    "on": "JgAYAB0dOh0dHR0dHTodHTodHTodHTodHQANBQAAAAA=",
+    "off": "JgAYAB0dOh0dHR0dHTodHTodHTodHTodHQANBQAAAAA=",
+    "sources": {
+      "Source": "JgAaAB0dOh0dHR0dHTodHR0dHR0dHTodHR0dAA0FAAA="
+    }
+  }
+}

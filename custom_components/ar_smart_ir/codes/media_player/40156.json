@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Samsung",
+  "supportedModels": [
+    "BN59-01358C"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "nextChannel": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EhISEhI3EhISEhISEjcSEhI3EjcSEhI3EjcSNxIADQUAAAAAAAA=",
+    "previousChannel": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhISEhISEhI3EhISEhISEjcSNxI3EjcSEhI3EjcSNxIADQUAAAAAAAA=",
+    "on": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhIADQUAAAAAAAA=",
+    "off": "JgBGAJSUEjcSNxI3EhISEhISEhISEhI3EjcSNxISEhISEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhIADQUAAAAAAAA="
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Philips",
+  "supportedModels": [
+    "XXPFL9955H"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PHR0PDw8PDw8PAA0F",
+    "volumeDown": "JgApAFobEBsQDRANLCwPDw0PDhAKEwoVCgAL2lobEBsQDRAOKi4KEwwwAA0FAAAA",
+    "mute": "JgAqAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dHQANBQAA",
+    "on": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dDw8PAA0F",
+    "off": "JgAsAFgdDx0PDw8PDx0dDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8dDw8dDw8PAA0F"
+  }
+}

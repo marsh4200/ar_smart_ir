@@ -1,0 +1,13 @@
+{
+  "manufacturer": "PDi",
+  "supportedModels": [
+    "PD108-420"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOjodAA0FAAA=",
+    "on": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "off": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA="
+  }
+}
