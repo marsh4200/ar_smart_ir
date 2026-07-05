@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Vitek",
+  "supportedModels": [
+    "VT1931"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBJACoOKQ8OKSkPKQ8OKQ4pDikOKQ4pDikp7SoOKQ8OKSkPKQ8OKQ4pDikOKQ4pDikp7SoOKQ8OKSkPKQ8QKBAoECgQKA4pECgADQUAAAA=",
+    "speed_cycle": "JgBNACoOKQ8PKSkPKQ8PKQ8pDykPKQ8pKQ8PAAEIKg4pDw8pKQ8pDw8pDykPKQ8pDykpDw8AAQgqDikPDykpDykPDikOKQ8pDikOKSkPAA0FAAAAAAAAAAAAAAAAAAAA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "manufacturer": "Shami",
+  "supportedModels": [
+    "Fan-4333E"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "low": "JgBhACsMKwwQJysNKgwQJxAnECcQJxAnKw0P/isMKwwQJysMKwwQJxAnECcQJxAnKwwQ/isMKwwQJysMKwwQJxAnECcQJxAnKwwQ/isNKgwQJysMKwwQJxAnECcQKA8nKw0ADQUAAAAAAAAAAAAAAA==",
+    "medium": "JgBnACkPKA8OKCkOKA8OKQ4oDigPKCgPDycQAAEjKwsqDhAmKw0qDg8nECYOKBEmKw4PJg8AASIqDioODiYrDSsODicQJg8nESYsDQ4oEAABISsNKg4QJioNKg4PJRElESUPKCsODScADQUAAAAAAA==",
+    "high": "JgC1ACsNKwwQJisNKwwQJhEmECYrDBEmESYQAAEfKwwrDBEmKw0rDBEmECYQKCsMESYQJhAAASArDCsMESYrDSsMESYQJhAnKwwRJhAmEAABICsMKwwRJisNKwwRJhAmECcrDBEmECYQAAEgKwwrDBEmKw0rDBEmECYQKCsMESYQJhAAASArDCsMESYrDSsMESYQJhAnKwwRJhAmEAABICsMKwwRJisNKwwRJhAmECgrDBEmECYADQUAAAAAAAAA",
+    "off": "JgBhACcQJxAOKScQJxAOKQ4pDikOKQ4pDikn5ycQJxAOKScRJxEOKQ4pDikOKQ4pDikn6CcRJxEOKScRJxEOKQ4pDikOKQ4pDikn6CcRJxEOKScRJxEOKQ4pDikOKQ4pDikADQUAAAAAAAAAAAAAAA==",
+    "oscillate": "JgBhACsMKwwQJysMKwwQJxAnKwwQJxAnECcQ/isMKwwQJysMKwwQJxAnKwwQJxAoDycQ/isMKwwQJysMKwwQJxAnKQ4QKA8nECcQ/ikOKQ4QKCgOKQ4QJxAnKQ8PJxAnECgADQUAAAAAAAAAAAAAAA=="
+  }
+}

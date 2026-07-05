@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Kinzo",
+  "supportedModels": [
+    "LQ-AC02S Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhI3EhISNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EgANBQAAAAA=",
+    "oscillate": "JgBIAAABKJQSEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSEhISEjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

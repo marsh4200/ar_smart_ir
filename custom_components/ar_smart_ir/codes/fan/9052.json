@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Profi Care",
+  "supportedModels": [
+    "PC-VL 3069"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBhACkOKQ4OKikOKQ4OKg4qDioOKg4qDiop7CkOKQ4OKikOKQ4OKg4qDioOKg4qDiop7CkOKQ4OKikOKQ4OKg4qDioOKg4qDiop7CkOKQ4OKikOKQ4OKg4qDioOKg4qDioADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgCbACoNKg0OKSoNKg0OKQ4pDikOKQ8pKg0OAAEGKg0qDQ4pKg0qDQ4pDikOKQ4pDykqDQ4AAQYqDSoNDikqDioNDikOKQ4pDikOKSoNDgABByoNKg0OKSoOKg0OKQ4pDikPKQ4pKg0OAAEHKg0qDQ4pKg0qDQ4pDikOKQ4pDikqDQ4AAQcqDSoNDikqDSoNDikOKQ4pDikOKSoNAA0FAA=="
+  }
+}

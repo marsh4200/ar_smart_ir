@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Bionaire",
+  "supportedModels": [
+    "BASF1016GRC"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgDxACoOKQ4OKikOKQ4OKg0qDSkOKQ4qDikq7yoOKQ4NKikOKQ4NKg0qDikOKQ8pDiop7yoOKQ4OKikOKQ4OKg4pDikOKQ4pDikq7yoNKg4NKikOKQ4NKg0pDikOKQ4pDykq8CoNKg4OKikOKQ4OKQ4pDykOKQ4pDikq7yoOKQ4NKSoOKQ4NKg0pDikOKQ8pDikq7yoNKw0OKSkOKg0OKQ0pDikOKQ4pDikq7yoOKg0PKSoNKg0OKQ8oDikPKQ4pDioq7isNKg0OKSoNKg0OKQ4oDygOKQ4pDykr7isNKg0OKSoNKg0OKQ4oDygPKA8pDigADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgA3ASoOKQ4NKSoOKQ4NKg4pDikOKQ4pKg4NAAELKg4pDg0qKQ4pDg0qDSoOKg4pDikqDg0AAQsqDikODiopDikODSoNKQ4pDikOKSoODgABCyoOKQ4NKikOKQ4OKg4pDioNKQ4pKg4NAAELKg4pDg0qKQ4pDg0qDSoOKQ8pDiopDg0AAQsqDikODSopDikODSoNKg0pDioOKSoODQABCyoOKQ4OKikOKQ4NKg0qDSoNKQ4pKg4OAAELKg4pDg4qKQ4pDg4qDioNKQ4pDikqDg0AAQsqDikODSopDikODioOKg4pDioNKSoODQABCyoOKQ4NKikOKQ4NKg4pDioNKQ4pKg4NAAELKg4pDg0qKQ4pDg0qDikOKQ4pDikqDg0AAQsqDikODSkqDikODSkOKQ4pDikOKSoOAA0FAAAAAAA="
+  }
+}

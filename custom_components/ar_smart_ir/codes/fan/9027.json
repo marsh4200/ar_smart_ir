@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Fakir",
+  "supportedModels": [
+    "VC60 DC 2019"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBRAJeSEjASMBIwEjASMBExEVARMhAyEFEQMhFQETERMRFQETERMZaTETERMRExETERMRExEVARMRExEVARMRFQETERMRFQETERAAHOAAEuSwANBQAAAAAAAAAAAAAA",
+    "speed_cycle": "JgBRAJeSEjASMBIwEjARMRExEVARMRExETIRUBExETERMRFQEVARMZaTETERMRExETERMRExEVARMRExETERUBExETERMRFQEVARAAHOAAEuSwANBQAAAAAAAAAAAAAA",
+    "oscillate": "JgBRAJeSEjASMBIwEjARMRExEk8SMRExETERMRFQEVARUBExETERMZaTETERMRExETERMRExEVARMRExETERMRFQEVARUBExETERAAHOAAEuSwANBQAAAAAAAAAAAAAA"
+  }
+}

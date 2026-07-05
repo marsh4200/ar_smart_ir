@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Eton",
+  "supportedModels": [
+    "NDY-DT2-Portable-Evaporative-Tower-Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxISEhISEhI3EhISNxISEhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISNxISEhISEhI3EhISNxI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "oscillate": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Domo",
+  "supportedModels": [
+    "DO8149"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBnAAABJ5MSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcVNRU0FTQVEBUQFRAVEBUQFRAVEBUQFTQVNBU0FTQVNBU0FTQVNBMRFRATERMRExETERMRExETNhM2EzYTNhM2EzYADQUAAAAAAA==",
+    "speed_cycle": "JgBnAAABJ5MVNBUQFRAVEBQQFRAVEBUQFRAVNBU0FTQVNBU0FTQVNBU0FTQVNBU0FRAVEBUQFRAVEBUQFRAVEBU0FTQVNBU0FTQVNBU0FTQVEBUQFRAVEBUQFRAVEBUQFTQVNBU0FTQADQUAAAAAAA=="
+  }
+}

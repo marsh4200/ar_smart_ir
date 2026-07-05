@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Atomberg",
+  "supportedModels": [
+    "fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "low": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxISEhISNxI3EjcSNxI3EjcSEhI3EhISEhISEjcSEhISEjcSEhI3EjcSNxISEgANBQAAAAA=",
+    "medium": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxISEhISNxI3EjcSNxISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEjcSNxISEgANBQAAAAA=",
+    "high": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxISEhISNxI3EjcSNxISEjcSEhI3EhISEhISEjcSNxISEjcSEhI3EjcSNxISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxISEhISNxI3EjcSNxI3EhISEhISEjcSEhISEjcSEhI3EjcSNxISEjcSNxISEgANBQAAAAA="
+  }
+}

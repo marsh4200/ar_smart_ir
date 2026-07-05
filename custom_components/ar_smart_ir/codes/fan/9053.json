@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Ozeri",
+  "supportedModels": [
+    "UltraWind OZF1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBhACsMKwwSJCsMKg0SJBIkEiQSJBIkEiQq7ioOKQ4RJSkOKQ4RJRElESURJRElESUp7ykOKQ4RJSkOKQ4RJRElESURJRElESUp7ykOKQ4RJSkOKQ4RJRElESURJRElESUADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgCbACoNKg4RJikOKQ4RJhEmESYRJSkOESYRAAEHKQ4pDhElKQ4pDhEmESYQJhElKQ4RJhEAAQcpDikOESYpDikOESYRJhEmESUpDhEmEAABBykOKQ4RJikOKQ4RJhEmESYRJikOESURAAEIKQ4pDhAmKQ4pDhAmESYRJhAmKQ4QJhAAAQgpDikOECYpDikOECYRJhAmECYpDxAnAA0FAA=="
+  }
+}

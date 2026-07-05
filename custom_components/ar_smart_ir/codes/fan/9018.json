@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Dyson",
+  "supportedModels": [
+    "Pure Cool Me Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBHAEoXHRMdEx4THiodEx0THRIbFh0rHRQdEx0THRMdEx0THRMdEx0rHRMbLRsVGwAGkkoXGS8bAAaHShcZLxkABohKFxkuAA0FAAAAAAA=",
+    "speed_cycle": "JgA3AEoVGxYaFRsVGy0bFRoWGhYbFRsuGhYaLRoXGi0aLhoWGhcaLhoWGhYaFhoWGgAGhEoWGi4ADQUAAAAAAA==",
+    "oscillate": "JgA3AEwUGhYaFhoXGS8ZFxoWGRcZFxkvGhYbFhotGS8ZFxkXGS8aLhoWGi4aFhouGgAGlEkXGS8ADQUAAAAAAA=="
+  }
+}

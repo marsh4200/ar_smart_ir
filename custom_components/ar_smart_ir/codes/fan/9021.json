@@ -1,0 +1,19 @@
+{
+  "manufacturer": "iLukodu",
+  "supportedModels": [
+    "TFS-20RH"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBPAAABKo4XDxYPFg4XDxYPFg8WDxYPFjMWMxYzFzMXMxYzFjMWMxYzFg8WMxYPFg8WDxYzFg8WDxYzFg8WMxYzFjMWDxYzFgAFHAABKUYADQUAAAAAAAAAAAAAAAAA",
+    "speed_cycle": "JgBPAAABKo8XDxYPFg8WDxYPFg4XDxYPFTMWMxYzFjQWMxYzFjMWMxYzFjQWNBYPFg8WDxY0Fg8WDxYPFg8WNBY0FjQWDxY0FgAFHQABKUYADQUAAAAAAAAAAAAAAAAA",
+    "oscillate": "JgBHAAABKo8XDxYPFg8WDxYOFw8WDhcPFjMWMxYzFjQWMxYzFjMWMxYPFg8WMxYzFjQWDxYPFg8WMxYzFg8WDxYPFjMWMxYzAA0FAAAAAAA="
+  }
+}

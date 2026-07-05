@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Hatari",
+  "supportedModels": [
+    "L1Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxI3EhISNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "oscillate": "JgBIAAABKJQSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EjcSNxI3EhISNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EgANBQAAAAA="
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Dyson",
+  "supportedModels": [
+    "TP7A"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBnAEgZGBgYGBgYGBgYGBgwGBgYGBgwGBgYGBgYGBgYGBgYGBgYMBgwGDAYMBgwGAAGYUgZGDAYAAZgSBkYMRgABmFIGRgxGAAGYkgZGDEYAAZiSBkXMRgABmFIGRgxGAAGYUgZGDEADQUAAAAAAA==",
+    "speed_cycle": "JgB3AEgZGBgYGBgYGBgYGBgwGBgYGBgwGBgYMBgYGDAYGBgwGDAYGBgYGBgYGBgwGAAGYEgZGDAYAAZgSBkYMBgABmBIGRgwGAAGYEgZGDAYAAZgSBkYMRgABmFIGRgxGAAGYUgZGDEYAAZhSBkXMRgABmFIGRgxAA0FAAAAAAA=",
+    "oscillate": "JgA3AEgZGBkYGRgZGBkYGRgyFxkYGRcxGBkYGRgxFzEYGRcZGDEYGRgZGBkYMRgZGAAGYkgZGDEADQUAAAAAAA=="
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Mitsubishi",
+  "supportedModels": [
+    "R30J-HRV"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgCFAF0vDCMMIwwMDAwMDAwjDAwMDAwjDCMMDAwjDAwMDAwjDCMMDAwjDCMMDAwjDAwMDAwMDAwMDAwjDAwMDAwMDCMMDAwMDAwMDAwMDAwMDAwMDCMMIwwMDAwMIwwMDAwMDAwjDCMMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCMMDAwMDCMADQUAAAAAAAAA",
+    "speed_cycle": "JgCFAF0vDCMMIwwMDAwMDAwjDAwMDAwjDCMMDAwjDAwMDAwjDCMMDAwjDCMMDAwjDAwMDAwMDAwMDAwjDAwMDAwMDCMMDAwMDAwMDAwMDAwMDAwMDCMMIwwMDAwMIwwMDAwMDAwjDAwMIwwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMIwwMDCMADQUAAAAAAAAA",
+    "oscillate": "JgCFAF0vDCMMIwwMDAwMDAwjDAwMDAwjDCMMDAwjDAwMDAwjDCMMDAwjDCMMDAwjDAwMDAwMDAwMDAwjDAwMDAwMDCMMDAwMDAwMDAwMDAwMDAwMDCMMIwwMDAwMIwwMDAwMDAwjDCMMIwwMDAwMDAwMDAwMDAwMDAwMDAwMDCMMIwwMDCMADQUAAAAAAAAA"
+  }
+}

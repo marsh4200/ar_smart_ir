@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Cascade",
+  "supportedModels": [
+    "Tower Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEhISEhISEhISEhI3EhISNxI3EjcSNxI3EjcSEhI3EgANBQAAAAA=",
+    "speed_cycle": "JgBPAAABL5IVERQRFBEUERQRFBEUERQRFDYUNhQ2FDYUNhQ2FDYUNhQRFBEUNhQRFBEUERQ2FBEUNhQ2FBEUNhQ2FDYUERQ2FAAFIgABLUkADQUAAAAAAAAAAAAAAAAA"
+  }
+}

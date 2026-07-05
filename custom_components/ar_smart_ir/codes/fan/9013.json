@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Homezest",
+  "supportedModels": [
+    "LWTF-04"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBPAAABLpMUEhQSFBIUEhQTFBMUExQTFDYUNhQ2FDYUNhQ2FDYUNhQ2FBMUNhQTFBMUEhQ2FBMTEhQ2FBIUNhQ2FDYUFBM2FAAFCgABL0kADQUAAAAAAAAAAAAAAAAA",
+    "speed_cycle": "JgBHAAABL5MUEhQTFBMUExQTFBMUExQSFDYUNhQ2FDYUNhQ2FDYUNhQ2FDYUNhQUExMUExQ2FBMTEhQSFBMUNhQ2FDYUFBM2AA0FAAAAAAA="
+  }
+}

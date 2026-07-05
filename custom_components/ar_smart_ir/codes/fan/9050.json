@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Anslut",
+  "supportedModels": [
+    "Tower Fan 95cm"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBPAAABMJEWEBYRFhAWEBY0FzUWEBYQFjUWNRY1FjUWEBYQFjUWNRY1FjUWNRYQFjUWEBYQFjUWEBYQFhAWNRYQFjUWNRYQFgAFGAABL0gADQUAAAAAAAAAAAAAAAAA",
+    "speed_cycle": "JgBPAAABMZEWERURFhAWEBY1FjUWEBYQFjUWNRY1FjUWEBYQFjUWNRYQFjUWNRYQFhAWEBYQFjUWNRYQFhAWNRY1FjUWNRYQFgAFGAABMEgADQUAAAAAAAAAAAAAAAAA"
+  }
+}

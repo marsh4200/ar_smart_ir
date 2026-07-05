@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Honeywell",
+  "supportedModels": [
+    "Fan C152"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EhISNxI3EjcSEhISEhISEhI3EhISEhISEjcSNxI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "oscillate": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEhISEhI3EjcSEhISEhISNxI3EjcSEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

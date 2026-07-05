@@ -1,0 +1,18 @@
+{
+  "manufacturer": "KOENIC",
+  "supportedModels": [
+    "KSFW 40322 TRC"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBnAAABJ5MTNhMSExITEhMSExITEhMSExITNhM2EzYTNhM2EzYTNhM2EzYTEhMSExITEhMSExITEhMSEzYTNhM2EzYTNhM2EzYTNhMSExITEhMSExITEhMSExITNhM2EzYTNhM2EzYADQUAAAAAAA==",
+    "speed_cycle": "JgBnAAABJ5MTNhMSExITEhMSExITEhMSExITNhM2EzYTNhM2EzYTNhM2EzYTNhMSExITEhMSExITEhMSExITNhM2EzYTNhM2EzYTNhM2ExITEhMSExITEhMSExITEhM2EzYTNhM2EzYADQUAAAAAAA=="
+  }
+}

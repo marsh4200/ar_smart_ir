@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Somela",
+  "supportedModels": [
+    "Wind Breeze 2 in 1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBhACwMKwwPJywMKwwOKA8oDygQJxAnECgr6CsNKw0PKCsNKw0PKA8oDygPKA8oDygr8CsNKw0PKCsNKw0PKA8oDygPKA8oDygr6CsNKw0PKCsNKw0PKA8oDygPKA8oDygADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgBnACwMKwwPJywMKwwPJw8oDygPKBAnLAwPAAEEKwwrDA8oKwwrDA8oDygPKA8oDygrDQ8AAQwrDCsMDygrDCsNDygPKA8oDygPKCsNDwABBCsNKw0PKCsNKw0PKA8oDygPKA8oKw0ADQUAAAAAAA==",
+    "oscillate": "JgBnACwMKwwPJywMKwwPJw8oLAwPJxAoDygPAAEEKw0rDQ8oKw0rDQ8oDygrDQ8oDygPKA8AAQwrDSsNDygrDSsNDygPKCsNDygPKA8oDwABBCsNKw0PKCsNKw0PKA8oKw0PKA8oDygADQUAAAAAAA=="
+  }
+}

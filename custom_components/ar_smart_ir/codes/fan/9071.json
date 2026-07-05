@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Mistral",
+  "supportedModels": [
+    "MTFYG07R"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBvADwAAQ00Hhg6GDoYOzQeFzsXOzQeGDoYOhg7FzsXOxc7GDoYOjQeGDoZOhc7NB4XOxg6NB40AAHqPAABDTQeGDoYOhg6NB4YOhg7NB4YOhg6GDoYOhk5GDoYOxc7NB4YOhg6GTk1Hhg7Fzs0HgANBQAAAAAAAAAAAAAAAAA=",
+    "speed_cycle": "JgA3AD0AAQ00Hhc8FzwXOzQeFzsXOzQfFjwXPBc7FzsXOxc7FzwXPDQeFzsXOxc7NB8WPBc7NB4ADQUAAAAAAA==",
+    "oscillate": "JgBvADwAAQ00Hhg6GDs0Hxc7Fzs0HjQeFzsXPBY8FzsXOxc7FzsXOzQfFjwYOjQeFzsXOzQeNB40AAHsPAABDTMfFzsXOzQfFzsXOzMfMx8XOxc7FzwXOxc7FzsXOxc7NB4XOxc8Mx8XOxc7Mx80HgANBQAAAAAAAAAAAAAAAAA="
+  }
+}

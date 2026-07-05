@@ -1,0 +1,20 @@
+{
+  "manufacturer": "Deka",
+  "supportedModels": [
+    "MS16"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "low": "JgAZACkPKQ8NKSkPKQ8PKA8pDykpDw4pDykADQUAAAA=",
+    "medium": "JgAZACkPKQ8NKikPKQ8pDw0qDSoNKikPKQ8ADQUAAAA=",
+    "high": "JgAZACkPKA8OKikPKQ8NKQ8pDygPKQ8pKQ8ADQUAAAA=",
+    "off": "JgAZACkPKQ8NKikPKQ8NKg0qDSoNKg0qDSoADQUAAAA=",
+    "oscillate": "JgAZACkPKQ8OKSkPDikqDygPKA8OKQ8pDykADQUAAAA="
+  }
+}

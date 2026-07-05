@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Lasko",
+  "supportedModels": [
+    "Fan Simple"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBXAAABKo0SOBMSEhMTExMTExISExMTExMTOBM4EzgTOBI4EjgSOBM4EzgTExMSEhMTExMTEzgTEhMSEjgTOBM4EzgTOBMTEwAFNwABKkYSAAx8AAErRgANBQAAAAAA",
+    "speed_cycle": "JgBHAAABK40TOBITExMTExMSEhMTExMTExISOBM4EzgTORI4EzgSOBI4EzgTOBMSExISExMTEzgTExMSExISOBI4EjgTOBMSAA0FAAAAAAA="
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Lasko",
+  "supportedModels": [
+    "Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgCRACoPKA4PKSoPKA4PKQ8pDykPKQ8pECkq6yoOKg0PKSoOKg0PKQ8pDykPKRAoECgq7CoOKg0PKCoOKg0PKA8pECgQKQ8pDykq7SoNKg4OKSoNKg8OKBApDykPKQ8pDykq7CoOKQ4PKSoOKQ4PKRApDykPKBAoDykr7CoPKQ0PKSoPKQ4OKQ8pDykPKRAoECkADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgC1ACoOKQ4PKSoOKQ8OKQ8pDykQKQ8pKw4OAAEHKg8pDQ8pKg8pDQ8oECgQKQ8pECkqDg4AAQcqDioODikqDykNDykPKQ8pECgQKSoNDwABByoOKg0PKSoPKQ0PKQ8pECgQKREnKg4OAAEHKw4pDQ8pKw0qDg4pECgQKQ8pDykqDg8AAQcqDSoODykqDSoPDikPKQ8pDykPKSoODwABByoOKQ8OKSoOKQ8PKQ8pDykPKQ8pKg8ADQUAAAAAAAAA"
+  }
+}

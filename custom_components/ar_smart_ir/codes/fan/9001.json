@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Generic",
+  "supportedModels": [
+    "Floor Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBnAAABKpMTOBQRFREUERQRFBEVEBURFBEUNxQ2FDcUNxQ2EzgVNhQ2FDcUERQRFREUERQRFBEUERQRFDYUNxU2FDYUNxQ2FTYTNxQRFREUEBQRFBEUERMSFBEUNxQ2FTYUNxQ2FDcADQUAAAAAAA==",
+    "speed_cycle": "JgBnAAABKJQUNxQRExIUEhQRFBITEhQSFBETNxM4FDYUNxM3EzcTOBQ3EzcTNxQSExIVEBQSExIUERQSExIUNxQ2EzcTOBU1FDcTNxQ2ExIUEhMRExIUEhMSFBEUEhM4FDcTNxM3EzcADQUAAAAAAA=="
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "AlohaBreeze",
+  "supportedModels": [
+    "84001"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgAxACkOKQ4PKSkOKQ8OKQ8pDykPKQ8pDykp6ykOKQ4PKSkOKQ4PKQ8pDykPKQ8pDykADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgA3ASkOKQ4PKSkOKQ4PKQ8pDykPKQ8pKQ4PAAEGKQ4pDg8pKQ4pDg8pDykPKQ8pDykpDg8AAQYpDikODykpDikODykPKQ8pDykPKSkODwABBikOKQ4PKSkOKQ4PKQ8pDykPKQ8pKQ4PAAEGKQ4pDg8pKQ4pDg8pDykPKQ8pDykpDg8AAQYpDikODykpDikODykPKQ8pDykPKSkODwABBikOKQ4PKSkOKQ4PKQ8pDykPKQ8pKQ4PAAEGKQ4pDg8pKQ4pDg8pDykPKQ8pDykpDg8AAQYpDikODykpDikODykPKQ8pDykPKSkODwABBikOKQ4PKSkOKQ4PKQ8pDykPKQ8pKQ4PAAEGKQ4pDg8pKQ4pDg8pDykPKQ8pDykpDg8AAQYpDikODykpDikODykPKQ8pDykPKSkOAA0FAAAAAAA="
+  }
+}

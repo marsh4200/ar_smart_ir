@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Co Tech",
+  "supportedModels": [
+    "towerfan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxI3EjcSNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEjcSNxISEhISEhISEjcSNxISEhISNxI3EjcSNxISEgANBQAAAAA="
+  }
+}

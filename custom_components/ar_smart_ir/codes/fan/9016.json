@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Dyson",
+  "supportedModels": [
+    "Air Multiplier"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgA/AEkYGRkYFxkYGRcZGBkwGRgZFxkwGRgYGRgYGRgZGBkXGBgYMBkwGS8ZMBkXGQAGikkYGTAZAAaMSBgYMAANBQAAAAAAAAAAAAAAAAA=",
+    "speed_cycle": "JgA/AEkYGRgYGBkXGRgZGBkwGRgYGBkwGBgZMBkXGTAZGBkwGTAZGBkXGRgZMBkwGQAGm0gYGDAZAAaNSBgZMAANBQAAAAAAAAAAAAAAAAA=",
+    "oscillate": "JgA/AEgYGRkXGBgYGBgYGBgwGRgYGBgvGRkYGBgwGS8ZGBgZGC8ZGBgYGBgYMBkYGAAGikgXGTAZAAaNSRgZMAANBQAAAAAAAAAAAAAAAAA="
+  }
+}

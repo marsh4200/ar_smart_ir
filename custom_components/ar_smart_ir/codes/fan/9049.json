@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Shinic",
+  "supportedModels": [
+    "BP69D"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgAbACgOKA8OKCgPJw4PKA4oDygPKA8oDygo6wANBQA=",
+    "speed_cycle": "JgAdACcPJw8OKSgPJw8OKg0pKA8NKg0qDSkOAAEGAA0FAAAAAAAAAAAAAAAAAAAA"
+  }
+}

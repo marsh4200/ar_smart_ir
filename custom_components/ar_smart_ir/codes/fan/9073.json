@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Stadler Form",
+  "supportedModels": [
+    "Peter"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgCbACoNKg0OKQ4pKg0qDQ4pDikOKSoNDikOAAEGKg0qDQ4pDikqDSoNDikOKQ4pKg0OKQ4AAQYqDSoNDikOKSoNKg0OKQ4pDikqDQ4pDgABBiwMLAwOKQ4pLAwsCw4pDikOKSwMDikOAAEGLAwsDA4pDiksCywMDikOKQ4pLAwOKQ4AAQYqDSoNDikOKSoNKg0OKQ4pDikqDQ4pAA0FAA==",
+    "speed_cycle": "JgB5ACsMKg0OKQ4pKg0qDQ4pKg0OKSoNDikq6yoNKg0OKQ4pKwwrDA8oKwwOKSsMDikr6isMKw0PKA8oKwwrDQ8oKwwPKCsNDygr6isMKw0PKA8oKwwrDQ8oKwwOKSsMDikq6yoNKg0OKQ4pKg0qDQ4pKg0OKSoNDikADQUAAAA=",
+    "oscillate": "JgDPACoNKwwOKQ4pKwwPKA8oDygPKA8oDygPAAEGKwwrDQ8oDygqDQ8oDygPKA8oDygPKA8AAQYqDSsNDygPKCoNDygPKA8oDygPKA4pDwABBisMKw0PKA8oKwwPKA8oDikOKQ4pDikPAAEGKg0qDQ4pDikqDQ4pDikOKQ4pDikOKQ4AAQcqDSoNDikOKSoNDikOKQ4pDikOKQ4pDgABBioNKg0OKQ4pKg0PKQ4pDikOKQ4pDikOAAEGKg0qDQ4pDikqDQ4pDikOKQ4pDikOKQANBQAAAAAAAAAAAAAAAAA="
+  }
+}

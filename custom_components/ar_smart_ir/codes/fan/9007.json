@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Siguro",
+  "supportedModels": [
+    "fn v750w"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBXAAABM5UTExMTExMTExMTExMTExMTExQSExM4EzgTOBM4EzgTOBMTEzgTOBMTExMTExMTEzgSOBMTExMTNxM3EzcTOBMSEwAFUQABNEoTAAxJAAEzSQANBQAAAAAA",
+    "speed_cycle": "JgBXAAABNZUTExMTExMTExMTExMTExMTExMTExM4EzgTOBM4EzgTOBM4ExMTExM4ExMTExMTEzkSExM4EzgTExM4EzgTOBMTEgAFUwABNUoTAAxPAAE4SgANBQAAAAAA",
+    "oscillate": "JgBXAAABMZUTExMTExMTExMTExMTExMTExMTExM4EzgTNxM3EzgTOBM4ExMTOBM4ExMTExMTEzgTExM4ExMTExM3EzgTOBMSEwAFUgABMkkTAAxLAAEySgANBQAAAAAA"
+  }
+}

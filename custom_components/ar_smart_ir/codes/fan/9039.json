@@ -1,0 +1,18 @@
+{
+  "manufacturer": "KOENIC",
+  "supportedModels": [
+    "KTFC 602722"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSEhI3EhISEhI3EhISNxISEjcSEhI3EjcSEhI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSEhISEhISEhI3EhISNxISEjcSNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

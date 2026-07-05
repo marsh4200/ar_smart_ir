@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Quads",
+  "supportedModels": [
+    "QS303 Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISEhI3EhISEhISEjcSNxI3EjcSEhI3EjcSNxISEgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxISEhISNxI3EhISEhISEjcSNxI3EhISEhI3EjcSNxISEgANBQAAAAA="
+  }
+}

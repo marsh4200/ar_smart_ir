@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Dyson",
+  "supportedModels": [
+    "Cool Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBHAEkbGTUYGxkbGTQZGxgbGBoZHRgcGBwYGxkbGRoZMxkbGAANDUkbGTUYGxkcGDQZGxgaGRoZHRgcGBsZGxgcGBoZNBgaAA0FAAAAAAA=",
+    "speed_cycle": "JgBHAEkcGDQZHBgcGDQZGxgbGBsYHRg0GRwYNBkcGDQZGxgzGQAMu0kcGDQYHBgcGDQZGxgbGBsYHRg0GRwYNBkcGDQZGxgzAA0FAAAAAAA=",
+    "oscillate": "JgBHAEkcGDQZGxkbGTQZGxkaGBoZNRkbGTQZGxk0GRoZGhkaGQAM2kkcGDQZGxkbGTQZGhgbGRoZNRkbGTQZGxk0GRsZGxgbAA0FAAAAAAA="
+  }
+}

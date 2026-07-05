@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Amazon",
+  "supportedModels": [
+    "Basics Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBhAJeXEjISMhIyEjISMhIyElQSMhIyElQSMhJUEjISMhJUEjISMpeXEjISMhIzETISMhIyElQSMhIyElQSMhJUEjISMhJUEjISAAHDAAEvSxIABq0AAS9MEgAGrQABL0wADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgBhAJeXEjISMhIyEjISMhIyElQSMhIyEjISVBIyEjISMhJUElQSMpeXEjISMhIyEjISMhIyElQSMhIyEjISVBIyEjISMhJUElQSAAHEAAEvSxIABq0AAS9MEgAGrQABL0sADQUAAAAAAAAAAAAAAA=="
+  }
+}

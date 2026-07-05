@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Rowenta",
+  "supportedModels": [
+    "Eole Infinite"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhI3EjcSEhISEhISEhI3EjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "oscillate": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSNxI3EhISEhISEhISNxISEhISEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}

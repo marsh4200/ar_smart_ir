@@ -1,0 +1,18 @@
+{
+  "manufacturer": "ComfortZone",
+  "supportedModels": [
+    "CZ106"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBXAAABL5QUERQRFBEUERQ2FDYUERQRFDYUNhQ2FDYUERQRFDYUNhQRFDYUERQ2FBEUERQRFDYUNhQRFDYUERQ2FDYUNhQRFAAFGQABL0kUAAxLAAEvSQANBQAAAAAA",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhI3EjcSEhISEjcSNxI3EjcSEhISEjcSNxI3EhISEhI3EhISEhISEjcSEhI3EjcSEhI3EjcSNxISEgANBQAAAAA="
+  }
+}

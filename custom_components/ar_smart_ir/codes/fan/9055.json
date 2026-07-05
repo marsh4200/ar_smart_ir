@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Seville Classics",
+  "supportedModels": [
+    "SC-UltraSlimLine-Oscillating-Tower-Fan-5-Buttons-EHF10119PB"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgDhASoPKQ4OKikPKQ4OKg4qDioNKg0qDSoq8SoOKg4NKikOKg4NKg4qDioOKg0qDSoq8SoOKg4NKikOKg4NKg4qDioOKg0qDSoq8SoPKQ4OKikPKQ8OKg4qDSoNKg0qDiop8SoPKQ4OKikOKg4NKg4qDioOKg4qDioq8CoOKg4OKikPKQ4OKg4qDioOKg4qDSoq8CoOKg4OKioOKQ8OKg4qDSoNKg0qDSoq8SoOKg4NKioOKg4NKg0qDioOKg4qDSoq8SoPKQ8OKioOKg4NKg4qDioNKg4qDioq8SoOKg8OKioOKg8OKg0qDioOKg0qDioq8SoPKg4NKioOKg4OKg0qDioNKg4qDSoq8SoPKg4NKikPKg4NKg4qDSoOKg0qDioq8SoPKg4NKioPKg4NKg4qDSoOKg4qDioq8SoPKg4NKioOKg4NKg4qDioNKg4qDSoq8SoPKg4NKioOKg4NKg4qDioNKg4qDSoq8SoOKg8OKioPKg4NKg4qDioNKg4qDioq8SoPKg4NKioOKg4NKg4qDSoOKg4qDSoq8SoOKg4NKikOKQ4OKg4qDSoNKg0qDSop8SoPKQ4OKikOKg4NKg4qDioOKg4qDSoq8SoOKQ4OKikPKQ8OKg0qDSoNKg4qDioADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgCbACoOKQ4NKSoOKQ4OKQ8pDykOKQ4pKg4OAAEMKg4pDg4pKg4qDg4pDikOKQ4pDykqDg0AAQwqDioODikqDioODikOKQ4pDikOKSoODQABDCoOKg4OKSoOKg4NKQ4pDikOKQ4pKg4NAAEMKg4qDg0pKg4pDg4pDykOKQ4pDikqDg4AAQwqDioODikqDioODSkOKQ4pDikOKSoPAA0FAA=="
+  }
+}

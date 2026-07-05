@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Tefal",
+  "supportedModels": [
+    "Essential VF3910F0"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBRAJiQEi8SLxIvEjASMBIvEk8SLxIvElASMBJQEjASMBJQEjARMJaSETARMBEwETARMBEwEVARMBEwEVARMBFQETARMBFQETARAAHMAAEsSgANBQAAAAAAAAAAAAAA",
+    "speed_cycle": "JgBZAJeREi8SLxIvEjASMBIvEk8SMBIwEjASUBIwEjASMBJQElASMJaSETASMBEwETARMBEwEVARMBEwETARUBEwETARMBFQEVARAAHMAAEsShEABnEAASxKAA0FAAAA"
+  }
+}

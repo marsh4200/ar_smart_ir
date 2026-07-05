@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Dyson",
+  "supportedModels": [
+    "AM11"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBXAEkcGTQZNRkbGRsZGxkbGRoZHBkbGRsZGxkbGRsZGhkaGQANOEkbGTUZNBkbGRsZGxkbGRoZHBkbGRsZGxkbGRsZGhkbGQAIS0kZGTMZAAfLSRkZMwANBQAAAAAA",
+    "speed_cycle": "JgBHAEkcGTUZNBkbGRsZGxkbGRoZNhk0GTQZNBk0GTQZGhkbGQANJUkcGTQZNRkbGRsZGxkbGRoZNRk1GTQZNBk0GTQZGhkaAA0FAAAAAAA="
+  }
+}

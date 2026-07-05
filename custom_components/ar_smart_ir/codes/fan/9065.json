@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Lasko",
+  "supportedModels": [
+    "1885"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEgANBQAAAAA="
+  }
+}

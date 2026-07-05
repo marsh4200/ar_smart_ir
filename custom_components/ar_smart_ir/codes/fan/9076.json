@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Daewoo",
+  "supportedModels": [
+    "DDV200"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxISEhISEhI3EhISEhI3EhISNxI3EjcSEhI3EgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EgANBQAAAAA="
+  }
+}

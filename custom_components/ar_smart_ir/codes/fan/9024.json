@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Vornado",
+  "supportedModels": [
+    "279TR"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxISEhISEhI3EjcSEhI3EjcSNxI3EjcSEhISEjcSEhISEgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EgANBQAAAAA="
+  }
+}

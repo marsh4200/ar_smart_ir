@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Dimplex",
+  "supportedModels": [
+    "Mont Blanc dxmbcf"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgDBACoNKg0PKSoNKg0PKQ8pDykPKQ8pDykp7CkOKQ4PKSkOKQ4PKQ8pDykPKQ8pDykq7CkOKQ4PKSkOKg4PKQ8pDykPKQ8pDykp7CkOKg4PKSkOKQ4PKQ8pDykPKQ4qDioq7CkOKQ4OKikOKQ4OKg4qDioOKg4qDiop7CoOKg4OKioOKg4OKg4qDioOKg4qDiop7CoOKg4OKioOKg4OKg4qDioOKg4qDioq7CkOKg4OKioOKQ4OKg4qDioOKg4qDioADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgDpACkOKQ4OKioOKg4OKg4qDioOKg4qKQ4OAAEHKQ4pDg4qKQ4qDg4qDioOKg4qDioqDg4AAQcqDioODioqDioODioOKg4qDioOKioODgABBykOKg4OKikOKg4OKg4qDioOKg4qKg4OAAEHKQ4qDg4qKg4qDg4qDioOKg4qDioqDg4AAQcpDikODioqDioODioOKg4qDioOKioODgABByoOKQ4OKioOKg4OKg4qDioOKg4qKg4OAAEHKQ4qDg4qKg4qDg4qDioOKg4qDioqDg4AAQcqDioODioqDioODioOKg4qDioOKioOAA0FAAAA",
+    "oscillate": "JgA3ASoOKQ4OKioOKg4OKg4qKQ4OKg4qDioOAAEHKQ4qDg4qKg4pDg4qDiopDg4qDioOKg4AAQcpDioODioqDioODioOKioODioOKg4qDgABByoOKg4OKioOKg4OKg4qKQ4OKg4qDioOAAEHKg4qDg4qKg4qDg4qDioqDg4qDioOKg4AAQcpDioODioqDioODioOKikODioOKg4qDgABBykOKg4OKioOKg4OKg4qKg4OKg4qDioOAAEHKg4qDg4qKQ4qDg4qDioqDg4qDioOKg4AAQcqDikODiopDioODioOKioODioOKg4qDgABBykOKg4OKikOKg4OKg4qKg4OKg4qDioOAAEHKQ4pDg4qKQ4qDg4qDiopDg4qDioOKg4AAQcqDioODiopDioODioOKikODioOKg4qAA0FAAAAAAA="
+  }
+}

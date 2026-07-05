@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Dyson",
+  "supportedModels": [
+    "AM06 33 Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBHAEkbGTQZGxkbGTQZGhkaGRoZHBkbGRsZGxkbGBsZGhgaGQANIkkbGDUZGxgbGTQYHBgaGBoZHBgbGRsYGxgbGBsYGxgaAA0FAAAAAAA=",
+    "speed_cycle": "JgBHAEkbGDQZGxgbGDQYGxgbGRoYHBg0GBsYNBgbGTQYGxgzGAAMuEgcGDQYGxkbGDQZGxgbGRoYHBk0GBsZNBkbGTQYGhkzAA0FAAAAAAA=",
+    "oscillate": "JgBHAEkbGDQZGxgbGDQYGxgbGBsYNRgbGTQYGxg0GBsYGxgaGAAM10kbGTQZGxgbGTQYGxkaGBoZNRkbGTQZGxk0GBsZGhgaAA0FAAAAAAA="
+  }
+}

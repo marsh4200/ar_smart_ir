@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Lasko",
+  "supportedModels": [
+    "Fan 2108"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBRAS0KLAoQJioMKgwPKA8oDygPKA8oDygr3ysLKgwPKCoMKgwPKA8oDygPKA8oDygq4CoMKgwPKCoMKgwPKA8oDygPKA8oDygq4CoNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4SkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4SkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4CkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4SkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4CkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4SkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4CkNKQ0OKSkNKQ0OKQ4pDikOKQ4pDikp4SkNKQ0OKSkNKQ0OKQ4pDioNKg0qDSoo4SgNKA0NKigOKA4NKg0qDSoNKg0qDSoo4igNKA0NKigOKA4NKg0qDSoNKg0qDSoADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgDBACsLKwsQJysLKwwPJxAnECcQJxAnLAsQ+ysLKwsQJysLKwsQJxAnECcQJxAnKwsQ+ysLKwsQJysLKwsQJxAnECcQJxAnKwsQ/CsLKwsQJysLKwsQJxAnECcQJxAnKwsQ+ysLKwsQJysLKwsQJxAnECcQJxAnKwsQ+ysLKwsQJysLKwsQKBAoECgQKBAnKwsQ+ysLKwsQJysLKwsQKBAoECgPKA8oKgwP/SoMKgwPKCoMKgwPKA8oDygPKA8oKgwADQUAAAAAAAAAAAAAAA==",
+    "oscillate": "JgB5ACwKLQoPJSsMKgwPKA8oKgwPKA8oECcQ+yoMKgwPKCoMKgwPKA8oKgwPKA8oDygP/CoMKgwPKCoMKgwPKA8oKgwPKA8oDygP/CoMKgwPKCoMKgwPKA8oKgwPKA8oDygP/SoMKgwPKCoMKgwPKA8oKgwPKA8pDikADQUAAAA="
+  }
+}

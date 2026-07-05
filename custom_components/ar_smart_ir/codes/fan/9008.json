@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Rowenta",
+  "supportedModels": [
+    "5870"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBhACwMKwwPJywMKwwOKA8oDygQJxAnECgr6CsNKw0PKCsNKw0PKA8oDygPKA8oDygr8CsNKw0PKCsNKw0PKA8oDygPKA8oDygr6CsNKw0PKCsNKw0PKA8oDygPKA8oDygADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgBhACwMKwwPJywMKwwqDQ4oECcQJxAoKwwr6CsMKw0PKCsNKw0rDQ8oDygPKA8oKw0r8SsNKw0PKCsNKw0rDQ8oDygPKA8oKw0r6CsNKw0PKCsNKw0rDQ8oDygPKA8oKw0ADQUAAAAAAAAAAAAAAA==",
+    "oscillate": "JgBnACwMKwwPJywMKwwqDQ4oECcsDCsMDygPAAEEKw0rDQ8oKwwrDSsNDygPKCsMKw0PKA8AAQwrDSsNDygrDSsNKw0PKA8oKw0rDQ8oDwABBCsNKw0PKCsNKw0rDQ8oDygrDSsNDygADQUAAAAAAA=="
+  }
+}

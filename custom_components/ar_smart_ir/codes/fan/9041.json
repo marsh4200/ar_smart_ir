@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Dreo",
+  "supportedModels": [
+    "DR-HTF007"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgDHACoOKg4OKSoOKg4OKQ4pDikOKQ4pDikq6yoOKg4OKSoOKg4OKQ4pDikOKQ4pDikqAAEQKQ4qDg4pKg4qDg4pDikOKQ4pDikOKSrrKg4qDg4pKg4qDg4pDikOKQ4pDikOKSoAAQ8qDioODikqDioODikOKQ4pDikOKQ4pKusqDioODikqDioODikOKQ4pDikOKQ4pKQABDyoOKg4OKSoOKg4OKQ4pDikOKQ4pDikp7CoOKg4OKSoOKQ4OKQ4pDikOKQ4pDikADQUAAAAAAA==",
+    "speed_cycle": "JgCbACkOKQ4OKSoOKQ4OKQ4pDikOKQ4pKg4OAAEGKg4pDg4pKg4pDg4pDikOKQ4pDikpDg4AAS0pDioODikpDikODikOKQ4pDikOKSoODgABBikOKg4OKSoOKQ4OKQ4pDikOKQ4pKg4OAAEtKg4pDg4pKQ4pDg4pDikOKQ4pDikpDg4AAQcqDikODikpDioODikOKQ4pDikOKSkOAA0FAA=="
+  }
+}

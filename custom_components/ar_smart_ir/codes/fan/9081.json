@@ -1,0 +1,19 @@
+{
+  "manufacturer": "ProBreeze",
+  "supportedModels": [
+    "PBF04"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBnAAABJpMTNhMRExITERMRExETERMRExETNhM2EzYTNhM2EzYTNhM2EzYTERMRExETERMRExETERMREzYTNhM2EzYTNhM2EzYTNhMRExETERMRExETERMRExETNhM2EzYTNhM2EzYADQUAAAAAAA==",
+    "speed_cycle": "JgBnAAABJpMTNhMRExETERMRExETERMSExETNhM2EzYTNhM2EzYTNhM2ExETNhM2ExETERMRExETERM2ExETERM2EzYTNhM2EzYTERM2EzYTERMRExETERMSEzYTERMREzYTNhM2EzYADQUAAAAAAA==",
+    "oscillate": "JgBnAAABJpMTNhMRExETERMRExETERMRExETNhM2EzYTNhM2EzYTNhM2EzYTERMREzYTERMRExETERMREzYTNhMREzYTNhM2EzYTNhMRExETNhMRExETERMRExETNhM2ExETNhM2EzYADQUAAAAAAA=="
+  }
+}

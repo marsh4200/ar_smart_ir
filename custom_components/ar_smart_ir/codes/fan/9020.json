@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Xpelair",
+  "supportedModels": [
+    "XPA360CF Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBIAAABKJQSEhISEhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEgANBQAAAAA=",
+    "speed_cycle": "JgBIAAABKJQSEhISEhISEhISEhISEhISEhISEhI3EjcSNxI3EjcSNxI3EhISNxISEhISEhISEjcSEhI3EhISNxI3EjcSNxISEgANBQAAAAA="
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Honeywell",
+  "supportedModels": [
+    "HO-5500RE 1"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgCRACoOKQ4OKikOKQ4NKg4pDikOKQ4pDikq7yoOKQ4NKikOKQ4NKQ4pDikOKQ4pDikq7yoOKQ4NKikOKQ4NKg0pDikOKQ4pDikq7yoOKQ4NKSoOKQ4NKg4pDikOKQ4pDikq7yoOKQ4NKikOKQ4NKg0pDikOKQ4pDikq7yoOKQ4NKikOKQ4OKg0pDikOKQ4pDikADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgCbACoNKg0OKSoNKg0OKQ4pKg4NKQ4pDikOAAEKKg4pDg0pKg4pDg0pDikqDg0pDikOKQ4AAQoqDikODSkqDikODSkOKSoODikOKQ4pDgABCyoOKQ4OKSoOKQ4NKQ4pKg4NKQ4pDikOAAELKg0qDg0pKg0qDQ4pDikqDQ4pDikOKQ4AAQoqDSoNDikqDSoNDikOKSoNDikOKQ4pAA0FAA==",
+    "oscillate": "JgCbACoOKQ4OKikOKQ4NKikODSkOKQ4pDioNAAELKg4pDg0pKg4pDg0qKQ4NKQ4pDikOKQ4AAQsqDSoODSkqDikODSopDg0pDioNKg0qDQABCyoNKg4NKikOKQ4NKikODSoOKQ4qDioNAAELKg0qDQ4pKg4pDg0qKQ4NKQ4pDikOKQ4AAQsqDikODSkqDikODSkqDQ4qDSkOKg0qAA0FAA=="
+  }
+}

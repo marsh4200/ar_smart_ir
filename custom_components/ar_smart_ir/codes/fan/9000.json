@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Generic",
+  "supportedModels": [
+    "Fan HS95104SK"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgDBAC0KLQsRJi0LLAsPKA8oDygPKA8oDygr6CsMLAsQJywMLAwQJxAoDygPKA8oDygr6CsMKwwPKCsMKwwPKA8oDygPKA8oDygr6CsMKwwPKCsMKwwPKA8oDygPKA8oDygr6CsNKwwPKCsNKw0PKA8oDygPKA8oDygr6CsMKwwPKCsMKwwPKA8oDygPKA8oDygr6CsMKwwPKCsMKwwPKA8oDygPKA8oDygr6CsMKwwPKCsMKwwPKA8oDygPKA8oDygADQUAAAAAAAAAAAAAAA==",
+    "speed_cycle": "JgDPAC4LLQsRJS4LLQsRJRAnECcQJxAnLQwQAAEDLAssDBAnLAwsDBAnECcQJxAnECcsDBAAAQMsDCwMECcsDCwMECcQJxAoECcQJywMEAABAywMLAwQKCwMLAwQKBAoECgQKBAoLAwQAAEDLAwsDBAoLAwsDBAoECgQKBAoECgsDBAAAQMsDCwMECgsDCwMECgQKBAoECgQKCwMEAABAywMLAwPKCsMKwwPKA8oDygPKA8oKwwPAAEEKwwrDA8oKwwrDA8oDygPKA8oDygrDQANBQAAAAAAAAAAAAAAAAA="
+  }
+}

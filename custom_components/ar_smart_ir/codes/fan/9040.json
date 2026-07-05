@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Dreo",
+  "supportedModels": [
+    "Cruiser Pro T1S Fan"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgCVACsNKg4OKCoOKg0OKA8oDygPKA8oDygr6isNKg0PKCoNKw0PKA8oDygPKA8oDygrAAEOKw0rDQ8oKw0qDQ8oDygPKA8oDygPKCvqKw0rDQ8oKw0qDQ8oDygPKA8oDygPKCsAAQ0qDSsNDygrDSoNDygPKA8oDygPKA8oK+oqDioNDigrDSoNDigPKA8oDygPJxAoAA0FAAAAAAAAAA==",
+    "speed_cycle": "JgCbACsNKg4OKCoOKg0OKA8oDygPKA8oKw0OAAEFKg4qDQ4oKw0qDg4oDygPKA8oDygqDg4AASwqDSsNDigrDSoODigPKA8oDygPKCoNDwABBSsNKg4OKCoNKw0OKA8oDygPKA8oKw0PAAErKw0qDg4oKw0rDQ4oDygPKA8oDygqDg4AAQUrDSsODigrDCsNDigPKA8oDygPKCsNAA0FAA=="
+  }
+}

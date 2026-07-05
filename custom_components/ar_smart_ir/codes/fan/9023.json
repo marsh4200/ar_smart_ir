@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Vornado",
+  "supportedModels": [
+    "Vornado"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBjACoNKg4OKSoOKg4OKg4pDykPKQ8pDykq6ioNKg4OKSoOKg4NKQ4pDioOKQ4pDikqAAEPKw0qDg4pKg4pDg4pDykPKQ8pDykOKSvqKw0qDg4pKg0qDg4qDikPKQ4pDioNKQANBQAAAAAAAAAAAA==",
+    "speed_cycle": "JgBnAC0LKw4NKikOKQ4OKQ8pDykPKQ8pKg4OAAEGKg0qDg0pKw0qDg4qDikOKQ8pDykqDQ8AASoqDSoODioqDioODSoNKQ4pDikOKikODgABBioNKg4OKSoOKQ4OKg4qDikPKQ8pKg4ADQUAAAAAAA=="
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manufacturer": "Brandson",
+  "supportedModels": [
+    "Fan 304997"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "toggleMode": true,
+  "speed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "commands": {
+    "power": "JgBNAAYSKg4qDg4pKg4qDw0pDioOKQ4pDikOKSrWBhAqDioODikqDykODikOKg4pDikOKQ4pKuwqDioPDSkqDykPDSkOKg4pDikOKg4pAA0FAAAAAAAAAAAAAAAAAAAA",
+    "speed_cycle": "JgBNACoOKg8NKikPKQ8NKg0qDSoNKg4qKQ8NAAEHKg4qDw0qKQ8pDw0qDSoNKQ4qDSopDw4AAQcqDykPDSopDykPDSoNKg0qDSoOKikPAA0FAAAAAAAAAAAAAAAAAAAA"
+  }
+}
