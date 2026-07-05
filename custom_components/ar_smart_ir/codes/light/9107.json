@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Tridonic",
+  "supportedModels": [
+    "REMOTECONTROL IR6"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgAJACAZPDgfGwANBQAAAA==",
+    "off": "JgALAB8cPTcfGx4cAA0FAA==",
+    "brighten": "JgALACAaPTcgGiAaAA0FAA=="
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "FlarX",
+  "supportedModels": [
+    "FlarX"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": false,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBHAAABKZcUNhQRFDcUERQ3FBEUNxQRFBEUNxQRFDcUERQ3FBEUNhQ3FBEUNhQRFBEUNxQRFDYUERQ3FBEVNhQ3FBEUNxQRAA0FAAAAAAA=",
+    "off": "JgBHAAABKZcUNxQRFDcUERQ2FBEUNxQRFBEVNhQRFDYUERQ3FBEUNhQ3FBEUNxQ2FBEUNxQRFBEUERQ3FBEUERQ2FBEUNxQ2AA0FAAAAAAA="
+  }
+}

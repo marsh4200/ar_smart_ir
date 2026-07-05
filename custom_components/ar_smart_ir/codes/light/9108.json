@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Tridonic",
+  "supportedModels": [
+    "basicDIM DCG PROGRAMMER"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgAYAB0dOjodHR0dOjodHR0dHR06HR06HQANBQAAAAA=",
+    "off": "JgAWAB0dOjodHR0dOjodHR0dHR06OjoADQUAAAAAAAA=",
+    "brighten": "JgAYAB0dOjodHR0dOjodHR0dHR0dHTo6HQANBQAAAAA="
+  }
+}

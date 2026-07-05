@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Panasonic",
+  "supportedModels": [
+    "PBUM11070 RGB Bulb 7w"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "brightness": true,
+  "colorTemperature": false,
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISNxI3EhISEhISEhISEhI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgANBQAAAAA=",
+    "brighten": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}
