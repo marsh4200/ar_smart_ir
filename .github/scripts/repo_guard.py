@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Repo guard checks for PRs: protected paths, brand assets, file hygiene,
 duplicate codesets. Usage: repo_guard.py <changed-files-list> <is_maintainer>"""
-import json, os, struct, sys, base64, glob
+import json, os, struct, sys, glob
 
 CODES_DIR = "custom_components/ar_smart_ir/codes"
 BRAND_DIR = "custom_components/ar_smart_ir/brand"
