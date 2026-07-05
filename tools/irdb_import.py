@@ -189,7 +189,7 @@ def main() -> int:
     os.makedirs(args.out, exist_ok=True)
     brand_filter = {b.strip().lower() for b in args.brands.split(",") if b.strip()}
 
-    print(f"Fetching irdb index ...", flush=True)
+    print("Fetching irdb index ...", flush=True)
     index = load_index()
     dt = args.device_type.strip().lower()
     by_brand: dict[str, list[tuple[str, str]]] = defaultdict(list)
