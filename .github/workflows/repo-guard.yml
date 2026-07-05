@@ -1,0 +1,28 @@
+name: Repo guard
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: List changed files
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          git diff --name-only --diff-filter=ACMR \
+            origin/${{ github.base_ref }} HEAD > /tmp/changed.txt
+          cat /tmp/changed.txt
+      - name: Run guard checks
+        env:
+          IS_MAINTAINER: ${{ github.event.pull_request.user.login == github.repository_owner }}
+        run: python .github/scripts/repo_guard.py /tmp/changed.txt "$IS_MAINTAINER"
