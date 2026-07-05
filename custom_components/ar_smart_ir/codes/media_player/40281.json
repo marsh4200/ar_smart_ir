@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Gigabyte",
+  "supportedModels": [
+    "AORUS Monitor"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxI3EjcSEhISEjcSNxISEhISEhISEjcSNxISEhISNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSNxISEjcSEhI3EjcSEhISEhISNxISEjcSEhISEjcSNxI3EgANBQAAAAA="
+  }
+}

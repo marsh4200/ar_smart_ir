@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Toshiba",
+  "supportedModels": [
+    "Ct-8563"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAYAB0dOh0dHR0dHR0dOjo6Oh0dHR0dHQANBQAAAAA=",
+    "volumeDown": "JgAYAB0dOh0dHR0dHR0dOjo6Oh0dHR06HQANBQAAAAA=",
+    "mute": "JgAYAB0dOh0dHR0dHR0dOjodHTodHTo6HQANBQAAAAA=",
+    "on": "JgAYAB0dOh0dHR0dHR0dOjodHTodHTodHQANBQAAAAA=",
+    "off": "JgAYAB0dOh0dHR0dHR0dOjodHTodHTodHQANBQAAAAA="
+  }
+}

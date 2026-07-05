@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Strong",
+  "supportedModels": [
+    "TVD221 B1825"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

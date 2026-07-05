@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Sencor",
+  "supportedModels": [
+    "25801"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxI3EjcSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEjcSEhISEjcSEhISEhISNxISEjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxI3EjcSEhI3EhISEhISEhISEhISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA="
+    }
+  }
+}

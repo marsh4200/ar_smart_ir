@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Hisense",
+  "supportedModels": [
+    "ER22601A"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAzACAYIBg6Gh4ZHhkfGR8ZHzQ7Gh4aHhoeAAsNHxkfGjoaHhoeGh4aHhoeNToaHhoeGgANBQAAAAAAAAAAAA==",
+    "volumeDown": "JgBNAB8ZPBggGB4ZHhkeGR4aHjY6Gh4aHjUeAArwHRo6Gh4aHhoeGh4aHhoeNToaHhoeNR4ACvAdGjoaHhoeGh4aHhoeGh41OhoeGh41AA0FAAAAAAAAAAAAAAAAAAAA",
+    "nextChannel": "JgAzAB8ZIBg7GR4ZHhkeGR42OhoeGh4aHhoeAAsQHRoeGjoaHhoeGh4aHjU6Gh4aHhoeGgANBQAAAAAAAAAAAA==",
+    "previousChannel": "JgBNACAYOhoeGR4ZHhkeGR41OxoeGh4aHjUeAAr0Hhk6Gh4aHhoeGh4aHjU6Gh4aHhoeNR4ACvQeGToaHhoeGh4aHhoeNToaHhoeGh41AA0FAAAAAAAAAAAAAAAAAAAA",
+    "on": "JgBNACAYOhoeGh0aHRodGh0aHRoeNR4aOhoeAAsLHho6Gh4aHhoeGh4aHhoeGx01Hho6Gx0ACwseGjoaHhoeGh4aHhoeGh4aHjUeGjobAA0FAAAAAAAAAAAAAAAAAAAA",
+    "off": "JgBNACAYOhoeGh0aHRodGh0aHRoeNR4aOhoeAAsLHho6Gh4aHhoeGh4aHhoeGx01Hho6Gx0ACwseGjoaHhoeGh4aHhoeGh4aHjUeGjobAA0FAAAAAAAAAAAAAAAAAAAA",
+    "sources": {
+      "Source": "JgAaAB0dOh0dHR0dHR0dHR06HR0dHTodHR0dAA0FAAA="
+    }
+  }
+}

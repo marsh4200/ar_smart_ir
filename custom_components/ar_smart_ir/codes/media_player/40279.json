@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Apex",
+  "supportedModels": [
+    "LE4643T"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "on": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSEhISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSEhISEjcSEhI3EhISEhISEhISNxISEjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEhISEhISEjcSNxI3EjcSNxI3EjcSEhI3EjcSEhISEjcSEhI3EhISEhISEjcSNxISEjcSEhI3EgANBQAAAAA="
+    }
+  }
+}

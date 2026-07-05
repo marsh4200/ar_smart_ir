@@ -1,0 +1,19 @@
+{
+  "manufacturer": "Kendo",
+  "supportedModels": [
+    "CP20M36VT"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAaAB0dOh0dHR0dHR0dHR0dHTo6HR0dHR0dAA0FAAA=",
+    "volumeDown": "JgAaAB0dOh0dHR0dHR0dHR0dHTo6HR0dHTodAA0FAAA=",
+    "mute": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOjodAA0FAAA=",
+    "on": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "off": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "sources": {
+      "AV": "JgAaAB0dOh0dHR0dHR0dHR06HR0dHTodHR0dAA0FAAA=",
+      "TV": "JgAcAB0dOh0dHR0dHR0dHR06HR0dHR0dHR0dHR0ADQU="
+    }
+  }
+}

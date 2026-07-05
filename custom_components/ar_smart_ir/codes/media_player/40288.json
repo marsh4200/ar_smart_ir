@@ -1,0 +1,22 @@
+{
+  "manufacturer": "ViewSonic",
+  "supportedModels": [
+    "VT2645"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAaAB0dOh0dHR0dHR0dHR0dHTo6HR0dHR0dAA0FAAA=",
+    "volumeDown": "JgAaAB0dOh0dHR0dHR0dHR0dHTo6HR0dHTodAA0FAAA=",
+    "mute": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOjodAA0FAAA=",
+    "nextChannel": "JgAaAB0dOh0dHR0dHR0dHR06Oh0dHR0dHR0dAA0FAAA=",
+    "previousChannel": "JgAaAB0dOh0dHR0dHR0dHR06Oh0dHR0dHTodAA0FAAA=",
+    "on": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "off": "JgAaAB0dOh0dHR0dHR0dHR0dHR0dOh0dOh0dAA0FAAA=",
+    "sources": {
+      "HDMI": "JgAaAB0dOh0dHR0dHR0dHR06HR0dHTodHR0dAA0FAAA=",
+      "AV": "JgAaAB0dOh0dHR0dHR0dHR06HR0dHTodHTodAA0FAAA=",
+      "Source": "JgAYAB0dOh0dHR0dHR0dHR06Ojo6HR0dHQANBQAAAAA="
+    }
+  }
+}

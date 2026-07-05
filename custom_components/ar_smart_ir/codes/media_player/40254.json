@@ -1,0 +1,13 @@
+{
+  "manufacturer": "Sweex",
+  "supportedModels": [
+    "Generic Monitor"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxI3EhISEhISEjcSEhISEhISEhI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSNxISEhISEhISEhISEhISEhISNxI3EjcSNxI3EjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

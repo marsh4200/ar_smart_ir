@@ -1,0 +1,14 @@
+{
+  "manufacturer": "Hisense",
+  "supportedModels": [
+    "RokuTV"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEhISEhISEhISNxI3EhISEhISEhISNxI3EhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "mute": "JgBIAAABKJQSEhISEjcSEhISEhISEhISEjcSNxISEjcSNxI3EjcSNxI3EhISEhI3EhISEhISEhISEhI3EjcSEhI3EjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEhISEhI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EjcSEhISEhISEhI3EjcSEhI3EhISEhISEhISEhI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA="
+  }
+}

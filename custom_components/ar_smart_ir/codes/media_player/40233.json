@@ -1,0 +1,17 @@
+{
+  "manufacturer": "Telekom",
+  "supportedModels": [
+    "Entertain"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgAbAAsUCgkVCQoUCwkVExUTCwkVEwoJFQoKEwANBQA=",
+    "volumeDown": "JgAZAAsVCgkVCQoTCwkVExUTCwkVExUTFRMADQUAAAA=",
+    "mute": "JgAZAAsUCgkVCgoUCwkVExUUFRMVEwoKFRMADQUAAAA=",
+    "nextChannel": "JgAzAAsVCQkVCQoTCwoUExUTCwkVExUTCgkVAAuKCxQKChUJChQLCRUTFRMLCRUTFRMKCQANBQAAAAAAAAAAAA==",
+    "previousChannel": "JgAZAAsUCgoVCQoUCwkVExUTCwkVExUKChMADQUAAAA=",
+    "on": "JgAbAAsUCwkVCgoTCgkVFBUTCgkKCRUTFQoKEwANBQA=",
+    "off": "JgAbAAsUCwkVCgoTCgkVFBUTCgkKCRUTFQoKEwANBQA="
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "manufacturer": "TCL",
+  "supportedModels": [
+    "32S327"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxI3EjcSNxI3EhISEhISEhISEhISEhISEhI3EjcSNxI3EgANBQAAAAA=",
+    "volumeDown": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxISEhISEhISEjcSEhISEhISNxI3EjcSNxISEjcSNxI3EgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhI3EhISNxISEjcSNxI3EjcSNxI3EhISEhISEjcSNxI3EjcSNxISEjcSEhISEhISEhISEhISNxISEjcSNxI3EgANBQAAAAA="
+  }
+}

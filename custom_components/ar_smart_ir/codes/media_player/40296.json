@@ -1,0 +1,14 @@
+{
+  "manufacturer": "PrismPlus",
+  "supportedModels": [
+    "PrismPlus"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "volumeUp": "JgBGAJSUEhISNxI3EjcSEhISEhISEhISEjcSNxI3EhISEhISEhISEhISEjcSEhI3EhISEhISEjcSNxISEjcSEhI3EjcSNxIADQUAAAAAAAA=",
+    "mute": "JgBGAJSUEhISNxI3EjcSEhISEhISEhISEjcSNxI3EhISEhISEhISNxISEjcSNxISEhISEhISEhISNxISEhISNxI3EjcSNxIADQUAAAAAAAA=",
+    "on": "JgBGAJSUEhISNxI3EjcSEhISEhISEhISEjcSNxI3EhISEhISEhISEhISEjcSNxISEhISEhISEjcSNxISEhISNxI3EjcSNxIADQUAAAAAAAA=",
+    "off": "JgBGAJSUEhISNxI3EjcSEhISEhISEhISEjcSNxI3EhISEhISEhISEhISEjcSNxISEhISEhISEjcSNxISEhISNxI3EjcSNxIADQUAAAAAAAA="
+  }
+}

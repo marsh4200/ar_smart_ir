@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Blitzwolf",
+  "supportedModels": [
+    "BWPCM2"
+  ],
+  "supportedController": "Broadlink",
+  "commandsEncoding": "Base64",
+  "commands": {
+    "mute": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxI3EjcSNxI3EhISNxISEjcSEhISEhISEhI3EhISNxISEgANBQAAAAA=",
+    "on": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxI3EhISEhI3EhISNxI3EjcSEhI3EjcSEhI3EhISEhISEgANBQAAAAA=",
+    "off": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxI3EhISEhI3EhISNxI3EjcSEhI3EjcSEhI3EhISEhISEgANBQAAAAA=",
+    "sources": {
+      "Source": "JgBIAAABKJQSEhISEhISEhISEjcSEhI3EjcSNxI3EhISNxI3EhISNxISEhISEhISEhISNxISEjcSNxI3EjcSNxI3EhISNxISEgANBQAAAAA="
+    }
+  }
+}
