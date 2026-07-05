@@ -46,6 +46,9 @@
           "test_device": "Send test command instead of saving"
         }
       }
+    },
+    "error": {
+      "test_failed": "The test command could not be sent. Check the controller selection and controller data."
     }
   },
   "options": {
@@ -84,10 +87,9 @@
           "go_back": "Go back to options"
         }
       }
+    },
+    "error": {
+      "learn_failed": "IR learning failed. Check the Broadlink/LinkNLink remote entity and try again."
     }
-  },
-  "error": {
-    "test_failed": "The test command could not be sent. Check the controller selection and controller data.",
-    "learn_failed": "IR learning failed. Check the Broadlink/LinkNLink remote entity and try again."
   }
 }

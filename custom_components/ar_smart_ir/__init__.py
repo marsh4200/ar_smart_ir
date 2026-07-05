@@ -288,6 +288,9 @@ async def _async_handle_learn_command(call: ServiceCall) -> None:
 
 # ── integration lifecycle ─────────────────────────────────────────────────────
 
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
+
+
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up AR Smart IR component."""
     return True

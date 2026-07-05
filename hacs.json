@@ -2,6 +2,5 @@
   "name": "AR Smart IR",
   "content_in_root": false,
   "render_readme": true,
-  "domains": ["ar_smart_ir"],
   "homeassistant": "2026.4.0"
 }
