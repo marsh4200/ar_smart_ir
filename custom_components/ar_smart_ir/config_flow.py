@@ -141,13 +141,23 @@ def _optional_entity_field(config_key: str, data: dict[str, Any]):
 
 
 def _controller_data_field(controller: str):
-    if controller == "ESPHome":
-        return str
-    if controller in ["Broadlink", "LinkNLink", "Xiaomi", "Tuya"]:
+    # Broadlink, LinkNLink and Xiaomi always target a Home Assistant
+    # remote.* entity, so an entity picker is the correct input.
+    if controller in ["Broadlink", "LinkNLink", "Xiaomi"]:
         return selector.EntitySelector(
             selector.EntitySelectorConfig(domain="remote")
         )
-    return str
+    # Everything else takes free text: an MQTT `/set` topic (MQTT/UFOR11),
+    # a service name or JSON config (ESPHome), an IP address (LOOKin), or a
+    # JSON config / remote entity_id (Tuya). Tuya previously used a
+    # remote-domain entity picker, which showed no usable input at all when
+    # no remote.* entity existed (e.g. Zigbee2MQTT blasters) and could not
+    # accept the JSON configs TuyaController supports. An explicit
+    # TextSelector is also used instead of a bare `str` schema type so the
+    # text box always renders in the frontend (issue #24).
+    return selector.TextSelector(
+        selector.TextSelectorConfig(multiline=False)
+    )
 
 
 def _normalize_controller_target(data: dict[str, Any]) -> None:

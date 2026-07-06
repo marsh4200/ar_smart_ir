@@ -55,7 +55,7 @@
       },
       "name": {
         "title": "Entity details",
-        "description": "Finish setting up your SmartIR device.\n\nFor MQTT and UFO-R11 (Moes/Tuya ZS06) IR blasters via Zigbee2MQTT, enter the `/set` topic such as `zigbee2mqtt/ufo_r11/set`. For Infrared, choose an existing Home Assistant `infrared.*` emitter entity.\n\nTest status: {status}",
+        "description": "Finish setting up your SmartIR device.\n\nFor MQTT and UFO-R11 (Moes/Tuya ZS06) IR blasters via Zigbee2MQTT, enter the `/set` topic such as `zigbee2mqtt/ufo_r11/set`. For Tuya blasters, enter a `remote.*` entity id, or a JSON config with mode `cloud` (needs `remote_id`) or mode `localtuya` (needs `entity_id` and `dp`). For Infrared, choose an existing Home Assistant `infrared.*` emitter entity.\n\nTest status: {status}",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
@@ -77,7 +77,7 @@
     "step": {
       "init": {
         "title": "SmartIR options",
-        "description": "Update the UI-configured SmartIR entity and adjust repeat timing for a selected command.\n\nFor MQTT and UFO-R11 (Moes/Tuya ZS06) IR blasters via Zigbee2MQTT, enter the `/set` topic such as `zigbee2mqtt/ufo_r11/set`. For Infrared, choose an existing Home Assistant `infrared.*` emitter entity. Native infrared receiver learning is not supported here yet.",
+        "description": "Update the UI-configured SmartIR entity and adjust repeat timing for a selected command.\n\nFor MQTT and UFO-R11 (Moes/Tuya ZS06) IR blasters via Zigbee2MQTT, enter the `/set` topic such as `zigbee2mqtt/ufo_r11/set`. For Tuya blasters, enter a `remote.*` entity id or a JSON config. For Infrared, choose an existing Home Assistant `infrared.*` emitter entity. Native infrared receiver learning is not supported here yet.",
         "data": {
           "name": "Name",
           "controller_data": "Controller data / service name",
