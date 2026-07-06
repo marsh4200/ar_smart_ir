@@ -1,0 +1,103 @@
+name: Bug Report
+description: Report a problem with the AR Smart IR integration
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill in as much detail as possible — it makes it much faster to track down the problem.
+
+  - type: input
+    id: integration_version
+    attributes:
+      label: AR Smart IR version
+      description: Found in HACS, or in Settings → Devices & Services → AR Smart IR.
+      placeholder: "e.g. 1.3.3"
+    validations:
+      required: true
+
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      description: Found in Settings → About.
+      placeholder: "e.g. 2026.6.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: controller
+    attributes:
+      label: Controller type
+      description: Which controller are you using with the integration?
+      options:
+        - Broadlink
+        - Xiaomi
+        - MQTT
+        - UFO-R11 (Zigbee2MQTT)
+        - LinkNLink
+        - Tasmota
+        - ESPHome
+        - Other / Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Device type affected
+      multiple: true
+      options:
+        - Climate (AC)
+        - Fan
+        - Media Player
+        - Light
+        - Other / Not sure
+    validations:
+      required: false
+
+  - type: input
+    id: codeset
+    attributes:
+      label: Codeset / device code file
+      description: If the problem relates to a specific device, which codeset file are you using?
+      placeholder: "e.g. climate/1180.json"
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you experiencing?
+      description: Describe what happened and what you expected to happen instead.
+      placeholder: "e.g. The AC turns on but temperature changes are not sent..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Set up device with codeset ...
+        2. Press ...
+        3. See error ...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: |
+        Paste any relevant errors from Settings → System → Logs. To get debug logs, add this to configuration.yaml and restart:
+        ```yaml
+        logger:
+          logs:
+            custom_components.ar_smart_ir: debug
+        ```
+      render: text
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Device configuration
+      description: How is the device configured? (Config flow options, YAML, etc. — remove anything sensitive)
+      render: yaml

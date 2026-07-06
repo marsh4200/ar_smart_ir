@@ -1,0 +1,50 @@
+name: Codeset Request
+description: Request support for a device that has no codeset yet
+title: "[Codeset]: "
+labels: ["codeset-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requesting codes for a device that isn't in the database yet? Fill in the details below. If you have the AR Smart IR Builder installed, you can also capture and submit codes yourself directly from the Builder panel.
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      placeholder: "e.g. Samsung"
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: Device model
+      placeholder: "e.g. AR12TXHQASINEU"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device_type
+    attributes:
+      label: Device type
+      options:
+        - Climate (AC)
+        - Fan
+        - Media Player / TV
+        - Light
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: remote_model
+    attributes:
+      label: Remote model number (if known)
+      placeholder: "e.g. DB93-14195A"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional details
+      description: Anything else that might help — similar models that work, links to the remote, captured codes you already have, etc.
