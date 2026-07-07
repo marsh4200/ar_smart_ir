@@ -141,20 +141,21 @@ def _optional_entity_field(config_key: str, data: dict[str, Any]):
 
 
 def _controller_data_field(controller: str):
-    # Broadlink, LinkNLink and Xiaomi always target a Home Assistant
-    # remote.* entity, so an entity picker is the correct input.
-    if controller in ["Broadlink", "LinkNLink", "Xiaomi"]:
-        return selector.EntitySelector(
-            selector.EntitySelectorConfig(domain="remote")
-        )
-    # Everything else takes free text: an MQTT `/set` topic (MQTT/UFOR11),
-    # a service name or JSON config (ESPHome), an IP address (LOOKin), or a
-    # JSON config / remote entity_id (Tuya). Tuya previously used a
-    # remote-domain entity picker, which showed no usable input at all when
-    # no remote.* entity existed (e.g. Zigbee2MQTT blasters) and could not
-    # accept the JSON configs TuyaController supports. An explicit
-    # TextSelector is also used instead of a bare `str` schema type so the
-    # text box always renders in the frontend (issue #24).
+    # Controller data is always a free-text box, for every controller.
+    #
+    # It previously used a remote-domain EntitySelector for Broadlink /
+    # LinkNLink / Xiaomi. That entity picker only accepts existing entities,
+    # so in the options flow — where the controller dropdown and this field
+    # share one screen — switching to a text-based controller (MQTT / UFOR11 /
+    # Tuya / ESPHome / LOOKin) left the old picker in place until the next
+    # submit. Pasting an MQTT topic such as "zigbee2mqtt/ufo_r11/set" then
+    # returned "no entities found", because a topic is not an entity.
+    #
+    # A TextSelector accepts anything: a remote.* entity_id (Broadlink family),
+    # an MQTT "/set" topic (MQTT / UFOR11), a service name or JSON config
+    # (ESPHome), an IP address (LOOKin), or a JSON / remote entity_id (Tuya).
+    # It also always renders in the frontend, unlike a bare `str` schema type
+    # (issue #24).
     return selector.TextSelector(
         selector.TextSelectorConfig(multiline=False)
     )
