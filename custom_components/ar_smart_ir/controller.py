@@ -41,6 +41,7 @@ import asyncio
 import binascii
 import json
 import logging
+import re
 from abc import ABC, abstractmethod
 from base64 import b64decode, b64encode
 
@@ -90,6 +91,34 @@ UFOR11_COMMANDS_ENCODING = ALL_ENCODINGS
 # Default IR carrier frequency (Hz). Can be overridden per-controller via
 # controller_data when the user knows their device uses something different.
 DEFAULT_IR_FREQUENCY_HZ = 38000
+
+# Payload property Zigbee2MQTT exposes on Tuya IR blasters (UFO-R11 / ZS06).
+Z2M_IR_PAYLOAD_KEY = "ir_code_to_send"
+
+
+def _looks_like_mqtt_topic(value) -> bool:
+    """True if ``value`` is an MQTT topic rather than a HA entity_id.
+
+    Home Assistant entity_ids are ``<domain>.<object_id>`` and never contain a
+    ``/``. MQTT topics (e.g. ``zigbee2mqtt/ufo_r11/set``) always do. The
+    UFO-R11 *is* a Tuya device, so users naturally pick the "Tuya" controller
+    and enter its ``/set`` topic; this lets the Tuya controller recognise that
+    and route over MQTT instead of shoving the topic into
+    ``remote.send_command``'s entity_id (issue #25).
+    """
+    return isinstance(value, str) and "/" in value
+
+
+def _looks_like_entity_id(value) -> bool:
+    """Permissive check that ``value`` resembles a HA entity_id.
+
+    Deliberately lenient so it never rejects a legitimate entity_id: requires a
+    single dot, no slash and no whitespace, and non-empty halves.
+    """
+    if not isinstance(value, str):
+        return False
+    value = value.strip()
+    return bool(re.fullmatch(r"[^./\s]+\.[^./\s]+", value))
 
 
 # ── factory ─────────────────────────────────────────────────────────────────
@@ -813,6 +842,14 @@ class InfraredController(AbstractController):
 #         Falls back to remote.send_command with the Tuya-Base64 string —
 #         useful for blueprint-style remotes from third-party Tuya
 #         integrations that present a standard remote.send_command interface.
+#
+#         If the plain string is instead an MQTT topic (contains "/", e.g.
+#         "zigbee2mqtt/ufo_r11/set"), it is treated as a Zigbee2MQTT Tuya
+#         blaster and the code is published over mqtt.publish as
+#         {"ir_code_to_send": "<tuya-b64>"} — the same wire format as the
+#         UFOR11 controller. This means a user who picks "Tuya" for their
+#         UFO-R11 (a Tuya device) and enters its /set topic just works,
+#         instead of hitting an entity_id validation error (issue #25).
 
 class TuyaController(AbstractController):
     def check_encoding(self, encoding):
@@ -898,6 +935,43 @@ class TuyaController(AbstractController):
 
             else:  # mode == "remote" — pass-through to remote.send_command
                 entity_id = target.get("entity_id", self._controller_data)
+
+                # A Zigbee2MQTT Tuya blaster (UFO-R11 / ZS06) is a Tuya device,
+                # so users commonly select the "Tuya" controller and enter its
+                # "zigbee2mqtt/<name>/set" topic. That is an MQTT topic, not a
+                # HA entity_id — publish the Tuya code over MQTT (exactly like
+                # the UFOR11 controller) instead of calling remote.send_command,
+                # which would otherwise raise "not a valid value for dictionary
+                # value @ data['entity_id']" (issue #25).
+                if _looks_like_mqtt_topic(entity_id):
+                    payload = json.dumps({Z2M_IR_PAYLOAD_KEY: tuya_b64})
+                    service_data = {
+                        "topic": entity_id.strip(),
+                        "payload": payload,
+                        "qos": 0,
+                        "retain": False,
+                    }
+
+                    async def publish_once():
+                        await self.hass.services.async_call(
+                            "mqtt", "publish", service_data
+                        )
+
+                    await self._repeat_with_delay(
+                        publish_once, repeat_count, repeat_delay_secs
+                    )
+                    return
+
+                if not _looks_like_entity_id(entity_id):
+                    raise Exception(
+                        f"Tuya controller target '{entity_id}' is not a valid "
+                        "remote entity_id. For a Zigbee2MQTT IR blaster enter "
+                        "its MQTT '/set' topic (e.g. "
+                        "'zigbee2mqtt/ufo_r11/set'); for a remote.* device "
+                        "enter its entity_id (e.g. 'remote.living_room'); or "
+                        "use a JSON config for cloud/localtuya."
+                    )
+
                 service_data = {
                     ATTR_ENTITY_ID: entity_id,
                     "command": tuya_b64,
