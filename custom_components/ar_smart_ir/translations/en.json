@@ -36,7 +36,8 @@
         "description": "Finish setting up your SmartIR device.\n\nFor MQTT and UFO-R11 (Moes/Tuya ZS06) IR blasters via Zigbee2MQTT, enter the `/set` topic such as `zigbee2mqtt/ufo_r11/set`. For Tuya blasters, enter a `remote.*` entity id, or a JSON config with mode `cloud` (needs `remote_id`) or mode `localtuya` (needs `entity_id` and `dp`). For Infrared, choose an existing Home Assistant `infrared.*` emitter entity.\n\nTest status: {status}",
         "data": {
           "name": "Name",
-          "controller_data": "Controller data / service name",
+          "controller_data": "MQTT topic / service name",
+          "controller_entity": "Remote entity (remote.*)",
           "infrared_entity": "Infrared emitter",
           "delay": "Delay between commands",
           "temperature_sensor": "Temperature sensor",
@@ -48,7 +49,9 @@
       }
     },
     "error": {
-      "test_failed": "The test command could not be sent. Check the controller selection and controller data."
+      "test_failed": "The test command could not be sent. Check the controller selection and controller data.",
+      "controller_target_conflict": "Enter a remote entity OR an MQTT topic / service name — not both.",
+      "required": "Choose a remote entity or enter an MQTT topic / service name."
     }
   },
   "options": {
@@ -58,7 +61,8 @@
         "description": "Update the UI-configured SmartIR entity, adjust repeat timing, or build a multi-step sequence for a selected command.\n\nFor MQTT and UFO-R11 (Moes/Tuya ZS06) IR blasters via Zigbee2MQTT, enter the `/set` topic such as `zigbee2mqtt/ufo_r11/set`. For Tuya blasters, enter a `remote.*` entity id or a JSON config. For Infrared, choose an existing Home Assistant `infrared.*` emitter entity. Native infrared receiver learning is not supported here yet.",
         "data": {
           "name": "Name",
-          "controller_data": "Controller data / service name",
+          "controller_data": "MQTT topic / service name",
+          "controller_entity": "Remote entity (remote.*)",
           "infrared_entity": "Infrared emitter",
           "delay": "Delay between commands",
           "temperature_sensor": "Temperature sensor",
@@ -89,7 +93,9 @@
       }
     },
     "error": {
-      "learn_failed": "IR learning failed. Check the Broadlink/LinkNLink remote entity and try again."
+      "learn_failed": "IR learning failed. Check the Broadlink/LinkNLink remote entity and try again.",
+      "controller_target_conflict": "Enter a remote entity OR an MQTT topic / service name — not both.",
+      "required": "Choose a remote entity or enter an MQTT topic / service name."
     }
   }
 }

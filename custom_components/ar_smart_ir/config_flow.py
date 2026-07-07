@@ -14,6 +14,7 @@ from .const import (
     CONF_COMMAND_OVERRIDES,
     CONF_CONTROLLER,
     CONF_CONTROLLER_DATA,
+    CONF_CONTROLLER_ENTITY,
     CONF_DELAY,
     CONF_DEVICE_CLASS,
     CONF_DEVICE_CODE,
@@ -140,24 +141,89 @@ def _optional_entity_field(config_key: str, data: dict[str, Any]):
     return vol.Optional(config_key)
 
 
+def _optional_entity_key(config_key: str, value: Any):
+    # An EntitySelector rejects an empty-string default ("Entity is neither a
+    # valid entity ID nor a valid UUID"), so only set a default when we have a
+    # real value; otherwise leave the field truly optional/empty.
+    if isinstance(value, str):
+        value = value.strip()
+    if value:
+        return vol.Optional(config_key, default=value)
+    return vol.Optional(config_key)
+
+
+# Which kind of target each controller accepts.
+#   - REMOTE: a Home Assistant remote.* entity (remote.send_command).
+#   - TEXT:   free text — an MQTT "/set" topic, a service name, an IP, or JSON.
+# Tuya is in both: a UFO-R11 is a Tuya device you can drive either via a
+# remote.* entity OR by publishing to its Zigbee2MQTT topic, so it gets both
+# inputs and the user fills whichever applies. Infrared is handled separately
+# via its own infrared.* entity field.
+REMOTE_TARGET_CONTROLLERS = ("Broadlink", "LinkNLink", "Xiaomi", "Tuya")
+TEXT_TARGET_CONTROLLERS = ("MQTT", "LOOKin", "ESPHome", "Tuya", "UFOR11")
+
+
+def _remote_entity_selector():
+    return selector.EntitySelector(
+        selector.EntitySelectorConfig(domain="remote")
+    )
+
+
 def _controller_data_field(controller: str):
-    # Controller data is always a free-text box, for every controller.
-    #
-    # It previously used a remote-domain EntitySelector for Broadlink /
-    # LinkNLink / Xiaomi. That entity picker only accepts existing entities,
-    # so in the options flow — where the controller dropdown and this field
-    # share one screen — switching to a text-based controller (MQTT / UFOR11 /
-    # Tuya / ESPHome / LOOKin) left the old picker in place until the next
-    # submit. Pasting an MQTT topic such as "zigbee2mqtt/ufo_r11/set" then
-    # returned "no entities found", because a topic is not an entity.
-    #
-    # A TextSelector accepts anything: a remote.* entity_id (Broadlink family),
-    # an MQTT "/set" topic (MQTT / UFOR11), a service name or JSON config
-    # (ESPHome), an IP address (LOOKin), or a JSON / remote entity_id (Tuya).
-    # It also always renders in the frontend, unlike a bare `str` schema type
-    # (issue #24).
+    # Free-text box: accepts an MQTT "/set" topic, a service name / JSON config
+    # (ESPHome), an IP address (LOOKin), or a JSON config (Tuya). An explicit
+    # TextSelector is used instead of a bare `str` schema type so the box
+    # always renders in the frontend (issue #24).
     return selector.TextSelector(
         selector.TextSelectorConfig(multiline=False)
+    )
+
+
+def _looks_like_remote_entity(value: Any) -> bool:
+    return isinstance(value, str) and value.strip().startswith("remote.")
+
+
+def _add_controller_target_fields(
+    schema: dict[Any, Any], controller: str, values: dict[str, Any]
+) -> None:
+    """Add the controller-data input(s) for ``controller`` into ``schema``.
+
+    Broadlink / LinkNLink / Xiaomi get a remote.* entity picker; MQTT / UFOR11 /
+    ESPHome / LOOKin get a text box; Tuya gets both. The two Tuya inputs are
+    folded back into a single ``controller_data`` value by
+    ``_normalize_controller_target`` on submit. Infrared is handled by the
+    caller and never reaches here.
+    """
+    wants_remote = controller in REMOTE_TARGET_CONTROLLERS
+    wants_text = controller in TEXT_TARGET_CONTROLLERS
+    if not wants_remote and not wants_text:
+        wants_text = True  # safe default for any unknown controller
+
+    entity_default = (values.get(CONF_CONTROLLER_ENTITY) or "").strip()
+    data_default = (values.get(CONF_CONTROLLER_DATA) or "").strip()
+
+    # On first load / edit there is only the merged ``controller_data``. If it
+    # is actually a remote entity, surface it in the picker rather than the box.
+    if wants_remote and not entity_default and _looks_like_remote_entity(data_default):
+        entity_default = data_default
+        data_default = ""
+
+    if wants_remote:
+        schema[
+            _optional_entity_key(CONF_CONTROLLER_ENTITY, entity_default)
+        ] = _remote_entity_selector()
+
+    if wants_text:
+        schema[
+            vol.Optional(CONF_CONTROLLER_DATA, default=data_default)
+        ] = _controller_data_field(controller)
+
+
+def _controller_target_conflict(values: dict[str, Any]) -> bool:
+    """True when the user filled both the remote entity and the text box."""
+    return bool(
+        (values.get(CONF_CONTROLLER_ENTITY) or "").strip()
+        and (values.get(CONF_CONTROLLER_DATA) or "").strip()
     )
 
 
@@ -166,11 +232,25 @@ def _normalize_controller_target(data: dict[str, Any]) -> None:
         infrared_entity = data.get(CONF_INFRARED_ENTITY) or data.get(CONF_CONTROLLER_DATA)
         data[CONF_INFRARED_ENTITY] = infrared_entity
         data[CONF_CONTROLLER_DATA] = infrared_entity
+        return
+
+    # Fold the optional remote-entity picker into the single controller_data
+    # value the rest of the integration uses. A genuine both-filled case is
+    # blocked earlier by _controller_target_conflict(); text wins as a fallback.
+    entity = (data.pop(CONF_CONTROLLER_ENTITY, "") or "").strip()
+    text = (data.get(CONF_CONTROLLER_DATA, "") or "").strip()
+    data[CONF_CONTROLLER_DATA] = text or entity
 
 
 def _controller_target_error_key(controller: str) -> str:
     if controller == "Infrared":
         return CONF_INFRARED_ENTITY
+    wants_remote = controller in REMOTE_TARGET_CONTROLLERS
+    wants_text = controller in TEXT_TARGET_CONTROLLERS
+    if wants_remote and wants_text:
+        return "base"  # either field satisfies (Tuya)
+    if wants_remote:
+        return CONF_CONTROLLER_ENTITY
     return CONF_CONTROLLER_DATA
 
 
@@ -332,22 +412,10 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 or current_values.get(CONF_CONTROLLER_DATA)
             )
             data_schema[
-                vol.Optional(
-                    CONF_INFRARED_ENTITY,
-                    default=infrared_default or "",
-                )
+                _optional_entity_key(CONF_INFRARED_ENTITY, infrared_default)
             ] = _infrared_entity_selector()
         else:
-            controller_field = _controller_data_field(controller)
-            if CONF_CONTROLLER_DATA in current_values:
-                data_schema[
-                    vol.Optional(
-                        CONF_CONTROLLER_DATA,
-                        default=current_values[CONF_CONTROLLER_DATA],
-                    )
-                ] = controller_field
-            else:
-                data_schema[vol.Optional(CONF_CONTROLLER_DATA)] = controller_field
+            _add_controller_target_fields(data_schema, controller, current_values)
 
         if platform == "climate":
             data_schema[
@@ -546,14 +614,21 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 if key != CONF_TEST_DEVICE
             }
 
+            if user_input.get(CONF_GO_BACK):
+                return await self.async_step_controller()
+
             data[CONF_DEVICE_CODE] = int(data[CONF_DEVICE_CODE])
             data[CONF_DELAY] = float(data.get(CONF_DELAY, DEFAULT_DELAY))
 
             data["controller"] = controller
-            _normalize_controller_target(data)
 
-            if user_input.get(CONF_GO_BACK):
-                return await self.async_step_controller()
+            if _controller_target_conflict(data):
+                return await self._async_show_name_form(
+                    user_input,
+                    errors={"base": "controller_target_conflict"},
+                )
+
+            _normalize_controller_target(data)
 
             if not data.get(CONF_CONTROLLER_DATA):
                 error_key = _controller_target_error_key(controller)
@@ -667,6 +742,7 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
             if user_input.get(CONF_CONTROLLER) != data.get(CONF_CONTROLLER):
                 updated_data = {**data, **user_input}
                 updated_data[CONF_CONTROLLER_DATA] = ""
+                updated_data.pop(CONF_CONTROLLER_ENTITY, None)
                 updated_data.pop(CONF_INFRARED_ENTITY, None)
                 self._draft_data = updated_data
                 return self.async_show_form(
@@ -685,6 +761,25 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                 )
 
             cleaned_input = dict(user_input)
+
+            if _controller_target_conflict(cleaned_input):
+                errors["base"] = "controller_target_conflict"
+                updated_data = {**data, **cleaned_input}
+                return self.async_show_form(
+                    step_id="init",
+                    data_schema=vol.Schema(
+                        self._build_options_schema(
+                            updated_data,
+                            command_options,
+                            selected_key,
+                            current_repeat,
+                            current_delay,
+                            current_remove,
+                        )
+                    ),
+                    errors=errors,
+                )
+
             _normalize_controller_target(cleaned_input)
 
             if not cleaned_input.get(CONF_CONTROLLER_DATA):
@@ -868,22 +963,14 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
         controller = data.get(CONF_CONTROLLER, CONTROLLERS[0])
         if controller == "Infrared":
             schema[
-                vol.Optional(
+                _optional_entity_key(
                     CONF_INFRARED_ENTITY,
-                    default=(
-                        data.get(CONF_INFRARED_ENTITY)
-                        or data.get(CONF_CONTROLLER_DATA, "")
-                    ),
+                    data.get(CONF_INFRARED_ENTITY)
+                    or data.get(CONF_CONTROLLER_DATA, ""),
                 )
             ] = _infrared_entity_selector()
         else:
-            controller_field = _controller_data_field(controller)
-            schema[
-                vol.Optional(
-                    CONF_CONTROLLER_DATA,
-                    default=data.get(CONF_CONTROLLER_DATA, ""),
-                )
-            ] = controller_field
+            _add_controller_target_fields(schema, controller, data)
 
         if data.get(CONF_PLATFORM) == "climate":
             schema[
