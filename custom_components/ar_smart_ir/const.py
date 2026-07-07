@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 DOMAIN = "ar_smart_ir"
-VERSION = "1.3.5"
+VERSION = "1.4.1"
 
 CONF_PLATFORM = "platform"
 CONF_UNIQUE_ID = "unique_id"
 CONF_DEVICE_CODE = "device_code"
 CONF_CONTROLLER = "controller"
 CONF_CONTROLLER_DATA = "controller_data"
+CONF_CONTROLLER_ENTITY = "controller_entity"
 CONF_INFRARED_ENTITY = "infrared_entity"
 CONF_DELAY = "delay"
 CONF_TEMPERATURE_SENSOR = "temperature_sensor"
