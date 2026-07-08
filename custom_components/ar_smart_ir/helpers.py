@@ -10,9 +10,35 @@ from typing import Any
 _LOGGER = logging.getLogger(__name__)
 COMPONENT_ABS_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# User-editable codeset directory that survives HACS updates.
+# The component lives at <config>/custom_components/ar_smart_ir, so the HA
+# config dir is two levels up. Custom codesets (e.g. exported by AR Smart IR
+# Builder) go in <config>/ar_smart_ir_codes/<platform>/<code>.json and are
+# merged into the catalog on top of the bundled codes.
+CONFIG_ABS_DIR = os.path.abspath(os.path.join(COMPONENT_ABS_DIR, "..", ".."))
+CUSTOM_CODES_ROOT = os.path.join(CONFIG_ABS_DIR, "ar_smart_ir_codes")
+
 
 def get_codes_dir(platform: str) -> str:
     return os.path.join(COMPONENT_ABS_DIR, "codes", platform)
+
+
+def get_custom_codes_dir(platform: str) -> str:
+    return os.path.join(CUSTOM_CODES_ROOT, platform)
+
+
+def _resolve_code_path(platform: str, device_code: int | str) -> str:
+    """Return the path to a codeset, preferring the user custom dir.
+
+    A file in <config>/ar_smart_ir_codes/<platform>/ overrides a bundled code
+    with the same number, so users can patch a shipped codeset without editing
+    the (HACS-managed) integration folder.
+    """
+    filename = f"{device_code}.json"
+    custom = os.path.join(get_custom_codes_dir(platform), filename)
+    if os.path.isfile(custom):
+        return custom
+    return os.path.join(get_codes_dir(platform), filename)
 
 
 COMMAND_META_KEYS = {
@@ -175,7 +201,7 @@ async def async_load_device_data(
     platform: str,
     command_overrides: Any = None,
 ) -> dict[str, Any]:
-    path = os.path.join(get_codes_dir(platform), f"{device_code}.json")
+    path = _resolve_code_path(platform, device_code)
     async with aiofiles.open(path, mode="r") as jfile:
         device_data = json.loads(await jfile.read())
 
@@ -190,38 +216,51 @@ async def async_load_device_data(
 
 
 def load_catalog(platform: str) -> list[dict[str, Any]]:
-    items: list[dict[str, Any]] = []
-    directory = get_codes_dir(platform)
-    if not os.path.isdir(directory):
-        return items
+    # code (str) -> catalog item. Custom dir is scanned last so a user codeset
+    # overrides a bundled one with the same number.
+    by_code: dict[str, dict[str, Any]] = {}
 
-    for filename in sorted(os.listdir(directory)):
-        if not filename.endswith(".json"):
-            continue
-        code = filename[:-5]
-        path = os.path.join(directory, filename)
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except Exception as err:
-            _LOGGER.warning("Skipping invalid SmartIR code file %s: %s", filename, err)
+    for directory, is_custom in (
+        (get_codes_dir(platform), False),
+        (get_custom_codes_dir(platform), True),
+    ):
+        if not os.path.isdir(directory):
             continue
 
-        manufacturer = data.get("manufacturer", "Unknown")
-        models = data.get("supportedModels") or ["Unknown"]
-        model_label = ", ".join(models[:3])
-        if len(models) > 3:
-            model_label += "…"
-        label = f"{code} — {manufacturer} — {model_label}"
-        items.append({
-            "code": code,
-            "manufacturer": manufacturer,
-            "models": models,
-            "label": label,
-            "supported_controller": data.get("supportedController"),
-            "commands_encoding": data.get("commandsEncoding"),
-        })
-    return items
+        for filename in sorted(os.listdir(directory)):
+            if not filename.endswith(".json"):
+                continue
+            code = filename[:-5]
+            # Only integer-named codesets are selectable (config flow casts to
+            # int). This also skips index/sidecar files the builder may drop.
+            if not code.isdigit():
+                continue
+            path = os.path.join(directory, filename)
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception as err:
+                _LOGGER.warning("Skipping invalid SmartIR code file %s: %s", path, err)
+                continue
+
+            manufacturer = data.get("manufacturer", "Unknown")
+            models = data.get("supportedModels") or ["Unknown"]
+            model_label = ", ".join(models[:3])
+            if len(models) > 3:
+                model_label += "…"
+            marker = " ★" if is_custom else ""
+            label = f"{code} — {manufacturer} — {model_label}{marker}"
+            by_code[code] = {
+                "code": code,
+                "manufacturer": manufacturer,
+                "models": models,
+                "label": label,
+                "custom": is_custom,
+                "supported_controller": data.get("supportedController"),
+                "commands_encoding": data.get("commandsEncoding"),
+            }
+
+    return [by_code[c] for c in sorted(by_code, key=lambda x: int(x))]
 
 
 def get_manufacturers(platform: str) -> list[str]:
