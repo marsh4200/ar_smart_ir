@@ -39,3 +39,11 @@ learn_command:
           max: 120
           unit_of_measurement: seconds
           mode: box
+
+import_codes:
+  name: Import codesets
+  description: >-
+    Install any codeset JSON files placed in /config/ar_smart_ir_import/ into the
+    canonical store the add-device list reads from. Runs automatically on start
+    and reload; use this to pick up new files without restarting. Won't overwrite
+    codesets you've already installed or edited.

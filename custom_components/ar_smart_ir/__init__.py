@@ -6,7 +6,7 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall
+from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers import entity_registry as er
@@ -18,6 +18,7 @@ from .helpers import (
     parse_command_overrides,
     set_command_override_at_path,
 )
+from .importer import import_dropins
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -293,6 +294,27 @@ CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up AR Smart IR component."""
+
+    # Materialise anything sitting in the /config/ar_smart_ir_import inbox into
+    # the canonical codeset store. Runs on every HA start and integration
+    # reload; also self-heals codesets that went missing from the store.
+    async def _run_import() -> dict:
+        return await hass.async_add_executor_job(import_dropins)
+
+    await _run_import()
+
+    async def import_codes(call: ServiceCall) -> dict:
+        """Manually trigger a drop-in import without a restart."""
+        return await _run_import()
+
+    if not hass.services.has_service(DOMAIN, "import_codes"):
+        hass.services.async_register(
+            DOMAIN,
+            "import_codes",
+            import_codes,
+            supports_response=SupportsResponse.OPTIONAL,
+        )
+
     return True
 
 
