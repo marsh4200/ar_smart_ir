@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 DOMAIN = "ar_smart_ir"
-VERSION = "1.5.0"
+VERSION = "1.6.0"
 
 CONF_PLATFORM = "platform"
 CONF_UNIQUE_ID = "unique_id"
