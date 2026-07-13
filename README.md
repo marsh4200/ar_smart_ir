@@ -34,6 +34,8 @@ It is designed for users who want a cleaner, more modern SmartIR experience with
 - 📚 Includes a **Broadlink learn service** for saving replacement commands
 - 🔄 Includes command conversion support between **Base64**, **HEX**, **Pronto**, and **Raw** where applicable
 - 🧩 Supports Home Assistant's native **Infrared** emitter entities on HA 2026.4+
+- 🎛️ Optional **AC presets** (Eco, Quiet, Comfort, …) via an optional `presetModes` key in climate codesets
+- 🛑 Optional **Passive mode** for climate — never re-sends unchanged state, letting the AC unit's own thermostat manage temperature
 - ⚡ Updated for newer Home Assistant patterns and compatibility
 
 ---
@@ -232,7 +234,26 @@ HEX
 Pronto
 Raw
 
+🎛️ Climate Presets (optional)
+Climate codesets can optionally declare AC presets (e.g. Eco, Quiet, Comfort on Samsung units) by adding a `presetModes` key. When present, an extra preset level sits between the fan/swing level and the temperatures:
 
+{
+  "presetModes": ["eco", "quiet"],
+  "commands": {
+    "off": "JgBQAAAB...",
+    "cool": {
+      "auto": {
+        "none": { "18": "JgBQ...", "19": "JgBQ..." },
+        "eco":  { "18": "JgBQ...", "19": "JgBQ..." }
+      }
+    }
+  }
+}
+
+The "none" preset holds the standard commands. If a preset is missing at any point in the tree, the integration falls back to "none" (or the flat temperature layout). Existing codesets without `presetModes` are completely unaffected and keep the original format.
+
+🛑 Passive Mode (optional)
+Climate entities have an optional Passive mode toggle in the setup and options flow. When enabled, AR Smart IR never re-sends a command unless something actually changed (mode, fan, swing, preset, or target temperature), and only sends the discrete "on" command when the unit is genuinely being switched on. This lets the AC unit's own built-in thermostat and hysteresis manage the temperature — AR Smart IR only transmits when you make a control change. It is off by default, so existing setups behave exactly as before.
 
 📌 Notes
 This project was originally based on and tested around Broadlink, but support has expanded significantly beyond that

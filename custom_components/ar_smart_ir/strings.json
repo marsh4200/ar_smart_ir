@@ -50,8 +50,13 @@
           "temperature_sensor": "Temperature sensor",
           "humidity_sensor": "Humidity sensor",
           "power_sensor_restore_state": "Restore HVAC state from power sensor",
+          "passive_mode": "Passive mode",
           "device_class": "Media player class",
           "source_names": "Optional source remap JSON / text"
+        },
+        "data_description": {
+          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature.",
+          "power_sensor_restore_state": "When the power sensor turns on, restore the last HVAC mode instead of defaulting to cool."
         }
       },
       "name": {
