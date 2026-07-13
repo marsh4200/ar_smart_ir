@@ -7,7 +7,7 @@ CODES_DIR = "custom_components/ar_smart_ir/codes"
 BRAND_DIR = "custom_components/ar_smart_ir/brand"
 PROTECTED = (".github/", "hacs.json", "LICENSE",
              "custom_components/ar_smart_ir/manifest.json", "tools/")
-MAX_FILE_BYTES = 1_000_000
+MAX_FILE_BYTES = 3_000_000  # large swing-mode climate codesets legitimately exceed 1 MB (largest bundled is ~2.2 MB)
 BRAND_SPEC = {"icon.png": 256, "icon@2x.png": 512,
               "logo.png": 256, "logo@2x.png": 512}
 
