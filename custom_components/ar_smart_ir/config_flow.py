@@ -26,6 +26,7 @@ from .const import (
     CONF_OVERRIDE_REPEAT_COUNT,
     CONF_OVERRIDE_REPEAT_DELAY,
     CONF_PLATFORM,
+    CONF_PASSIVE_MODE,
     CONF_POWER_SENSOR,
     CONF_POWER_SENSOR_RESTORE_STATE,
     CONF_SOURCE_NAMES,
@@ -431,6 +432,12 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 vol.Optional(
                     CONF_POWER_SENSOR_RESTORE_STATE,
                     default=current_values.get(CONF_POWER_SENSOR_RESTORE_STATE, False),
+                )
+            ] = bool
+            data_schema[
+                vol.Optional(
+                    CONF_PASSIVE_MODE,
+                    default=current_values.get(CONF_PASSIVE_MODE, False),
                 )
             ] = bool
 
@@ -986,6 +993,12 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                 vol.Optional(
                     CONF_POWER_SENSOR_RESTORE_STATE,
                     default=data.get(CONF_POWER_SENSOR_RESTORE_STATE, False),
+                )
+            ] = bool
+            schema[
+                vol.Optional(
+                    CONF_PASSIVE_MODE,
+                    default=data.get(CONF_PASSIVE_MODE, False),
                 )
             ] = bool
 

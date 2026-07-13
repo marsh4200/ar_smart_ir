@@ -44,7 +44,11 @@
           "humidity_sensor": "Humidity sensor",
           "go_back": "Go back to controller selection",
           "test_command": "Test command",
-          "test_device": "Send test command instead of saving"
+          "test_device": "Send test command instead of saving",
+          "passive_mode": "Passive mode"
+        },
+        "data_description": {
+          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature."
         }
       }
     },
@@ -78,7 +82,11 @@
           "override_sequence_step_4": "Sequence step 4",
           "override_sequence_step_5": "Sequence step 5",
           "override_remove": "Remove selected override",
-          "learn_command": "Open IR learn wizard (Broadlink / LinkNLink)"
+          "learn_command": "Open IR learn wizard (Broadlink / LinkNLink)",
+          "passive_mode": "Passive mode"
+        },
+        "data_description": {
+          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature."
         }
       },
       "learn": {

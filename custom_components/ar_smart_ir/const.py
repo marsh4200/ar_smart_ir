@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 DOMAIN = "ar_smart_ir"
-VERSION = "1.6.0"
+VERSION = "1.7.0"
 
 CONF_PLATFORM = "platform"
 CONF_UNIQUE_ID = "unique_id"
@@ -15,6 +15,7 @@ CONF_TEMPERATURE_SENSOR = "temperature_sensor"
 CONF_HUMIDITY_SENSOR = "humidity_sensor"
 CONF_POWER_SENSOR = "power_sensor"
 CONF_POWER_SENSOR_RESTORE_STATE = "power_sensor_restore_state"
+CONF_PASSIVE_MODE = "passive_mode"
 CONF_SOURCE_NAMES = "source_names"
 CONF_DEVICE_CLASS = "device_class"
 CONF_COMMAND_OVERRIDES = "command_overrides"
