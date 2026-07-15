@@ -28,6 +28,10 @@ from .const import (
     CONF_POWER_SENSOR,
     CONF_POWER_SENSOR_RESTORE_STATE,
     CONF_TEMPERATURE_SENSOR,
+    CONF_TEMPERATURE_UNIT,
+    TEMPERATURE_UNIT_AUTO,
+    TEMPERATURE_UNIT_CELSIUS,
+    TEMPERATURE_UNIT_FAHRENHEIT,
 )
 from .controller import get_controller
 from .helpers import async_load_device_data
@@ -42,6 +46,10 @@ CONF_DELAY = "delay"
 
 DEFAULT_DELAY = 0.5
 PRESET_NONE = "none"
+
+# No Celsius air-conditioner codeset goes anywhere near this; every Fahrenheit
+# one starts well above it. Used only when a codeset declares no unit at all.
+FAHRENHEIT_INFERENCE_THRESHOLD = 45
 SENSOR_STATES_INVALID = {STATE_UNKNOWN, STATE_UNAVAILABLE, None, ""}
 
 SUPPORT_FLAGS = (
@@ -66,6 +74,53 @@ async def async_setup_entry(hass, entry, async_add_entities):
     entity = SmartIRClimate(hass, config, device_data)
 
     async_add_entities([entity], update_before_add=True)
+
+
+def _normalise_unit(value):
+    """Map a loose unit string onto a UnitOfTemperature, or None."""
+    if value is None:
+        return None
+
+    token = str(value).strip().upper().lstrip("°")
+
+    if token in {"F", "FAHRENHEIT", "DEGF", "\u00b0F"}:
+        return UnitOfTemperature.FAHRENHEIT
+    if token in {"C", "CELSIUS", "CENTIGRADE", "DEGC", "\u00b0C"}:
+        return UnitOfTemperature.CELSIUS
+
+    return None
+
+
+def resolve_temperature_unit(device_data, config=None):
+    """Work out what unit a climate codeset's temperatures are actually in.
+
+    Precedence (issue #33):
+      1. The user's explicit override in the config entry.
+      2. A "temperatureUnit" key in the codeset JSON.
+      3. Inference from the temperature range.
+      4. Celsius, matching every codeset shipped before 1.7.1.
+    """
+    if config:
+        override = _normalise_unit(
+            config.get(CONF_TEMPERATURE_UNIT, TEMPERATURE_UNIT_AUTO)
+        )
+        if override is not None:
+            return override
+
+    declared = _normalise_unit(
+        device_data.get("temperatureUnit") or device_data.get("temperature_unit")
+    )
+    if declared is not None:
+        return declared
+
+    # Nothing declared: a codeset topping out above ~45 can only be Fahrenheit.
+    try:
+        if float(device_data["maxTemperature"]) >= FAHRENHEIT_INFERENCE_THRESHOLD:
+            return UnitOfTemperature.FAHRENHEIT
+    except (KeyError, TypeError, ValueError):
+        pass
+
+    return UnitOfTemperature.CELSIUS
 
 
 class SmartIRClimate(ClimateEntity, RestoreEntity):
@@ -97,6 +152,11 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self._min_temperature = device_data["minTemperature"]
         self._max_temperature = device_data["maxTemperature"]
         self._precision = device_data["precision"]
+
+        # The unit the codeset's own temperature keys are written in (issue
+        # #33). Reporting this as the entity's native unit stops Home Assistant
+        # treating a Fahrenheit codeset as Celsius and converting it again.
+        self._temperature_unit = resolve_temperature_unit(device_data, config)
 
         valid_modes = [x for x in device_data["operationModes"] if x in HVAC_MODES]
 
@@ -214,7 +274,7 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
 
     @property
     def temperature_unit(self):
-        return UnitOfTemperature.CELSIUS
+        return self._temperature_unit
 
     @property
     def should_poll(self):
@@ -294,6 +354,7 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
             "supported_controller": self._supported_controller,
             "commands_encoding": self._commands_encoding,
             "passive_mode": self._passive_mode,
+            "codeset_temperature_unit": self._temperature_unit,
         }
 
     @callback
@@ -332,13 +393,17 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
             )
             return None
 
-        sensor_unit = state.attributes.get(ATTR_UNIT_OF_MEASUREMENT)
-        if sensor_unit == UnitOfTemperature.FAHRENHEIT:
+        sensor_unit = _normalise_unit(
+            state.attributes.get(ATTR_UNIT_OF_MEASUREMENT)
+        )
+
+        # Convert the sensor into the codeset's unit, not blindly into Celsius.
+        if sensor_unit is not None and sensor_unit != self._temperature_unit:
             return round(
                 TemperatureConverter.convert(
                     value,
-                    UnitOfTemperature.FAHRENHEIT,
-                    UnitOfTemperature.CELSIUS,
+                    sensor_unit,
+                    self._temperature_unit,
                 ),
                 1,
             )

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 DOMAIN = "ar_smart_ir"
-VERSION = "1.7.0"
+VERSION = "1.7.1"
 
 CONF_PLATFORM = "platform"
 CONF_UNIQUE_ID = "unique_id"
@@ -12,6 +12,7 @@ CONF_CONTROLLER_ENTITY = "controller_entity"
 CONF_INFRARED_ENTITY = "infrared_entity"
 CONF_DELAY = "delay"
 CONF_TEMPERATURE_SENSOR = "temperature_sensor"
+CONF_TEMPERATURE_UNIT = "temperature_unit"
 CONF_HUMIDITY_SENSOR = "humidity_sensor"
 CONF_POWER_SENSOR = "power_sensor"
 CONF_POWER_SENSOR_RESTORE_STATE = "power_sensor_restore_state"
@@ -41,6 +42,18 @@ CONF_LEARN_TIMEOUT = "learn_timeout"
 
 DEFAULT_DELAY = 0.5
 DEFAULT_DEVICE_CLASS = "tv"
+
+# Codeset temperature unit (issue #33).
+# "auto"  - trust the codeset's "temperatureUnit" key, else infer from range.
+# "C"/"F" - force, overriding whatever the codeset says.
+TEMPERATURE_UNIT_AUTO = "auto"
+TEMPERATURE_UNIT_CELSIUS = "C"
+TEMPERATURE_UNIT_FAHRENHEIT = "F"
+TEMPERATURE_UNIT_OPTIONS = [
+    TEMPERATURE_UNIT_AUTO,
+    TEMPERATURE_UNIT_CELSIUS,
+    TEMPERATURE_UNIT_FAHRENHEIT,
+]
 
 PLATFORMS = ["climate", "fan", "light", "media_player"]
 
