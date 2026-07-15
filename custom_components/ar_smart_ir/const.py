@@ -47,8 +47,8 @@ DEFAULT_DEVICE_CLASS = "tv"
 # "auto"  - trust the codeset's "temperatureUnit" key, else infer from range.
 # "C"/"F" - force, overriding whatever the codeset says.
 TEMPERATURE_UNIT_AUTO = "auto"
-TEMPERATURE_UNIT_CELSIUS = "C"
-TEMPERATURE_UNIT_FAHRENHEIT = "F"
+TEMPERATURE_UNIT_CELSIUS = "celsius"
+TEMPERATURE_UNIT_FAHRENHEIT = "fahrenheit"
 TEMPERATURE_UNIT_OPTIONS = [
     TEMPERATURE_UNIT_AUTO,
     TEMPERATURE_UNIT_CELSIUS,
