@@ -31,6 +31,9 @@ from .const import (
     CONF_POWER_SENSOR_RESTORE_STATE,
     CONF_SOURCE_NAMES,
     CONF_TEMPERATURE_SENSOR,
+    CONF_TEMPERATURE_UNIT,
+    TEMPERATURE_UNIT_AUTO,
+    TEMPERATURE_UNIT_OPTIONS,
     CONF_TEST_COMMAND,
     CONF_TEST_DEVICE,
     DEFAULT_DEVICE_CLASS,
@@ -87,6 +90,17 @@ RAW_BASED_CONTROLLERS = {
     "Tuya",
     "UFOR11",
 }
+
+
+def _temperature_unit_selector():
+    """Let the user force a codeset's temperature unit (issue #33)."""
+    return selector.SelectSelector(
+        selector.SelectSelectorConfig(
+            options=TEMPERATURE_UNIT_OPTIONS,
+            mode=selector.SelectSelectorMode.DROPDOWN,
+            translation_key=CONF_TEMPERATURE_UNIT,
+        )
+    )
 
 
 def _temperature_sensor_selector():
@@ -440,6 +454,14 @@ class ARSmartIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     default=current_values.get(CONF_PASSIVE_MODE, False),
                 )
             ] = bool
+            data_schema[
+                vol.Optional(
+                    CONF_TEMPERATURE_UNIT,
+                    default=current_values.get(
+                        CONF_TEMPERATURE_UNIT, TEMPERATURE_UNIT_AUTO
+                    ),
+                )
+            ] = _temperature_unit_selector()
 
         if platform in {"fan", "light", "media_player"}:
             data_schema[
@@ -1001,6 +1023,12 @@ class ARSmartIROptionsFlow(config_entries.OptionsFlow):
                     default=data.get(CONF_PASSIVE_MODE, False),
                 )
             ] = bool
+            schema[
+                vol.Optional(
+                    CONF_TEMPERATURE_UNIT,
+                    default=data.get(CONF_TEMPERATURE_UNIT, TEMPERATURE_UNIT_AUTO),
+                )
+            ] = _temperature_unit_selector()
 
         if data.get(CONF_PLATFORM) in {"fan", "light", "media_player"}:
             schema[

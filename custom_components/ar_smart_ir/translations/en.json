@@ -45,10 +45,12 @@
           "go_back": "Go back to controller selection",
           "test_command": "Test command",
           "test_device": "Send test command instead of saving",
-          "passive_mode": "Passive mode"
+          "passive_mode": "Passive mode",
+          "temperature_unit": "Codeset temperature unit"
         },
         "data_description": {
-          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature."
+          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature.",
+          "temperature_unit": "Unit the codeset's own temperature keys are written in. Auto trusts the codeset's \"temperatureUnit\" key, or infers Fahrenheit from the range. Set this only if a codeset is mislabelled."
         }
       }
     },
@@ -83,10 +85,12 @@
           "override_sequence_step_5": "Sequence step 5",
           "override_remove": "Remove selected override",
           "learn_command": "Open IR learn wizard (Broadlink / LinkNLink)",
-          "passive_mode": "Passive mode"
+          "passive_mode": "Passive mode",
+          "temperature_unit": "Codeset temperature unit"
         },
         "data_description": {
-          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature."
+          "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature.",
+          "temperature_unit": "Unit the codeset's own temperature keys are written in. Auto trusts the codeset's \"temperatureUnit\" key, or infers Fahrenheit from the range. Set this only if a codeset is mislabelled."
         }
       },
       "learn": {
@@ -104,6 +108,15 @@
       "learn_failed": "IR learning failed. Check the Broadlink/LinkNLink remote entity and try again.",
       "controller_target_conflict": "Enter a remote entity OR an MQTT topic / service name — not both.",
       "required": "Choose a remote entity or enter an MQTT topic / service name."
+    }
+  },
+  "selector": {
+    "temperature_unit": {
+      "options": {
+        "auto": "Auto (detect from codeset)",
+        "celsius": "Celsius (°C)",
+        "fahrenheit": "Fahrenheit (°F)"
+      }
     }
   }
 }
