@@ -30,8 +30,6 @@ from .const import (
     CONF_TEMPERATURE_SENSOR,
     CONF_TEMPERATURE_UNIT,
     TEMPERATURE_UNIT_AUTO,
-    TEMPERATURE_UNIT_CELSIUS,
-    TEMPERATURE_UNIT_FAHRENHEIT,
 )
 from .controller import get_controller
 from .helpers import async_load_device_data
