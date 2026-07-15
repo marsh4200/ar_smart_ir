@@ -218,9 +218,8 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
 
         if last_state:
             self._hvac_mode = last_state.state
-            self._target_temperature = last_state.attributes.get(
-                "temperature",
-                self._target_temperature,
+            self._target_temperature = self._restore_target_temperature(
+                last_state.attributes.get("temperature")
             )
             self._current_fan_mode = last_state.attributes.get(
                 "fan_mode",
@@ -261,6 +260,50 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                     self._async_power_sensor_changed,
                 )
             )
+
+    def _restore_target_temperature(self, value):
+        """Bring a restored target temperature back into range.
+
+        A state saved by an older version - or before the unit override was
+        changed - can be in a different unit entirely (issue #33: a 65 °C
+        target was written out as 149 °F). Sending that would look up a
+        command key that doesn't exist, so clamp it into the codeset's own
+        range instead of failing on the next command.
+        """
+        if value is None:
+            return self._target_temperature
+
+        try:
+            value = float(value)
+        except (TypeError, ValueError):
+            _LOGGER.debug(
+                "%s: unusable restored target temperature %s, using %s",
+                self._name,
+                value,
+                self._min_temperature,
+            )
+            return self._min_temperature
+
+        if self._precision == PRECISION_WHOLE:
+            value = round(value)
+        else:
+            value = round(value, 1)
+
+        clamped = min(max(value, self._min_temperature), self._max_temperature)
+
+        if clamped != value:
+            _LOGGER.info(
+                "%s: restored target temperature %s is outside the codeset "
+                "range %s-%s %s, clamping to %s",
+                self._name,
+                value,
+                self._min_temperature,
+                self._max_temperature,
+                self._temperature_unit,
+                clamped,
+            )
+
+        return clamped
 
     @property
     def unique_id(self):
