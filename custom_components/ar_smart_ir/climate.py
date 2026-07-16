@@ -46,7 +46,8 @@ DEFAULT_DELAY = 0.5
 PRESET_NONE = "none"
 
 # No Celsius air-conditioner codeset goes anywhere near this; every Fahrenheit
-# one starts well above it. Used only when a codeset declares no unit at all.
+# one starts well above it. Used to infer the unit of a codeset that declares
+# none, and to reject a user override the codeset's own range contradicts.
 FAHRENHEIT_INFERENCE_THRESHOLD = 45
 SENSOR_STATES_INVALID = {STATE_UNKNOWN, STATE_UNAVAILABLE, None, ""}
 
@@ -89,11 +90,41 @@ def _normalise_unit(value):
     return None
 
 
+def _codeset_max_temperature(device_data):
+    """The codeset's top setpoint as a float, or None if unusable."""
+    try:
+        return float(device_data["maxTemperature"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _override_contradicts_codeset(override, device_data):
+    """True if an override cannot possibly describe this codeset's range.
+
+    A codeset's own numbers give its unit away. No air conditioner has a
+    Fahrenheit setpoint range topping out below ~45 °F, and none has a Celsius
+    range reaching it. An override that contradicts the range this badly is a
+    misconfiguration rather than an intent, and obeying it does real damage:
+    a 16-30 °C codeset forced to Fahrenheit renders as -8.9 to -1.1 °C, and
+    every setpoint the user then picks is converted back into a *different*
+    but still valid codeset key, so the wrong command is transmitted silently.
+    """
+    maximum = _codeset_max_temperature(device_data)
+    if maximum is None:
+        return False
+
+    if override == UnitOfTemperature.FAHRENHEIT:
+        return maximum < FAHRENHEIT_INFERENCE_THRESHOLD
+
+    return maximum >= FAHRENHEIT_INFERENCE_THRESHOLD
+
+
 def resolve_temperature_unit(device_data, config=None):
     """Work out what unit a climate codeset's temperatures are actually in.
 
     Precedence (issue #33):
-      1. The user's explicit override in the config entry.
+      1. The user's explicit override in the config entry, unless the
+         codeset's range flatly contradicts it.
       2. A "temperatureUnit" key in the codeset JSON.
       3. Inference from the temperature range.
       4. Celsius, matching every codeset shipped before 1.7.1.
@@ -103,7 +134,23 @@ def resolve_temperature_unit(device_data, config=None):
             config.get(CONF_TEMPERATURE_UNIT, TEMPERATURE_UNIT_AUTO)
         )
         if override is not None:
-            return override
+            if not _override_contradicts_codeset(override, device_data):
+                return override
+
+            _LOGGER.warning(
+                "Ignoring the '%s' temperature unit override for the %s codeset: "
+                "its setpoints run %s-%s, which cannot be %s. This option "
+                "declares the unit the codeset's own numbers are written in - it "
+                "does not change how temperatures are displayed. For that, use "
+                "Home Assistant's unit system or the entity's unit override, and "
+                "set this option back to '%s'.",
+                override,
+                device_data.get("manufacturer", "unknown"),
+                device_data.get("minTemperature"),
+                device_data.get("maxTemperature"),
+                override,
+                TEMPERATURE_UNIT_AUTO,
+            )
 
     declared = _normalise_unit(
         device_data.get("temperatureUnit") or device_data.get("temperature_unit")
@@ -112,11 +159,9 @@ def resolve_temperature_unit(device_data, config=None):
         return declared
 
     # Nothing declared: a codeset topping out above ~45 can only be Fahrenheit.
-    try:
-        if float(device_data["maxTemperature"]) >= FAHRENHEIT_INFERENCE_THRESHOLD:
-            return UnitOfTemperature.FAHRENHEIT
-    except (KeyError, TypeError, ValueError):
-        pass
+    maximum = _codeset_max_temperature(device_data)
+    if maximum is not None and maximum >= FAHRENHEIT_INFERENCE_THRESHOLD:
+        return UnitOfTemperature.FAHRENHEIT
 
     return UnitOfTemperature.CELSIUS
 

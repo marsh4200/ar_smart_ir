@@ -53,12 +53,12 @@
           "passive_mode": "Passive mode",
           "device_class": "Media player class",
           "source_names": "Optional source remap JSON / text",
-          "temperature_unit": "Codeset temperature unit"
+          "temperature_unit": "Codeset temperature unit (advanced)"
         },
         "data_description": {
           "passive_mode": "Only transmit IR when you change a setting. Unchanged states are never re-sent, so the AC unit's own thermostat manages the temperature.",
           "power_sensor_restore_state": "When the power sensor turns on, restore the last HVAC mode instead of defaulting to cool.",
-          "temperature_unit": "Unit the codeset's own temperature keys are written in. Auto trusts the codeset's \"temperatureUnit\" key, or infers Fahrenheit from the range. Set this only if a codeset is mislabelled."
+          "temperature_unit": "Advanced. Declares the unit the codeset's own temperature keys are written in — it does NOT change how temperatures are displayed. For that, use Home Assistant's unit system or the entity's unit override. Leave on Auto unless a codeset is genuinely mislabelled; an override the codeset's range contradicts is ignored."
         }
       },
       "name": {
