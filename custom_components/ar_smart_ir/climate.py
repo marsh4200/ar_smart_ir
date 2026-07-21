@@ -307,11 +307,18 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
             )
 
     def _restore_target_temperature(self, value):
-        """Bring a restored target temperature back into range.
+        """Bring a restored target temperature back into the codeset's unit and range.
+
+        Home Assistant serialises a climate entity's "temperature" attribute
+        in the *display* unit (hass.config.units.temperature_unit), not the
+        entity's native unit, so on an imperial system a 22 °C target is
+        stored as 72. Convert it back into the codeset's unit before doing
+        anything else; without that, 72 reads as 72 °C and clamps to the
+        codeset maximum.
 
         A state saved by an older version - or before the unit override was
-        changed - can be in a different unit entirely (issue #33: a 65 °C
-        target was written out as 149 °F). Sending that would look up a
+        changed - can still be in a different unit entirely (issue #33: a
+        65 °C target was written out as 149 °F). Sending that would look up a
         command key that doesn't exist, so clamp it into the codeset's own
         range instead of failing on the next command.
         """
@@ -328,6 +335,14 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                 self._min_temperature,
             )
             return self._min_temperature
+
+        display_unit = self.hass.config.units.temperature_unit
+        if display_unit != self._temperature_unit:
+            value = TemperatureConverter.convert(
+                value,
+                display_unit,
+                self._temperature_unit,
+            )
 
         if self._precision == PRECISION_WHOLE:
             value = round(value)
