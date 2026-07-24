@@ -256,7 +256,10 @@ class SmartIRFan(FanEntity, RestoreEntity):
 
         self.async_write_ha_state()
 
-    async def async_turn_on(self, percentage=None, **kwargs):
+    async def async_turn_on(self, percentage=None, preset_mode=None, **kwargs):
+        # Home Assistant calls async_turn_on(percentage, preset_mode, **kwargs)
+        # positionally, so preset_mode must be accepted even though this
+        # platform does not expose preset modes.
 
         if percentage is None:
             percentage = ordered_list_item_to_percentage(
@@ -266,7 +269,7 @@ class SmartIRFan(FanEntity, RestoreEntity):
 
         await self.async_set_percentage(percentage)
 
-    async def async_turn_off(self):
+    async def async_turn_off(self, **kwargs):
 
         await self.async_set_percentage(0)
 
