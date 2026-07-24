@@ -305,6 +305,27 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                     self._async_power_sensor_changed,
                 )
             )
+            # Initial sync: reconcile restored state with the actual power
+            # sensor so the entity is correct after a restart even if the
+            # sensor never changes.
+            power_state = self.hass.states.get(self._power_sensor)
+            if power_state is not None:
+                if power_state.state == "off" and self._hvac_mode != HVACMode.OFF:
+                    self._on_by_remote = False
+                    self._hvac_mode = HVACMode.OFF
+                elif power_state.state == "on" and self._hvac_mode == HVACMode.OFF:
+                    self._on_by_remote = True
+                    if (
+                        self._power_sensor_restore_state
+                        and self._last_on_operation is not None
+                    ):
+                        self._hvac_mode = self._last_on_operation
+                    else:
+                        self._hvac_mode = (
+                            self._operation_modes[1]
+                            if len(self._operation_modes) > 1
+                            else HVACMode.COOL
+                        )
 
     def _restore_target_temperature(self, value):
         """Bring a restored target temperature back into the codeset's unit and range.
