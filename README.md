@@ -1,4 +1,5 @@
 # AR Smart IR
+![Usage](https://img.shields.io/badge/dynamic/json?color=9932CC&logo=home-assistant&label=usage&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/custom_integrations.json&query=$.ar_smart_ir.total)
 
 [![Latest Release](https://img.shields.io/github/v/release/marsh4200/ar_smart_ir?include_prereleases)](https://github.com/marsh4200/ar_smart_ir/releases)
 
