@@ -1,5 +1,16 @@
 # AR Smart IR
 
+
+
+> [!WARNING]
+> ## Project Archived
+>
+> **AR Smart IR is no longer under active development.**
+>
+> This repository has been archived, and there will be **no further updates, bug fixes, or new features**. The project is now considered closed.
+>
+> The repository will remain available for anyone who wishes to use or fork it, but no further maintenance or support should be expected.
+
 [![Latest Release](https://img.shields.io/github/v/release/marsh4200/ar_smart_ir?include_prereleases)](https://github.com/marsh4200/ar_smart_ir/releases)
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
@@ -19,14 +30,7 @@ It is designed for users who want a cleaner, more modern SmartIR experience with
 
 
 
-> [!WARNING]
-> ## Project Archived
->
-> **AR Smart IR is no longer under active development.**
->
-> This repository has been archived, and there will be **no further updates, bug fixes, or new features**. The project is now considered closed.
->
-> The repository will remain available for anyone who wishes to use or fork it, but no further maintenance or support should be expected.
+
 
 
 ---
