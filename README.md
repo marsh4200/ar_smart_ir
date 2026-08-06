@@ -6,6 +6,9 @@
 [![Stars](https://img.shields.io/github/stars/marsh4200/ar_smart_ir)](https://github.com/marsh4200/ar_smart_ir/stargazers)
 
 
+
+
+
 > [!WARNING]
 > ## Project Archived
 >
