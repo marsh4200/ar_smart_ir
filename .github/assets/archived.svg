@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 840 140" width="840" height="140" role="img" aria-label="Project archived - AR Smart IR is no longer under active development">
+  <title>Project Archived — no further updates, bug fixes or new features</title>
+
+  <defs>
+    <clipPath id="cardClip"><rect x="1" y="1" width="838" height="138" rx="14"/></clipPath>
+    <clipPath id="topClip"><rect x="1" y="1" width="838" height="10"/></clipPath>
+    <clipPath id="botClip"><rect x="1" y="129" width="838" height="10"/></clipPath>
+
+    <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#fbbf24" stop-opacity="0"/>
+      <stop offset="0.5"  stop-color="#fbbf24" stop-opacity="0.13"/>
+      <stop offset="1"    stop-color="#fbbf24" stop-opacity="0"/>
+    </linearGradient>
+
+    <g id="hazard">
+      <path d="M0 -4 L14 -4 L0 14 L-14 14 Z" fill="#fbbf24"/>
+      <path d="M28 -4 L42 -4 L28 14 L14 14 Z" fill="#fbbf24"/>
+      <path d="M56 -4 L70 -4 L56 14 L42 14 Z" fill="#fbbf24"/>
+      <path d="M84 -4 L98 -4 L84 14 L70 14 Z" fill="#fbbf24"/>
+      <path d="M112 -4 L126 -4 L112 14 L98 14 Z" fill="#fbbf24"/>
+      <path d="M140 -4 L154 -4 L140 14 L126 14 Z" fill="#fbbf24"/>
+      <path d="M168 -4 L182 -4 L168 14 L154 14 Z" fill="#fbbf24"/>
+      <path d="M196 -4 L210 -4 L196 14 L182 14 Z" fill="#fbbf24"/>
+      <path d="M224 -4 L238 -4 L224 14 L210 14 Z" fill="#fbbf24"/>
+      <path d="M252 -4 L266 -4 L252 14 L238 14 Z" fill="#fbbf24"/>
+      <path d="M280 -4 L294 -4 L280 14 L266 14 Z" fill="#fbbf24"/>
+      <path d="M308 -4 L322 -4 L308 14 L294 14 Z" fill="#fbbf24"/>
+      <path d="M336 -4 L350 -4 L336 14 L322 14 Z" fill="#fbbf24"/>
+      <path d="M364 -4 L378 -4 L364 14 L350 14 Z" fill="#fbbf24"/>
+      <path d="M392 -4 L406 -4 L392 14 L378 14 Z" fill="#fbbf24"/>
+      <path d="M420 -4 L434 -4 L420 14 L406 14 Z" fill="#fbbf24"/>
+      <path d="M448 -4 L462 -4 L448 14 L434 14 Z" fill="#fbbf24"/>
+      <path d="M476 -4 L490 -4 L476 14 L462 14 Z" fill="#fbbf24"/>
+      <path d="M504 -4 L518 -4 L504 14 L490 14 Z" fill="#fbbf24"/>
+      <path d="M532 -4 L546 -4 L532 14 L518 14 Z" fill="#fbbf24"/>
+      <path d="M560 -4 L574 -4 L560 14 L546 14 Z" fill="#fbbf24"/>
+      <path d="M588 -4 L602 -4 L588 14 L574 14 Z" fill="#fbbf24"/>
+      <path d="M616 -4 L630 -4 L616 14 L602 14 Z" fill="#fbbf24"/>
+      <path d="M644 -4 L658 -4 L644 14 L630 14 Z" fill="#fbbf24"/>
+      <path d="M672 -4 L686 -4 L672 14 L658 14 Z" fill="#fbbf24"/>
+      <path d="M700 -4 L714 -4 L700 14 L686 14 Z" fill="#fbbf24"/>
+      <path d="M728 -4 L742 -4 L728 14 L714 14 Z" fill="#fbbf24"/>
+      <path d="M756 -4 L770 -4 L756 14 L742 14 Z" fill="#fbbf24"/>
+      <path d="M784 -4 L798 -4 L784 14 L770 14 Z" fill="#fbbf24"/>
+      <path d="M812 -4 L826 -4 L812 14 L798 14 Z" fill="#fbbf24"/>
+      <path d="M840 -4 L854 -4 L840 14 L826 14 Z" fill="#fbbf24"/>
+      <path d="M868 -4 L882 -4 L868 14 L854 14 Z" fill="#fbbf24"/>
+    </g>
+  </defs>
+
+  <style>
+    .bg      { fill: #1c1917; }
+    .edge    { stroke: #57534e; }
+    .h1      { fill: #fef3c7; font: 700 25px/1 "Segoe UI", Ubuntu, "Helvetica Neue", Arial, sans-serif; }
+    .h2      { fill: #d6d3d1; font: 400 14.5px/1 "Segoe UI", Ubuntu, "Helvetica Neue", Arial, sans-serif; }
+    .h3      { fill: #a8a29e; font: 400 12.5px/1 "Segoe UI", Ubuntu, "Helvetica Neue", Arial, sans-serif; }
+    .haz     { fill: #292524; }
+    .tri     { fill: #fbbf24; }
+    .triInk  { fill: #1c1917; }
+
+    @media (prefers-color-scheme: light) {
+      .bg     { fill: #fffbeb; }
+      .edge   { stroke: #fcd34d; }
+      .h1     { fill: #78350f; }
+      .h2     { fill: #57534e; }
+      .h3     { fill: #78716c; }
+      .haz    { fill: #fef3c7; }
+      .triInk { fill: #fffbeb; }
+    }
+
+    /* Pulse on the warning mark */
+    #mark { animation: pulse 1.9s ease-in-out infinite; transform-origin: 62px 70px; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1;    transform: scale(1); }
+      50%      { opacity: 0.62; transform: scale(0.94); }
+    }
+
+    /* Blinking status dot */
+    #dot { animation: blink 1.5s steps(1, end) infinite; }
+    @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0.15; } }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      #mark, #dot { animation: none; }
+    }
+  </style>
+
+  <g clip-path="url(#cardClip)">
+    <rect x="1" y="1" width="838" height="138" rx="14" class="bg"/>
+
+    <!-- Sweeping highlight -->
+    <rect x="-360" y="1" width="360" height="138" fill="url(#sweepGrad)">
+      <animate attributeName="x" from="-360" to="840" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Top hazard strip -->
+    <g clip-path="url(#topClip)">
+      <rect x="1" y="1" width="838" height="10" class="haz"/>
+      <g>
+        <use href="#hazard" xlink:href="#hazard" x="-28" y="0"/>
+        <animateTransform attributeName="transform" type="translate"
+                          from="0 0" to="28 0" dur="0.9s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- Bottom hazard strip (opposite direction) -->
+    <g clip-path="url(#botClip)">
+      <rect x="1" y="129" width="838" height="10" class="haz"/>
+      <g>
+        <use href="#hazard" xlink:href="#hazard" x="-28" y="130"/>
+        <animateTransform attributeName="transform" type="translate"
+                          from="28 0" to="0 0" dur="0.9s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- Warning mark -->
+    <g id="mark">
+      <path class="tri" d="M62 46 L92 96 Q95 101 89 101 L35 101 Q29 101 32 96 Z"/>
+      <rect class="triInk" x="59.6" y="63" width="4.8" height="21" rx="2.4"/>
+      <circle class="triInk" cx="62" cy="91" r="2.9"/>
+    </g>
+
+    <!-- Text -->
+    <text class="h1" x="118" y="58">PROJECT ARCHIVED</text>
+    <text class="h2" x="118" y="82">AR Smart IR is no longer under active development.</text>
+    <text class="h3" x="118" y="103">No further updates, bug fixes or new features. Forks welcome — no support expected.</text>
+
+    <!-- Status dot -->
+    <circle id="dot" cx="812" cy="70" r="5" fill="#f87171"/>
+  </g>
+
+  <rect x="1" y="1" width="838" height="138" rx="14" fill="none" class="edge" stroke-width="1"/>
+</svg>
