@@ -16,14 +16,6 @@
 </p>
 
 > [!WARNING]
-> ## Project Archived
->
-> **AR Smart IR is no longer under active development.**
->
-> This repository has been archived, and there will be **no further updates, bug fixes, or new features**. The project is now considered closed.
->
-> The repository will remain available for anyone who wishes to use or fork it, but no further maintenance or support should be expected.
-
 
 
 
