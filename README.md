@@ -11,6 +11,10 @@
   https://my.home-assistant.io/redirect/hacs_repository/?owner=marsh4200&repository=ar_smart_ir&category=integration
 )
 
+<p align="center">
+  <img src=".github/assets/archived.svg" alt="Project Archived - AR Smart IR is no longer under active development" width="100%">
+</p>
+
 > [!WARNING]
 > ## Project Archived
 >
